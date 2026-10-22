@@ -31,6 +31,16 @@ npm run dev                 # the dashboard, http://localhost:3000
 npm run worker              # in a second terminal: reads, indexes and analyses documents
 ```
 
+### Static snapshot (GitHub Pages)
+
+A read-only copy of the current reports is published at https://merogith.github.io/PolicyTracker2/. It is built from the local database: uploading, re-running and editing are hidden, and the worker is not needed.
+
+```bash
+node scripts/export-static.mjs      # builds into .next-static/, crawls the app, writes out-static/
+```
+
+In Git Bash, prefix it with `MSYS_NO_PATHCONV=1`. To keep the site small, the crawl saves each country's main report with the default action stages, up to two clicks from the main pages (`--depth`); other views open the closest saved one. Publish by pushing the contents of `out-static/` to the `gh-pages` branch.
+
 With `OPENAI_FAKE=1` the whole pipeline runs against a local stand-in for OpenAI: answers are made up from the page text, so they exercise the app but say nothing about the documents. The sidebar shows "Demo mode" while it is on.
 
 Runs shows a **recorded API estimate**, not payments or an invoice. Demo responses contribute zero cost and zero API tokens; jobs retain their execution mode across configuration changes. New worker attempts accumulate response usage, including invalid answers, retries and cancelled work that completes. The estimate excludes storage and scripts outside the job queue. Historical jobs without mode evidence remain marked as unrecorded rather than being assumed live or demo.

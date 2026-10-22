@@ -5,7 +5,7 @@
 // the current database, follows every link it renders, and saves each view as its own HTML file.
 // scripts/static-nav.js (injected into every page) maps query-string links to those files.
 //
-//   node scripts/export-static.mjs [--base /PolicyTracker2] [--out out-static] [--depth 3] [--max 2500] [--skip-build]
+//   node scripts/export-static.mjs [--base /PolicyTracker2] [--out out-static] [--depth 2] [--max 2500] [--skip-build]
 //
 // Views multiply (topic x metric x scale x stages x report), so the crawl keeps each country's main
 // report and the default action stages, and stops --depth clicks away from the main pages. Other
@@ -22,7 +22,7 @@ const args = Object.fromEntries(process.argv.slice(2).join(" ").split(/\s*--/).f
 const BASE = (args.base ?? "/PolicyTracker2").replace(/\/$/, "");
 const OUT = args.out ?? "out-static";
 const MAX = Number(args.max ?? 2500);
-const DEPTH = Number(args.depth ?? 3);
+const DEPTH = Number(args.depth ?? 2);
 const PORT = Number(args.port ?? 3123);
 const DIST = ".next-static";
 const ORIGIN = `http://127.0.0.1:${PORT}`;
@@ -82,7 +82,9 @@ function keyOf(raw, from) {
   const reports = params.filter(([k]) => k === "report").map(([, v]) => v);
   const stages = params.filter(([k]) => k === "stages").map(([, v]) => v).join(",");
   if (reports.some(id => !MAIN_REPORTS.has(id)) || (stages && stages !== DEFAULT_STAGES)) return null;
-  const kept = params.filter(([k]) => k !== "report" && k !== "stages");
+  // Each document view carries the whole document (~3 MB); one per quote would pass Pages' 1 GB limit,
+  // so quote links open the cited page without highlighting that one quote.
+  const kept = params.filter(([k]) => k !== "report" && k !== "stages" && !(k === "cite" && path.includes("/documents/")));
   const key = path + (kept.length ? "?" + new URLSearchParams(kept) : "");
   return { key, hash: url.hash, alias: key === path + search ? undefined : path + search };
 }
@@ -96,8 +98,9 @@ const aliases = new Map(); // equivalent URL -> key
 const depths = new Map();
 function enqueue(link, depth) {
   if (link.alias) aliases.set(link.alias, link.key);
-  const isFile = link.key.startsWith(BASE + "/api/");
-  if (pages.has(link.key) || (depth > DEPTH && !isFile) || pages.size >= MAX) return;
+  // Files and plain pages (a document, a country) are few and must always open, whatever the depth.
+  const always = link.key.startsWith(BASE + "/api/") || !link.key.includes("?");
+  if (pages.has(link.key) || (depth > DEPTH && !always) || pages.size >= MAX) return;
   pages.set(link.key, null);
   depths.set(link.key, depth);
   queue.push(link.key);

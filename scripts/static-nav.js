@@ -41,7 +41,7 @@
     if (m[c.key]) return { href: m[c.key] + url.hash, exact: true };
     // Saved views use each country's main report and the default stages without saying so.
     var stages = c.params.filter(function (p) { return p[0] === "stages"; }).map(function (p) { return p[1]; }).join(",");
-    var kept = c.params.filter(function (p) { return p[0] !== "report" && !(p[0] === "stages" && stages === "1,2,3,4"); });
+    var kept = c.params.filter(function (p) { return p[0] !== "report" && !(p[0] === "stages" && stages === "1,2,3,4") && !(p[0] === "cite" && c.path.indexOf("/documents/") > 0); });
     var plain = c.path + (kept.length ? "?" + new URLSearchParams(kept).toString() : "");
     if (m[plain]) return { href: m[plain] + url.hash, exact: !c.params.some(function (p) { return p[0] === "report"; }) };
     for (var n = kept.length - 1; n >= 0; n--) {
