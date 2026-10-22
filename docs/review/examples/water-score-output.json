@@ -1,0 +1,996 @@
+{
+  "version": "3.0.0",
+  "status": "review_not_active",
+  "example_status": "synthetic_reference_outputs_not_country_results",
+  "source_file": "water-score-input.json",
+  "combined_source_profile": "supplied_all",
+  "note": "Calculated deterministically with score-bands.mjs. Combined results are exploratory supplied-all documentation, including both NAP editions, in a synthetic one-topic profile. No source PDFs or LLM output were evaluated.",
+  "combined": {
+    "scoring_version": "3.0.0",
+    "scope": {
+      "kind": "country",
+      "document_ids": [
+        "XEX-NAP1",
+        "XEX-NDC1",
+        "XEX-NAP2"
+      ],
+      "source_profile_complete": true
+    },
+    "profile": {
+      "profile_id": "synthetic-water-example-AGR-01-v3",
+      "topic_ids": [
+        "AGR-01"
+      ]
+    },
+    "claims": [
+      {
+        "claim_id": "C1",
+        "topic_ids": [
+          "AGR-01"
+        ],
+        "lower_band": 2,
+        "upper_band": 2,
+        "label": "Policy response documented",
+        "details_vary": false,
+        "metrics": {
+          "response": {
+            "lower": true,
+            "upper": true,
+            "status": "evidenced"
+          },
+          "delivery_details": {
+            "lower": false,
+            "upper": false,
+            "status": "not_found"
+          },
+          "implementation_reported": {
+            "lower": false,
+            "upper": false,
+            "status": "not_found"
+          }
+        },
+        "variants": [
+          {
+            "variant_id": "V1",
+            "policy_object_id": "XEX-efficient-irrigation-target-2030",
+            "statement_type": "commitment",
+            "conditionality": "unconditional",
+            "band": 2,
+            "delivery_checks_applicable": true,
+            "checks": {
+              "actor": {
+                "qualified": false,
+                "evidence_ids": [],
+                "reason": "Not documented"
+              },
+              "timeframe": {
+                "qualified": true,
+                "evidence_ids": [
+                  "E1"
+                ],
+                "reason": "Source-supported detail for the same response"
+              },
+              "deliverable": {
+                "qualified": true,
+                "evidence_ids": [
+                  "E1"
+                ],
+                "reason": "Source-supported detail for the same response"
+              }
+            },
+            "stage": "Commitment",
+            "evidence_ids": [
+              "E1"
+            ]
+          },
+          {
+            "variant_id": "V2",
+            "policy_object_id": "XEX-efficient-irrigation-target-2030",
+            "statement_type": "commitment",
+            "conditionality": "unconditional",
+            "band": 2,
+            "delivery_checks_applicable": true,
+            "checks": {
+              "actor": {
+                "qualified": false,
+                "evidence_ids": [],
+                "reason": "Not documented"
+              },
+              "timeframe": {
+                "qualified": true,
+                "evidence_ids": [
+                  "E3"
+                ],
+                "reason": "Source-supported detail for the same response"
+              },
+              "deliverable": {
+                "qualified": true,
+                "evidence_ids": [
+                  "E3"
+                ],
+                "reason": "Source-supported detail for the same response"
+              }
+            },
+            "stage": "Commitment",
+            "evidence_ids": [
+              "E3"
+            ]
+          }
+        ]
+      },
+      {
+        "claim_id": "C2",
+        "topic_ids": [
+          "AGR-01"
+        ],
+        "lower_band": 1,
+        "upper_band": 1,
+        "label": "Context documented",
+        "details_vary": false,
+        "metrics": {
+          "response": {
+            "lower": false,
+            "upper": false,
+            "status": "not_found"
+          },
+          "delivery_details": {
+            "lower": false,
+            "upper": false,
+            "status": "not_found"
+          },
+          "implementation_reported": {
+            "lower": false,
+            "upper": false,
+            "status": "not_found"
+          }
+        },
+        "variants": [
+          {
+            "variant_id": "C2-base",
+            "policy_object_id": "XEX-network-capacity-2024",
+            "statement_type": "context",
+            "conditionality": "not_stated",
+            "band": 1,
+            "delivery_checks_applicable": false,
+            "checks": {
+              "actor": {
+                "qualified": false,
+                "evidence_ids": [],
+                "reason": "Not documented"
+              },
+              "timeframe": {
+                "qualified": false,
+                "evidence_ids": [],
+                "reason": "Not documented"
+              },
+              "deliverable": {
+                "qualified": false,
+                "evidence_ids": [],
+                "reason": "Not documented"
+              }
+            },
+            "stage": null,
+            "evidence_ids": [
+              "E2"
+            ]
+          }
+        ]
+      },
+      {
+        "claim_id": "C3",
+        "topic_ids": [
+          "AGR-01"
+        ],
+        "lower_band": 3,
+        "upper_band": 3,
+        "label": "Delivery details documented",
+        "details_vary": false,
+        "metrics": {
+          "response": {
+            "lower": true,
+            "upper": true,
+            "status": "evidenced"
+          },
+          "delivery_details": {
+            "lower": true,
+            "upper": true,
+            "status": "evidenced"
+          },
+          "implementation_reported": {
+            "lower": false,
+            "upper": false,
+            "status": "not_found"
+          }
+        },
+        "variants": [
+          {
+            "variant_id": "C3-base",
+            "policy_object_id": "XEX-canal-rehabilitation-2026-2030",
+            "statement_type": "planned_action",
+            "conditionality": "not_stated",
+            "band": 3,
+            "delivery_checks_applicable": true,
+            "checks": {
+              "actor": {
+                "qualified": true,
+                "evidence_ids": [
+                  "E4"
+                ],
+                "reason": "Source-supported detail for the same response"
+              },
+              "timeframe": {
+                "qualified": true,
+                "evidence_ids": [
+                  "E4"
+                ],
+                "reason": "Source-supported detail for the same response"
+              },
+              "deliverable": {
+                "qualified": true,
+                "evidence_ids": [
+                  "E4"
+                ],
+                "reason": "Source-supported detail for the same response"
+              }
+            },
+            "stage": "Planned",
+            "evidence_ids": [
+              "E4"
+            ]
+          }
+        ]
+      }
+    ],
+    "topics": [
+      {
+        "topic_id": "AGR-01",
+        "home_domain_id": "agriculture",
+        "band": 3,
+        "label": "Delivery details documented",
+        "lower_band": 3,
+        "upper_band": 3,
+        "details_vary": false,
+        "search_incomplete": false,
+        "processing_complete": true,
+        "response_status": "evidenced",
+        "metrics": {
+          "response": {
+            "lower": true,
+            "upper": true,
+            "status": "evidenced"
+          },
+          "delivery_details": {
+            "lower": true,
+            "upper": true,
+            "status": "evidenced"
+          },
+          "implementation_reported": {
+            "lower": false,
+            "upper": false,
+            "status": "not_found"
+          }
+        },
+        "response_claim_count": 2,
+        "detail_ready_claim_count": 1,
+        "implementation_reported_claim_count": 0,
+        "claim_ids": [
+          "C1",
+          "C2",
+          "C3"
+        ],
+        "job_processing_complete": true,
+        "source_profile_complete": true
+      }
+    ],
+    "domains": [
+      {
+        "home_domain_id": "agriculture",
+        "total_topics": 1,
+        "processed_topics": 1,
+        "job_processed_topics": 1,
+        "demonstrated_band_counts": {
+          "0": 0,
+          "1": 0,
+          "2": 0,
+          "3": 1,
+          "unavailable": 0
+        },
+        "provisional_topic_count": 0,
+        "P": 1,
+        "A": 0,
+        "U": 0,
+        "metrics": {
+          "response": {
+            "P": 1,
+            "A": 0,
+            "U": 0,
+            "N": 1,
+            "lower_percent": 100,
+            "upper_percent": 100,
+            "exact": true
+          },
+          "delivery_details": {
+            "P": 1,
+            "A": 0,
+            "U": 0,
+            "N": 1,
+            "lower_percent": 100,
+            "upper_percent": 100,
+            "exact": true
+          },
+          "implementation_reported": {
+            "P": 0,
+            "A": 1,
+            "U": 0,
+            "N": 1,
+            "lower_percent": 0,
+            "upper_percent": 0,
+            "exact": true
+          }
+        },
+        "response_coverage": {
+          "lower_percent": 100,
+          "upper_percent": 100,
+          "exact": true
+        },
+        "response_topic_count": 1,
+        "detail_ready_topic_count": 1,
+        "implementation_reported_topic_count": 0
+      }
+    ],
+    "national": {
+      "meaning": "Unique-topic documentation inventory, not policy quality",
+      "total_topics": 1,
+      "processed_topics": 1,
+      "job_processed_topics": 1,
+      "demonstrated_band_counts": {
+        "0": 0,
+        "1": 0,
+        "2": 0,
+        "3": 1,
+        "unavailable": 0
+      },
+      "provisional_topic_count": 0,
+      "P": 1,
+      "A": 0,
+      "U": 0,
+      "metrics": {
+        "response": {
+          "P": 1,
+          "A": 0,
+          "U": 0,
+          "N": 1,
+          "lower_percent": 100,
+          "upper_percent": 100,
+          "exact": true
+        },
+        "delivery_details": {
+          "P": 1,
+          "A": 0,
+          "U": 0,
+          "N": 1,
+          "lower_percent": 100,
+          "upper_percent": 100,
+          "exact": true
+        },
+        "implementation_reported": {
+          "P": 0,
+          "A": 1,
+          "U": 0,
+          "N": 1,
+          "lower_percent": 0,
+          "upper_percent": 0,
+          "exact": true
+        }
+      },
+      "response_coverage": {
+        "lower_percent": 100,
+        "upper_percent": 100,
+        "exact": true
+      },
+      "response_topic_count": 1,
+      "detail_ready_topic_count": 1,
+      "implementation_reported_topic_count": 0
+    }
+  },
+  "documents": [
+    {
+      "document_id": "XEX-NDC1",
+      "assessment": {
+        "scoring_version": "3.0.0",
+        "scope": {
+          "kind": "document",
+          "document_ids": [
+            "XEX-NDC1"
+          ],
+          "source_profile_complete": true
+        },
+        "profile": {
+          "profile_id": "synthetic-water-example-AGR-01-v3",
+          "topic_ids": [
+            "AGR-01"
+          ]
+        },
+        "claims": [
+          {
+            "claim_id": "C1",
+            "topic_ids": [
+              "AGR-01"
+            ],
+            "lower_band": 2,
+            "upper_band": 2,
+            "label": "Policy response documented",
+            "details_vary": false,
+            "metrics": {
+              "response": {
+                "lower": true,
+                "upper": true,
+                "status": "evidenced"
+              },
+              "delivery_details": {
+                "lower": false,
+                "upper": false,
+                "status": "not_found"
+              },
+              "implementation_reported": {
+                "lower": false,
+                "upper": false,
+                "status": "not_found"
+              }
+            },
+            "variants": [
+              {
+                "variant_id": "V1",
+                "policy_object_id": "XEX-efficient-irrigation-target-2030",
+                "statement_type": "commitment",
+                "conditionality": "unconditional",
+                "band": 2,
+                "delivery_checks_applicable": true,
+                "checks": {
+                  "actor": {
+                    "qualified": false,
+                    "evidence_ids": [],
+                    "reason": "Not documented"
+                  },
+                  "timeframe": {
+                    "qualified": true,
+                    "evidence_ids": [
+                      "E1"
+                    ],
+                    "reason": "Source-supported detail for the same response"
+                  },
+                  "deliverable": {
+                    "qualified": true,
+                    "evidence_ids": [
+                      "E1"
+                    ],
+                    "reason": "Source-supported detail for the same response"
+                  }
+                },
+                "stage": "Commitment",
+                "evidence_ids": [
+                  "E1"
+                ]
+              }
+            ]
+          }
+        ],
+        "topics": [
+          {
+            "topic_id": "AGR-01",
+            "home_domain_id": "agriculture",
+            "band": 2,
+            "label": "Policy response documented",
+            "lower_band": 2,
+            "upper_band": 2,
+            "details_vary": false,
+            "search_incomplete": false,
+            "processing_complete": true,
+            "response_status": "evidenced",
+            "metrics": {
+              "response": {
+                "lower": true,
+                "upper": true,
+                "status": "evidenced"
+              },
+              "delivery_details": {
+                "lower": false,
+                "upper": false,
+                "status": "not_found"
+              },
+              "implementation_reported": {
+                "lower": false,
+                "upper": false,
+                "status": "not_found"
+              }
+            },
+            "response_claim_count": 1,
+            "detail_ready_claim_count": 0,
+            "implementation_reported_claim_count": 0,
+            "claim_ids": [
+              "C1"
+            ],
+            "job_processing_complete": true,
+            "source_profile_complete": true
+          }
+        ],
+        "domains": [
+          {
+            "home_domain_id": "agriculture",
+            "total_topics": 1,
+            "processed_topics": 1,
+            "job_processed_topics": 1,
+            "demonstrated_band_counts": {
+              "0": 0,
+              "1": 0,
+              "2": 1,
+              "3": 0,
+              "unavailable": 0
+            },
+            "provisional_topic_count": 0,
+            "P": 1,
+            "A": 0,
+            "U": 0,
+            "metrics": {
+              "response": {
+                "P": 1,
+                "A": 0,
+                "U": 0,
+                "N": 1,
+                "lower_percent": 100,
+                "upper_percent": 100,
+                "exact": true
+              },
+              "delivery_details": {
+                "P": 0,
+                "A": 1,
+                "U": 0,
+                "N": 1,
+                "lower_percent": 0,
+                "upper_percent": 0,
+                "exact": true
+              },
+              "implementation_reported": {
+                "P": 0,
+                "A": 1,
+                "U": 0,
+                "N": 1,
+                "lower_percent": 0,
+                "upper_percent": 0,
+                "exact": true
+              }
+            },
+            "response_coverage": {
+              "lower_percent": 100,
+              "upper_percent": 100,
+              "exact": true
+            },
+            "response_topic_count": 1,
+            "detail_ready_topic_count": 0,
+            "implementation_reported_topic_count": 0
+          }
+        ],
+        "national": null
+      }
+    },
+    {
+      "document_id": "XEX-NAP1",
+      "assessment": {
+        "scoring_version": "3.0.0",
+        "scope": {
+          "kind": "document",
+          "document_ids": [
+            "XEX-NAP1"
+          ],
+          "source_profile_complete": true
+        },
+        "profile": {
+          "profile_id": "synthetic-water-example-AGR-01-v3",
+          "topic_ids": [
+            "AGR-01"
+          ]
+        },
+        "claims": [
+          {
+            "claim_id": "C2",
+            "topic_ids": [
+              "AGR-01"
+            ],
+            "lower_band": 1,
+            "upper_band": 1,
+            "label": "Context documented",
+            "details_vary": false,
+            "metrics": {
+              "response": {
+                "lower": false,
+                "upper": false,
+                "status": "not_found"
+              },
+              "delivery_details": {
+                "lower": false,
+                "upper": false,
+                "status": "not_found"
+              },
+              "implementation_reported": {
+                "lower": false,
+                "upper": false,
+                "status": "not_found"
+              }
+            },
+            "variants": [
+              {
+                "variant_id": "C2-base",
+                "policy_object_id": "XEX-network-capacity-2024",
+                "statement_type": "context",
+                "conditionality": "not_stated",
+                "band": 1,
+                "delivery_checks_applicable": false,
+                "checks": {
+                  "actor": {
+                    "qualified": false,
+                    "evidence_ids": [],
+                    "reason": "Not documented"
+                  },
+                  "timeframe": {
+                    "qualified": false,
+                    "evidence_ids": [],
+                    "reason": "Not documented"
+                  },
+                  "deliverable": {
+                    "qualified": false,
+                    "evidence_ids": [],
+                    "reason": "Not documented"
+                  }
+                },
+                "stage": null,
+                "evidence_ids": [
+                  "E2"
+                ]
+              }
+            ]
+          }
+        ],
+        "topics": [
+          {
+            "topic_id": "AGR-01",
+            "home_domain_id": "agriculture",
+            "band": 1,
+            "label": "Context documented",
+            "lower_band": 1,
+            "upper_band": 1,
+            "details_vary": false,
+            "search_incomplete": false,
+            "processing_complete": true,
+            "response_status": "not_found",
+            "metrics": {
+              "response": {
+                "lower": false,
+                "upper": false,
+                "status": "not_found"
+              },
+              "delivery_details": {
+                "lower": false,
+                "upper": false,
+                "status": "not_found"
+              },
+              "implementation_reported": {
+                "lower": false,
+                "upper": false,
+                "status": "not_found"
+              }
+            },
+            "response_claim_count": 0,
+            "detail_ready_claim_count": 0,
+            "implementation_reported_claim_count": 0,
+            "claim_ids": [
+              "C2"
+            ],
+            "job_processing_complete": true,
+            "source_profile_complete": true
+          }
+        ],
+        "domains": [
+          {
+            "home_domain_id": "agriculture",
+            "total_topics": 1,
+            "processed_topics": 1,
+            "job_processed_topics": 1,
+            "demonstrated_band_counts": {
+              "0": 0,
+              "1": 1,
+              "2": 0,
+              "3": 0,
+              "unavailable": 0
+            },
+            "provisional_topic_count": 0,
+            "P": 0,
+            "A": 1,
+            "U": 0,
+            "metrics": {
+              "response": {
+                "P": 0,
+                "A": 1,
+                "U": 0,
+                "N": 1,
+                "lower_percent": 0,
+                "upper_percent": 0,
+                "exact": true
+              },
+              "delivery_details": {
+                "P": 0,
+                "A": 1,
+                "U": 0,
+                "N": 1,
+                "lower_percent": 0,
+                "upper_percent": 0,
+                "exact": true
+              },
+              "implementation_reported": {
+                "P": 0,
+                "A": 1,
+                "U": 0,
+                "N": 1,
+                "lower_percent": 0,
+                "upper_percent": 0,
+                "exact": true
+              }
+            },
+            "response_coverage": {
+              "lower_percent": 0,
+              "upper_percent": 0,
+              "exact": true
+            },
+            "response_topic_count": 0,
+            "detail_ready_topic_count": 0,
+            "implementation_reported_topic_count": 0
+          }
+        ],
+        "national": null
+      }
+    },
+    {
+      "document_id": "XEX-NAP2",
+      "assessment": {
+        "scoring_version": "3.0.0",
+        "scope": {
+          "kind": "document",
+          "document_ids": [
+            "XEX-NAP2"
+          ],
+          "source_profile_complete": true
+        },
+        "profile": {
+          "profile_id": "synthetic-water-example-AGR-01-v3",
+          "topic_ids": [
+            "AGR-01"
+          ]
+        },
+        "claims": [
+          {
+            "claim_id": "C1",
+            "topic_ids": [
+              "AGR-01"
+            ],
+            "lower_band": 2,
+            "upper_band": 2,
+            "label": "Policy response documented",
+            "details_vary": false,
+            "metrics": {
+              "response": {
+                "lower": true,
+                "upper": true,
+                "status": "evidenced"
+              },
+              "delivery_details": {
+                "lower": false,
+                "upper": false,
+                "status": "not_found"
+              },
+              "implementation_reported": {
+                "lower": false,
+                "upper": false,
+                "status": "not_found"
+              }
+            },
+            "variants": [
+              {
+                "variant_id": "V2",
+                "policy_object_id": "XEX-efficient-irrigation-target-2030",
+                "statement_type": "commitment",
+                "conditionality": "unconditional",
+                "band": 2,
+                "delivery_checks_applicable": true,
+                "checks": {
+                  "actor": {
+                    "qualified": false,
+                    "evidence_ids": [],
+                    "reason": "Not documented"
+                  },
+                  "timeframe": {
+                    "qualified": true,
+                    "evidence_ids": [
+                      "E3"
+                    ],
+                    "reason": "Source-supported detail for the same response"
+                  },
+                  "deliverable": {
+                    "qualified": true,
+                    "evidence_ids": [
+                      "E3"
+                    ],
+                    "reason": "Source-supported detail for the same response"
+                  }
+                },
+                "stage": "Commitment",
+                "evidence_ids": [
+                  "E3"
+                ]
+              }
+            ]
+          },
+          {
+            "claim_id": "C3",
+            "topic_ids": [
+              "AGR-01"
+            ],
+            "lower_band": 3,
+            "upper_band": 3,
+            "label": "Delivery details documented",
+            "details_vary": false,
+            "metrics": {
+              "response": {
+                "lower": true,
+                "upper": true,
+                "status": "evidenced"
+              },
+              "delivery_details": {
+                "lower": true,
+                "upper": true,
+                "status": "evidenced"
+              },
+              "implementation_reported": {
+                "lower": false,
+                "upper": false,
+                "status": "not_found"
+              }
+            },
+            "variants": [
+              {
+                "variant_id": "C3-base",
+                "policy_object_id": "XEX-canal-rehabilitation-2026-2030",
+                "statement_type": "planned_action",
+                "conditionality": "not_stated",
+                "band": 3,
+                "delivery_checks_applicable": true,
+                "checks": {
+                  "actor": {
+                    "qualified": true,
+                    "evidence_ids": [
+                      "E4"
+                    ],
+                    "reason": "Source-supported detail for the same response"
+                  },
+                  "timeframe": {
+                    "qualified": true,
+                    "evidence_ids": [
+                      "E4"
+                    ],
+                    "reason": "Source-supported detail for the same response"
+                  },
+                  "deliverable": {
+                    "qualified": true,
+                    "evidence_ids": [
+                      "E4"
+                    ],
+                    "reason": "Source-supported detail for the same response"
+                  }
+                },
+                "stage": "Planned",
+                "evidence_ids": [
+                  "E4"
+                ]
+              }
+            ]
+          }
+        ],
+        "topics": [
+          {
+            "topic_id": "AGR-01",
+            "home_domain_id": "agriculture",
+            "band": 3,
+            "label": "Delivery details documented",
+            "lower_band": 3,
+            "upper_band": 3,
+            "details_vary": false,
+            "search_incomplete": false,
+            "processing_complete": true,
+            "response_status": "evidenced",
+            "metrics": {
+              "response": {
+                "lower": true,
+                "upper": true,
+                "status": "evidenced"
+              },
+              "delivery_details": {
+                "lower": true,
+                "upper": true,
+                "status": "evidenced"
+              },
+              "implementation_reported": {
+                "lower": false,
+                "upper": false,
+                "status": "not_found"
+              }
+            },
+            "response_claim_count": 2,
+            "detail_ready_claim_count": 1,
+            "implementation_reported_claim_count": 0,
+            "claim_ids": [
+              "C1",
+              "C3"
+            ],
+            "job_processing_complete": true,
+            "source_profile_complete": true
+          }
+        ],
+        "domains": [
+          {
+            "home_domain_id": "agriculture",
+            "total_topics": 1,
+            "processed_topics": 1,
+            "job_processed_topics": 1,
+            "demonstrated_band_counts": {
+              "0": 0,
+              "1": 0,
+              "2": 0,
+              "3": 1,
+              "unavailable": 0
+            },
+            "provisional_topic_count": 0,
+            "P": 1,
+            "A": 0,
+            "U": 0,
+            "metrics": {
+              "response": {
+                "P": 1,
+                "A": 0,
+                "U": 0,
+                "N": 1,
+                "lower_percent": 100,
+                "upper_percent": 100,
+                "exact": true
+              },
+              "delivery_details": {
+                "P": 1,
+                "A": 0,
+                "U": 0,
+                "N": 1,
+                "lower_percent": 100,
+                "upper_percent": 100,
+                "exact": true
+              },
+              "implementation_reported": {
+                "P": 0,
+                "A": 1,
+                "U": 0,
+                "N": 1,
+                "lower_percent": 0,
+                "upper_percent": 0,
+                "exact": true
+              }
+            },
+            "response_coverage": {
+              "lower_percent": 100,
+              "upper_percent": 100,
+              "exact": true
+            },
+            "response_topic_count": 1,
+            "detail_ready_topic_count": 1,
+            "implementation_reported_topic_count": 0
+          }
+        ],
+        "national": null
+      }
+    }
+  ]
+}

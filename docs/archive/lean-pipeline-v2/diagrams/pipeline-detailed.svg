@@ -1,0 +1,220 @@
+<?xml version='1.0' encoding='utf-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1780" height="1740" viewBox="0 0 1780 1740" role="img" aria-labelledby="engineering-title engineering-desc">
+  <title id="engineering-title">Engineering flow</title>
+  <desc id="engineering-desc">Regional climate and disaster policy tracker. Two model stages, deterministic pooling and documentation bands, automatic publication with source-specific evidence.</desc>
+  <defs>
+    <marker id="engineering-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#60758A" />
+    </marker>
+  </defs>
+  <rect x="0" y="0" width="1780" height="1740" fill="#F7F9FC" />
+  <text x="60" y="57" font-family="Arial, Helvetica, sans-serif" font-size="32" font-weight="700" fill="#23364D">
+    <tspan x="60" dy="0">Policy tracker: engineering flow</tspan>
+  </text>
+  <text x="60" y="95" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="400" fill="#52667B">
+    <tspan x="60" dy="0">Preserve sources, organize across documents, calculate transparent bands and publish automatically.</tspan>
+  </text>
+  <rect x="60" y="145" width="850" height="90" rx="14" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="2" />
+  <text x="80" y="167" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="700" fill="#42648A">
+    <tspan x="80" dy="0">01  CODE</tspan>
+  </text>
+  <text x="80" y="196" font-family="Arial, Helvetica, sans-serif" font-size="21" font-weight="700" fill="#23364D">
+    <tspan x="80" dy="0">Sources</tspan>
+  </text>
+  <text x="80" y="220" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="400" fill="#23364D">
+    <tspan x="80" dy="0">Country + document identities, editions, source role and document hash.</tspan>
+  </text>
+  <rect x="60" y="265" width="850" height="110" rx="14" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="2" />
+  <text x="80" y="287" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="700" fill="#42648A">
+    <tspan x="80" dy="0">02  CODE</tspan>
+  </text>
+  <text x="80" y="316" font-family="Arial, Helvetica, sans-serif" font-size="21" font-weight="700" fill="#23364D">
+    <tspan x="80" dy="0">Prepare pages and coverage</tspan>
+  </text>
+  <text x="80" y="340" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="400" fill="#23364D">
+    <tspan x="80" dy="0">Extract/index readable pages; retain original files and physical page numbers.</tspan>
+    <tspan x="80" dy="21">Record unreadable material and bounded search scope.</tspan>
+  </text>
+  <path d="M485.0,235 L485.0,265" fill="none" stroke="#60758A" stroke-width="2" marker-end="url(#engineering-arrow)" />
+  <rect x="60" y="395" width="850" height="110" rx="14" fill="#EAF2FF" stroke="#6B98D1" stroke-width="2" />
+  <text x="80" y="417" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="700" fill="#42648A">
+    <tspan x="80" dy="0">03  LLM - STAGE 1</tspan>
+  </text>
+  <text x="80" y="446" font-family="Arial, Helvetica, sans-serif" font-size="21" font-weight="700" fill="#23364D">
+    <tspan x="80" dy="0">Extract per document and domain</tspan>
+  </text>
+  <text x="80" y="470" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="400" fill="#23364D">
+    <tspan x="80" dy="0">Use relevant taxonomy definitions and the full topic-ID catalogue.</tspan>
+    <tspan x="80" dy="21">Return atomic records, labels, exact quotes and source-linked factual fields.</tspan>
+  </text>
+  <path d="M485.0,375 L485.0,395" fill="none" stroke="#60758A" stroke-width="2" marker-end="url(#engineering-arrow)" />
+  <rect x="60" y="535" width="850" height="110" rx="14" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="2" />
+  <text x="80" y="557" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="700" fill="#42648A">
+    <tspan x="80" dy="0">04  CODE</tspan>
+  </text>
+  <text x="80" y="586" font-family="Arial, Helvetica, sans-serif" font-size="21" font-weight="700" fill="#23364D">
+    <tspan x="80" dy="0">Check source evidence and schema</tspan>
+  </text>
+  <text x="80" y="610" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="400" fill="#23364D">
+    <tspan x="80" dy="0">Check known IDs, quotes, figures and required factual provenance.</tspan>
+    <tspan x="80" dy="21">Bounded repair uses the same stage prompt; unresolved fields stay unsupported.</tspan>
+  </text>
+  <path d="M485.0,505 L485.0,535" fill="none" stroke="#60758A" stroke-width="2" marker-end="url(#engineering-arrow)" />
+  <rect x="60" y="675" width="850" height="110" rx="14" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="2" />
+  <text x="80" y="697" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="700" fill="#42648A">
+    <tspan x="80" dy="0">05  CODE</tspan>
+  </text>
+  <text x="80" y="726" font-family="Arial, Helvetica, sans-serif" font-size="21" font-weight="700" fill="#23364D">
+    <tspan x="80" dy="0">Persist durable records</tspan>
+  </text>
+  <text x="80" y="750" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="400" fill="#23364D">
+    <tspan x="80" dy="0">Assign record/evidence IDs and preserve prior versions and source-specific facts.</tspan>
+    <tspan x="80" dy="21">Cache unchanged extraction; keep discovery aliases and coverage metadata.</tspan>
+  </text>
+  <path d="M485.0,645 L485.0,675" fill="none" stroke="#60758A" stroke-width="2" marker-end="url(#engineering-arrow)" />
+  <rect x="60" y="805" width="850" height="110" rx="14" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="2" />
+  <text x="80" y="827" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="700" fill="#42648A">
+    <tspan x="80" dy="0">06  CODE - NO LLM</tspan>
+  </text>
+  <text x="80" y="856" font-family="Arial, Helvetica, sans-serif" font-size="21" font-weight="700" fill="#23364D">
+    <tspan x="80" dy="0">Pool by assigned topics</tspan>
+  </text>
+  <text x="80" y="880" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="400" fill="#23364D">
+    <tspan x="80" dy="0">Reconcile true duplicates; each primary topic has one owning home domain.</tspan>
+    <tspan x="80" dy="21">Other relevant records are context-only; keep all eligible owned records.</tspan>
+  </text>
+  <path d="M485.0,785 L485.0,805" fill="none" stroke="#60758A" stroke-width="2" marker-end="url(#engineering-arrow)" />
+  <rect x="60" y="935" width="850" height="120" rx="14" fill="#EAF2FF" stroke="#6B98D1" stroke-width="2" />
+  <text x="80" y="957" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="700" fill="#42648A">
+    <tspan x="80" dy="0">07  LLM - STAGE 2</tspan>
+  </text>
+  <text x="80" y="986" font-family="Arial, Helvetica, sans-serif" font-size="21" font-weight="700" fill="#23364D">
+    <tspan x="80" dy="0">Organize country/domain packs</tspan>
+  </text>
+  <text x="80" y="1010" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="400" fill="#23364D">
+    <tspan x="80" dy="0">Group equivalent assertions; retain variants and supporting/contextual links.</tspan>
+    <tspan x="80" dy="21">Input is sourced records, not PDFs. Bounded overflow reconciliation stays Stage 2.</tspan>
+  </text>
+  <path d="M485.0,915 L485.0,935" fill="none" stroke="#60758A" stroke-width="2" marker-end="url(#engineering-arrow)" />
+  <rect x="60" y="1085" width="850" height="110" rx="14" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="2" />
+  <text x="80" y="1107" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="700" fill="#42648A">
+    <tspan x="80" dy="0">08  CODE</tspan>
+  </text>
+  <text x="80" y="1136" font-family="Arial, Helvetica, sans-serif" font-size="21" font-weight="700" fill="#23364D">
+    <tspan x="80" dy="0">Check accounting and identity</tspan>
+  </text>
+  <text x="80" y="1160" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="400" fill="#23364D">
+    <tspan x="80" dy="0">Every owned record appears once; links resolve; comparable targets stay explicit.</tspan>
+    <tspan x="80" dy="21">Reconcile stable claim IDs and split/merge history; preserve partial-state diagnostics.</tspan>
+  </text>
+  <path d="M485.0,1055 L485.0,1085" fill="none" stroke="#60758A" stroke-width="2" marker-end="url(#engineering-arrow)" />
+  <rect x="60" y="1225" width="850" height="110" rx="14" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="2" />
+  <text x="80" y="1247" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="700" fill="#42648A">
+    <tspan x="80" dy="0">09  CODE</tspan>
+  </text>
+  <text x="80" y="1276" font-family="Arial, Helvetica, sans-serif" font-size="21" font-weight="700" fill="#23364D">
+    <tspan x="80" dy="0">Calculate source-scoped bands</tspan>
+  </text>
+  <text x="80" y="1300" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="400" fill="#23364D">
+    <tspan x="80" dy="0">Same rules, separate evidence sets: each document and the combined country.</tspan>
+    <tspan x="80" dy="21">Four bands + response-coverage bounds; progress and contradictions stay separate.</tspan>
+  </text>
+  <path d="M485.0,1195 L485.0,1225" fill="none" stroke="#60758A" stroke-width="2" marker-end="url(#engineering-arrow)" />
+  <rect x="60" y="1365" width="850" height="110" rx="14" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="2" />
+  <text x="80" y="1387" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="700" fill="#42648A">
+    <tspan x="80" dy="0">10  CODE - AUTOMATIC</tspan>
+  </text>
+  <text x="80" y="1416" font-family="Arial, Helvetica, sans-serif" font-size="21" font-weight="700" fill="#23364D">
+    <tspan x="80" dy="0">Publish an atomic country snapshot</tspan>
+  </text>
+  <text x="80" y="1440" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="400" fill="#23364D">
+    <tspan x="80" dy="0">Publish when jobs terminate or the configured deadline is reached.</tspan>
+    <tspan x="80" dy="21">Keep dated prior results while updating; later success publishes a newer snapshot.</tspan>
+  </text>
+  <path d="M485.0,1335 L485.0,1365" fill="none" stroke="#60758A" stroke-width="2" marker-end="url(#engineering-arrow)" />
+  <rect x="60" y="1505" width="850" height="120" rx="14" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="2" />
+  <text x="80" y="1527" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="700" fill="#42648A">
+    <tspan x="80" dy="0">11  UI</tspan>
+  </text>
+  <text x="80" y="1556" font-family="Arial, Helvetica, sans-serif" font-size="21" font-weight="700" fill="#23364D">
+    <tspan x="80" dy="0">Show the dashboard and evidence</tspan>
+  </text>
+  <text x="80" y="1580" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="400" fill="#23364D">
+    <tspan x="80" dy="0">Domain distributions &gt; topic bands &gt; claims &gt; exact sources.</tspan>
+    <tspan x="80" dy="21">Switch combined / document / historical views; allow post-publication flag and hide.</tspan>
+  </text>
+  <path d="M485.0,1475 L485.0,1505" fill="none" stroke="#60758A" stroke-width="2" marker-end="url(#engineering-arrow)" />
+  <rect x="1100" y="145" width="620" height="185" rx="14" fill="#EAF7F4" stroke="#92C3B5" stroke-width="2" />
+  <text x="1120" y="187" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700" fill="#23364D">
+    <tspan x="1120" dy="0">One versioned configuration bundle</tspan>
+  </text>
+  <text x="1120" y="223" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="400" fill="#23364D">
+    <tspan x="1120" dy="0">Taxonomy + labels + prompts + schema</tspan>
+    <tspan x="1120" dy="25">Band rules + retrieval/model settings</tspan>
+    <tspan x="1120" dy="25">UI edits and file exports share the same version.</tspan>
+    <tspan x="1120" dy="25">Feeds extraction, pooling, organization and bands.</tspan>
+  </text>
+  <path d="M1100,240 L1020,240 L1020,1280" fill="none" stroke="#60758A" stroke-width="2" stroke-dasharray="7 6" />
+  <path d="M1020,450 L912,450" fill="none" stroke="#60758A" stroke-width="2" marker-end="url(#engineering-arrow)" stroke-dasharray="7 6" />
+  <path d="M1020,855 L912,855" fill="none" stroke="#60758A" stroke-width="2" marker-end="url(#engineering-arrow)" stroke-dasharray="7 6" />
+  <path d="M1020,995 L912,995" fill="none" stroke="#60758A" stroke-width="2" marker-end="url(#engineering-arrow)" stroke-dasharray="7 6" />
+  <path d="M1020,1280 L912,1280" fill="none" stroke="#60758A" stroke-width="2" marker-end="url(#engineering-arrow)" stroke-dasharray="7 6" />
+  <rect x="1100" y="385" width="620" height="170" rx="14" fill="#F0F4F8" stroke="#D7E0EA" stroke-width="2" />
+  <text x="1120" y="424" font-family="Arial, Helvetica, sans-serif" font-size="21" font-weight="700" fill="#23364D">
+    <tspan x="1120" dy="0">Two model roles, not a model chain</tspan>
+  </text>
+  <text x="1120" y="458" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="400" fill="#23364D">
+    <tspan x="1120" dy="0">Pooling and scoring are application code.</tspan>
+    <tspan x="1120" dy="25">Retagging is maintenance, not a routine third stage.</tspan>
+    <tspan x="1120" dy="25">No separate judge/scoring model.</tspan>
+    <tspan x="1120" dy="25">Two roles can use the same tested model.</tspan>
+  </text>
+  <rect x="1100" y="605" width="620" height="210" rx="14" fill="#F0F4F8" stroke="#D7E0EA" stroke-width="2" />
+  <text x="1120" y="644" font-family="Arial, Helvetica, sans-serif" font-size="21" font-weight="700" fill="#23364D">
+    <tspan x="1120" dy="0">Bounded work, visible limitations</tspan>
+  </text>
+  <text x="1120" y="678" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="400" fill="#23364D">
+    <tspan x="1120" dy="0">One country-update budget covers retries,</tspan>
+    <tspan x="1120" dy="25">search, repairs and overflow.</tspan>
+    <tspan x="1120" dy="25">Never truncate input and label it complete.</tspan>
+    <tspan x="1120" dy="25">Failed or unreadable work is incomplete,</tspan>
+    <tspan x="1120" dy="25">not evidence that a policy is absent.</tspan>
+  </text>
+  <rect x="1100" y="865" width="620" height="200" rx="14" fill="#F0F4F8" stroke="#D7E0EA" stroke-width="2" />
+  <text x="1120" y="904" font-family="Arial, Helvetica, sans-serif" font-size="21" font-weight="700" fill="#23364D">
+    <tspan x="1120" dy="0">Stage 2 preserves meaning</tspan>
+  </text>
+  <text x="1120" y="938" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="400" fill="#23364D">
+    <tspan x="1120" dy="0">100,000 ha versus comparable 80,000 ha:</tspan>
+    <tspan x="1120" dy="25">retain conflicting target variants.</tspan>
+    <tspan x="1120" dy="25">60,000 ha of existing capacity:</tspan>
+    <tspan x="1120" dy="25">keep a separate contextual claim.</tspan>
+    <tspan x="1120" dy="25">Support never proves target achievement.</tspan>
+  </text>
+  <rect x="1100" y="1115" width="620" height="210" rx="14" fill="#F0F4F8" stroke="#D7E0EA" stroke-width="2" />
+  <text x="1120" y="1154" font-family="Arial, Helvetica, sans-serif" font-size="21" font-weight="700" fill="#23364D">
+    <tspan x="1120" dy="0">Document and combined views</tspan>
+  </text>
+  <text x="1120" y="1188" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="400" fill="#23364D">
+    <tspan x="1120" dy="0">Each document keeps its own assertions.</tspan>
+    <tspan x="1120" dy="25">Combined views can link evidence across sources.</tspan>
+    <tspan x="1120" dy="25">Historical views exclude future documents.</tspan>
+    <tspan x="1120" dy="25">Four bands are categories, not numbers to average.</tspan>
+    <tspan x="1120" dy="25">Cross-domain display does not double-count topics.</tspan>
+  </text>
+  <rect x="1100" y="1375" width="620" height="250" rx="14" fill="#F0F4F8" stroke="#D7E0EA" stroke-width="2" />
+  <text x="1120" y="1414" font-family="Arial, Helvetica, sans-serif" font-size="21" font-weight="700" fill="#23364D">
+    <tspan x="1120" dy="0">Automatic publication</tspan>
+  </text>
+  <text x="1120" y="1448" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="400" fill="#23364D">
+    <tspan x="1120" dy="0">No human approval or moderation gate.</tspan>
+    <tspan x="1120" dy="25">Partial snapshots identify unresolved work.</tspan>
+    <tspan x="1120" dy="25">Progress, contradictions and conditions</tspan>
+    <tspan x="1120" dy="25">appear beside the documentation band.</tspan>
+    <tspan x="1120" dy="25">Users flag or hide items after publication.</tspan>
+    <tspan x="1120" dy="25">Hiding does not silently change the benchmark.</tspan>
+  </text>
+  <text x="60" y="1688" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="400" fill="#52667B">
+    <tspan x="60" dy="0">Specification v2.0.0 | Climate and disaster scope | 16 domains / 64 topics | Runtime integration still required</tspan>
+  </text>
+</svg>

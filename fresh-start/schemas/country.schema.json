@@ -1,0 +1,34 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "country.schema.json",
+  "title": "Country manifest: the documents analysed for one country",
+  "description": "Edited by people. Country is the top-level container: stage 1 runs once per document listed here, stage 2 runs once per country over all of them. Every extraction's document_id must appear in this list.",
+  "type": "object",
+  "required": ["country", "name", "documents"],
+  "additionalProperties": false,
+  "properties": {
+    "country": { "type": "string", "description": "ISO 3166-1 alpha-3" },
+    "name": { "type": "string" },
+    "notes": { "type": ["string", "null"] },
+    "documents": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["document_id", "kind", "title", "edition_date", "language", "file"],
+        "additionalProperties": false,
+        "properties": {
+          "document_id": { "type": "string", "description": "<country>-<kind><edition>, unique across all countries; it prefixes every record ID" },
+          "kind": { "type": "string", "description": "A vocabulary document_kind value" },
+          "title": { "type": "string" },
+          "edition_date": { "type": ["string", "null"], "description": "ISO date; orders editions and decides the 'latest document' stage" },
+          "language": { "type": ["string", "null"] },
+          "file": { "type": "string", "description": "PDF path relative to the country folder" },
+          "sha256": { "type": ["string", "null"] },
+          "source_url": { "type": ["string", "null"] },
+          "supersedes": { "type": ["string", "null"], "description": "document_id of the earlier edition this one replaces, if any" },
+          "pages_in_scope": { "type": ["string", "null"], "description": "'all' or a page range such as '1-40'; what stage 1 was asked to read" }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,126 @@
+{
+  "id": "policy-documentation-bands",
+  "version": "3.0.0",
+  "dashboard_recommendation_superseded_by": "../ui-scoring/scoring.json",
+  "status": "review_not_active",
+  "meaning": "Presence and specification of policy responses in supplied, searched documents; not policy effectiveness, adequate ambition, implementation success or comprehensive portfolio quality",
+  "bands": [
+    { "value": 0, "label": "No evidence found", "rule": "No qualifying topic claim after complete processing of the defined usable-source scope; not national absence" },
+    { "value": 1, "label": "Context documented", "rule": "Relevant concern, context, projection, reported effect or unadopted proposal, with no attributable policy response" },
+    { "value": 2, "label": "Policy response documented", "rule": "At least one attributable commitment, planned action, implementation assertion or delivered output" },
+    { "value": 3, "label": "Delivery details documented", "rule": "At least one coherent response with a named accountable or implementing organization, an anchored action timeframe, and a specific verifiable deliverable" }
+  ],
+  "response_statement_types": ["commitment", "planned_action", "implementation_underway", "output_delivered"],
+  "implementation_statement_types": ["implementation_underway", "output_delivered"],
+  "context_statement_types": ["concern", "context", "projection", "result_reported", "proposal", "other"],
+  "conditionality_options": ["conditional", "unconditional", "not_stated"],
+  "delivery_criteria": {
+    "actor": {
+      "accepted_roles": ["responsible", "implementing"],
+      "other_roles": ["financing", "supporting", "monitoring_reporting", "consulted", "unspecified"],
+      "rule": "Named responsible or implementing organization explicitly attached to this response; a funder or mentioned organization alone is insufficient"
+    },
+    "timeframe": {
+      "accepted_anchors": ["action"],
+      "other_anchors": ["publication"],
+      "rule": "A stated delivery deadline, action period or dated milestone; publication year and contextual observation dates alone are insufficient"
+    },
+    "deliverable": {
+      "accepted_kinds": ["quantified_output", "named_asset", "named_legal_instrument", "named_milestone"],
+      "other_kinds": ["generic_action"],
+      "rule": "A specific verifiable quantity/output, identified asset, named legal instrument or identifiable milestone; generic 'rehabilitate canals' is insufficient"
+    },
+    "combination": "All three criteria must be source-supported and explicitly attached to the same policy_object_id. Compatible evidence can come from different documents. A supports/contextualizes relation alone is insufficient."
+  },
+  "claims": {
+    "range": [1, 3],
+    "band_zero": "Reserved for a complete topic search with no qualifying claims; never assigned to a sourced claim",
+    "variant_rule": "Assess each coherent variant independently. All variants of a claim share one policy_object_id (null allowed only for non-response claims); each variant_id has one claim owner. A variant's evidence_ids list all evidence admitted to its coherent interpretation, including compatible delivery details. Detail citations must be a subset. Claim lower=min(variant bands); upper=max(variant bands). Show the lower label and Details vary when qualification differs. Never assemble criteria across incompatible variants.",
+    "conditionality": "An attributable conditional policy commitment qualifies as a response; show its conditions separately, without extra points or penalties",
+    "reported_result": "A reported effect alone does not prove an attributable policy response or causation; a separate qualifying response assertion is required",
+    "value_conflicts": "Conflicting numbers do not reduce a band when qualification is unchanged; retain both values and the conflict badge",
+    "display": "Claim band codes are internal diagnostics only. Show statement type, delivery checks, conditions, source and reported stage; no headline claim score."
+  },
+  "topics": {
+    "lower": "max(claim lower bands), or internal 0 if no claim",
+    "upper": "max(claim upper bands) when processing_complete; otherwise 3",
+    "display": "Show demonstrated lower label plus Details vary / Search incomplete as applicable. If no evidence and processing is incomplete, band=null and label=Unavailable; internal [0,3] is only an uncertainty bound.",
+    "completeness_contract": "Normalized scope.source_profile_complete is required. Input topic.processing_complete describes supplied-job completion. Effective assessment processing_complete = supplied-job completion AND required source-profile completeness. Preserve job_processing_complete separately. Missing required roles force unknown unproved predicates while retaining positive evidence; do not turn a missing NAP into zeros.",
+    "secondary_topics": "Multi-topic normalized claims require explicit topic_projections for every topic, with independently source-checked statement type and retained/subset delivery details per canonical variant. Predicates are computed from each projection, never inherited from tags. Projections cannot invent new evidence, response stages, policy identities or stronger delivery details. Single-topic inputs remain lean. A topic displayed in multiple domains is still one topic.",
+    "limitation": "One detailed response can establish band 3. Show response-claim and detail-ready-claim counts; the band does not assess comprehensiveness of the policy portfolio."
+  },
+  "domains": {
+    "denominator": "Fixed unique home-topic IDs in the common comparison profile; filters and duplicate display placements do not change N",
+    "P": "Number of topics whose demonstrated lower band is at least 2",
+    "A": "Number of complete topics whose upper band is below 2",
+    "U": "N - P - A; response status remains undetermined",
+    "response_coverage": "100 * P / N when U=0; otherwise [100 * P / N, 100 * (P+U) / N]",
+    "distributions": "Count demonstrated topic bands 0,1,2,3 and unavailable separately. Mark ranges/incomplete topics; never present provisional counts as final.",
+    "availability": "Show processing_complete topics / N independently from response coverage. Positive evidence can remain in P even when another source fails.",
+    "no_ordinal_mean": true,
+    "country_composite": false,
+    "national_inventory": "Sum positive unique topics / all unique profile topics, calculated separately for each metric; never average domain percentages. This describes documentation inventory, not effort, adequacy or a national policy-quality score.",
+    "z_scores": false
+  },
+  "coverage_metrics": {
+    "response": { "label": "Response coverage", "variant_predicate": "band >= 2", "headline": true },
+    "delivery_details": { "label": "Delivery-detail coverage", "variant_predicate": "band >= 3", "headline": true },
+    "implementation_reported": { "label": "Implementation reported", "variant_predicate": "statement_type in implementation_statement_types", "headline": false },
+    "uncertainty": "For each predicate separately: claim lower=all coherent variants qualify; upper=any qualify. Topic lower=any claim lower; upper=any claim upper or processing incomplete. P=demonstrated, A=definitely not found, U=undetermined. Coverage bounds are 100*P/N and 100*(P+U)/N.",
+    "independence": "Delivery details and implementation reporting each imply a response, but neither implies the other. Never blend the three percentages.",
+    "display": "Percentages always show numerator and fixed denominator. Topic color remains the four-band rubric; no new good/bad thresholds for domain or country percentages."
+  },
+  "stages": {
+    "commitment": "Commitment",
+    "planned_action": "Planned",
+    "implementation_underway": "Underway",
+    "output_delivered": "Delivered",
+    "rule": "Show each source assertion's stage. Current status requires explicit update lineage. Never infer replacement from publication date, average stages, or copy later stages into historical document views."
+  },
+  "comparison": {
+    "require": ["same taxonomy semantic version", "same scoring version", "same fixed topic profile", "same defined document-role and date coverage", "compatible extraction scope"],
+    "provisional": "All-document exploration stays available; incompatible/incomplete source profiles are labelled provisional and excluded from complete regional comparisons",
+    "regional_view": "Show topic bands and separate response/delivery-detail percentages with fixed counts and source completeness. The 64-topic default is an inventory, not 64 universal policy obligations.",
+    "not_applicable": "Never infer N/A from silence or simple geography, and never remove difficult topics automatically. A future narrower regional core is a versioned configuration shared by all countries in that cohort.",
+    "priority_lens": "Highlight only source-stated priorities with citations. Country priorities can filter/sort the view but do not change the common benchmark denominator or weights.",
+    "source_profiles": {
+      "supplied_all": {
+        "version": "3.0.0", "purpose": "Exploratory supplied-document inventory", "matched_comparison": false,
+        "required_roles": [], "selection": "All explicitly selected supplied documents, with exact source IDs retained", "arrows": false
+      },
+      "ndc_only": {
+        "version": "3.0.0", "purpose": "Matched NDC documentation comparison", "matched_comparison": true,
+        "required_roles": ["NDC"], "selection": "Latest eligible NDC edition within each agreed family as of the cutoff", "arrows": true
+      },
+      "ndc_nap": {
+        "version": "3.0.0", "purpose": "Matched NDC and NAP documentation comparison", "matched_comparison": true,
+        "required_roles": ["NDC", "NAP"], "selection": "Latest eligible edition for each required role/family as of the cutoff", "arrows": true
+      }
+    },
+    "source_selection_rules": [
+      "Profiles select a comparison corpus; they never establish policy supersession, withdrawal or replacement.",
+      "Missing required role sets source_profile_complete=false. Affected topic processing is incomplete; retain demonstrated positives and unknown upper bounds. Never automatically substitute another document role.",
+      "Store exact selected source IDs, family IDs, roles, source edition dates, cutoff date and ingestion timestamps separately.",
+      "Historical editions remain in history outside the current comparison corpus. Carry-forward requires explicit evidence and provenance, not silent reuse.",
+      "A permitted functional equivalent needs an explicit versioned profile rule. Missing NAP material cannot silently become NDC evidence of complete adaptation coverage.",
+      "DRR-topic silence in an NDC/NAP corpus means not found in that corpus, not weak national disaster policy. A DRR comparison requires an explicitly shared source-role profile."
+    ]
+  },
+  "change_arrows": {
+    "meaning": "Change in documented coverage, never proof of policy effectiveness or real-world implementation progress",
+    "eligible_event": "same_family_edition_update",
+    "requirements": ["same country", "same frozen method signature", "same taxonomy/scoring/profile versions", "same unique topic homes", "same source-role/family coverage and date rule", "complete source profiles", "complete topic processing", "exact requested metric", "newer eligible source edition under the same family", "both snapshots recomputed on the same method"],
+    "refresh_without_arrow": ["source_backfill", "method_change", "profile_change", "recalculation", "source_removed", "ordinary_upload", "unknown"],
+    "partial_default": "Suppress arrow and point delta; show source/processing limitations",
+    "specialist_interval": "Optional possible delta [new lower-old upper, new upper-old lower], always labelled documentation uncertainty; no point arrow for partial snapshots",
+    "color": "Neutral direction icons for increases and decreases; never green/red climate-performance claims",
+    "absence": "A missing restatement in a later corpus is not an inferred withdrawal. Explicit source-backed withdrawals are retained as annotations."
+  },
+  "automatic_checks": {
+    "before_scoring": ["source quote and numeric fidelity", "attributable statement type", "topic relevance", "policy-object identity", "compatible variant membership", "delivery-detail specificity"],
+    "reference_engine": "Consumes already source-checked normalized assessments and evidence IDs. It checks IDs, enums, field presence, unique variant ownership, coherent evidence membership and policy-object references; it cannot prove semantic truth, exhaustive search, source fidelity or the raw record ownership partition itself.",
+    "invalid_input": "The strict calculator rejects invalid contracts. The safe adapter returns unavailable with no assessment; never replace a rejected assessment with a zero or an empty successful result.",
+    "no_human_gate": true,
+    "post_publication": "Flag/hide is a presentation overlay by default. Analytical exclusions create a separately labelled adjusted snapshot."
+  }
+}

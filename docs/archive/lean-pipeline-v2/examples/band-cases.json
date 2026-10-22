@@ -1,0 +1,104 @@
+{
+  "version": "2.0.0",
+  "status": "synthetic_reference_fixtures_not_country_results",
+  "note": "These are normalized, already source-checked assessment inputs. Evidence IDs stand in for resolved quotations. This file does not demonstrate LLM accuracy or quote verification.",
+  "cases": [
+    {
+      "id": "empty_complete",
+      "meaning": "Usable-source topic processing completed and found no qualifying evidence",
+      "input": {
+        "scope": { "kind": "document", "document_ids": ["D-1"] },
+        "profile": { "profile_id": "synthetic-irrigation-v2", "topic_ids": ["AGR-01"] },
+        "evidence": [],
+        "claims": [],
+        "topics": [{ "topic_id": "AGR-01", "home_domain_id": "agriculture", "processing_complete": true }]
+      },
+      "expected": { "band": 0, "lower_band": 0, "upper_band": 0, "response_status": "not_found" }
+    },
+    {
+      "id": "empty_incomplete",
+      "meaning": "Required material could not be processed; this must not become band zero",
+      "input": {
+        "scope": { "kind": "document", "document_ids": ["D-1"] },
+        "profile": { "profile_id": "synthetic-irrigation-v2", "topic_ids": ["AGR-01"] },
+        "evidence": [],
+        "claims": [],
+        "topics": [{ "topic_id": "AGR-01", "home_domain_id": "agriculture", "processing_complete": false }]
+      },
+      "expected": { "band": null, "lower_band": 0, "upper_band": 3, "response_status": "undetermined" }
+    },
+    {
+      "id": "context_only",
+      "meaning": "Existing capacity describes context; it does not establish a policy response",
+      "input": {
+        "scope": { "kind": "document", "document_ids": ["D-1"] },
+        "profile": { "profile_id": "synthetic-irrigation-v2", "topic_ids": ["AGR-01"] },
+        "evidence": [{ "evidence_id": "E-1", "document_id": "D-1" }],
+        "claims": [{
+          "claim_id": "C-context",
+          "topic_ids": ["AGR-01"],
+          "variants": [{
+            "variant_id": "V-context",
+            "policy_object_id": null,
+            "statement_type": "context",
+            "conditionality": "not_stated",
+            "evidence_ids": ["E-1"],
+            "details": { "actor": null, "timeframe": null, "deliverable": null }
+          }]
+        }],
+        "topics": [{ "topic_id": "AGR-01", "home_domain_id": "agriculture", "processing_complete": true }]
+      },
+      "expected": { "band": 1, "lower_band": 1, "upper_band": 1, "response_status": "not_found" }
+    },
+    {
+      "id": "response_no_delivery_details",
+      "meaning": "An attributable conditional irrigation commitment qualifies as a response",
+      "input": {
+        "scope": { "kind": "document", "document_ids": ["D-1"] },
+        "profile": { "profile_id": "synthetic-irrigation-v2", "topic_ids": ["AGR-01"] },
+        "evidence": [{ "evidence_id": "E-1", "document_id": "D-1" }],
+        "claims": [{
+          "claim_id": "C-response",
+          "topic_ids": ["AGR-01"],
+          "variants": [{
+            "variant_id": "V-response",
+            "policy_object_id": "P-irrigation",
+            "statement_type": "commitment",
+            "conditionality": "conditional",
+            "evidence_ids": ["E-1"],
+            "details": { "actor": null, "timeframe": null, "deliverable": null }
+          }]
+        }],
+        "topics": [{ "topic_id": "AGR-01", "home_domain_id": "agriculture", "processing_complete": true }]
+      },
+      "expected": { "band": 2, "lower_band": 2, "upper_band": 2, "response_status": "evidenced" }
+    },
+    {
+      "id": "delivery_details",
+      "meaning": "A named ministry will rehabilitate 30 km of canals by 2030 under an identified programme",
+      "input": {
+        "scope": { "kind": "document", "document_ids": ["D-1"] },
+        "profile": { "profile_id": "synthetic-irrigation-v2", "topic_ids": ["AGR-01"] },
+        "evidence": [{ "evidence_id": "E-1", "document_id": "D-1" }],
+        "claims": [{
+          "claim_id": "C-action",
+          "topic_ids": ["AGR-01"],
+          "variants": [{
+            "variant_id": "V-action",
+            "policy_object_id": "P-canal-rehabilitation",
+            "statement_type": "planned_action",
+            "conditionality": "not_stated",
+            "evidence_ids": ["E-1"],
+            "details": {
+              "actor": { "text": "Ministry of Agriculture", "policy_object_id": "P-canal-rehabilitation", "evidence_ids": ["E-1"], "role": "responsible" },
+              "timeframe": { "text": "By 2030", "policy_object_id": "P-canal-rehabilitation", "evidence_ids": ["E-1"], "anchor": "action" },
+              "deliverable": { "text": "Rehabilitate 30 km of irrigation canals", "policy_object_id": "P-canal-rehabilitation", "evidence_ids": ["E-1"], "kind": "quantified_output" }
+            }
+          }]
+        }],
+        "topics": [{ "topic_id": "AGR-01", "home_domain_id": "agriculture", "processing_complete": true }]
+      },
+      "expected": { "band": 3, "lower_band": 3, "upper_band": 3, "response_status": "evidenced" }
+    }
+  ]
+}

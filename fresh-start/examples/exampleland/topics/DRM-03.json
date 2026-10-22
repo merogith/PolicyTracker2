@@ -1,0 +1,100 @@
+{
+  "versions": {
+    "claims": "0.3.0-draft",
+    "prompt": "topic-0.1",
+    "model": null
+  },
+  "scope": {
+    "country": "XEX",
+    "topic_id": "DRM-03",
+    "document_ids": [
+      "XEX-NDC3"
+    ],
+    "record_ids": [
+      "XEX-NDC3-p21-1",
+      "XEX-NDC3-p21-2",
+      "XEX-NDC3-p21-3"
+    ]
+  },
+  "claims": [
+    {
+      "claim_id": "C1",
+      "claim_text_en": "Install 40 automatic river gauges with SMS flood warnings in the Northern basin by 2028; procurement of the first 15 began in 2025 with USD 1.2 million allocated from the state budget.",
+      "member_record_ids": [
+        "XEX-NDC3-p21-1",
+        "XEX-NDC3-p21-2"
+      ],
+      "outcome_signal": "not_reported",
+      "setback_flags": [],
+      "status": "active",
+      "review_status": "proposed",
+      "open_issue": null
+    },
+    {
+      "claim_id": "C2",
+      "claim_text_en": "Limited hydrological data on small tributaries constrains flood-warning lead times.",
+      "member_record_ids": [
+        "XEX-NDC3-p21-3"
+      ],
+      "outcome_signal": "not_reported",
+      "setback_flags": [],
+      "status": "active",
+      "review_status": "proposed",
+      "open_issue": null
+    }
+  ],
+  "relations": [
+    {
+      "relation_id": "L1",
+      "from_record_id": "XEX-NDC3-p21-2",
+      "to_record_id": "XEX-NDC3-p21-1",
+      "type": "progress_of",
+      "rationale": "Procurement of 15 of the planned 40 gauges in the same basin is a later stage of the same action.",
+      "review_status": "proposed"
+    },
+    {
+      "relation_id": "L2",
+      "from_record_id": "XEX-NDC3-p21-3",
+      "to_record_id": "XEX-NDC3-p21-1",
+      "type": "related",
+      "rationale": "The data barrier concerns flood warning but is a different proposition from the gauge action.",
+      "review_status": "proposed"
+    }
+  ],
+  "brief": {
+    "core_idea_en": "Flood early warning in the Northern basin is the one early-warning measure NDC 3.0 describes. The Ministry of Emergency Situations is to install 40 automatic river gauges linked to SMS warnings by 2028, procurement of the first 15 gauges started in 2025 with a state-budget allocation, and the document names poor data on small tributaries as the main constraint on warning lead times.",
+    "concerns": [
+      {
+        "text_en": "Limited hydrological data on small tributaries constrains warning lead times.",
+        "claim_ids": [
+          "C2"
+        ]
+      }
+    ],
+    "responses": [
+      {
+        "text_en": "Install 40 automatic river gauges with SMS flood warnings in the Northern basin by 2028, Ministry of Emergency Situations responsible; procurement of the first 15 started in 2025 (NDC 3.0, p. 21, Table 5).",
+        "claim_ids": [
+          "C1"
+        ]
+      }
+    ],
+    "numbers": [
+      {
+        "text_en": "40 gauges by 2028; first 15 in procurement since 2025; USD 1.2 million allocated from the state budget (NDC 3.0, p. 21).",
+        "claim_ids": [
+          "C1"
+        ]
+      }
+    ],
+    "changes_between_editions": [],
+    "gaps": [
+      {
+        "text_en": "No baseline for the existing gauge network and no total cost for all 40 gauges.",
+        "claim_ids": [
+          "C1"
+        ]
+      }
+    ]
+  }
+}

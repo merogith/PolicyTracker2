@@ -1,0 +1,9 @@
+{
+  "country": "XEX",
+  "name": "Exampleland (SYNTHETIC EXAMPLE, not a real country)",
+  "notes": "Two NDC editions. Only NDC 3.0 has been extracted so far; NDC 2.0 is listed so the country view can say it was not read.",
+  "documents": [
+    { "document_id": "XEX-NDC2", "kind": "NDC", "title": "Exampleland NDC 2.0", "edition_date": "2020-12-15", "language": "en", "file": "XEX-NDC2.pdf", "sha256": null, "source_url": null, "supersedes": null, "pages_in_scope": null },
+    { "document_id": "XEX-NDC3", "kind": "NDC", "title": "Exampleland NDC 3.0", "edition_date": "2025-11-01", "language": "en", "file": "XEX-NDC3.pdf", "sha256": null, "source_url": null, "supersedes": "XEX-NDC2", "pages_in_scope": "1, 8, 12, 21-22, 30" }
+  ]
+}

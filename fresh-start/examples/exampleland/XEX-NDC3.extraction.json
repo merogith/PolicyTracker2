@@ -1,0 +1,619 @@
+{
+  "document": {
+    "document_id": "XEX-NDC3",
+    "country": "XEX",
+    "kind": "NDC",
+    "title": "Exampleland NDC 3.0 (SYNTHETIC EXAMPLE, not a real country)",
+    "edition_date": "2025-11-01",
+    "language": "en",
+    "page_count": 40,
+    "sha256": null
+  },
+  "versions": {
+    "taxonomy": "0.1.0-draft",
+    "vocabulary": "0.2.0-draft",
+    "prompt": "extract-0.1",
+    "model": null
+  },
+  "coverage": {
+    "pages": [
+      {
+        "page": 1,
+        "disposition": "background",
+        "record_ids": [],
+        "reason": "Cover and foreword"
+      },
+      {
+        "page": 8,
+        "disposition": "extracted",
+        "record_ids": [
+          "XEX-NDC3-p8-1"
+        ],
+        "reason": null
+      },
+      {
+        "page": 12,
+        "disposition": "extracted",
+        "record_ids": [
+          "XEX-NDC3-p12-1"
+        ],
+        "reason": null
+      },
+      {
+        "page": 21,
+        "disposition": "extracted",
+        "record_ids": [
+          "XEX-NDC3-p21-1",
+          "XEX-NDC3-p21-2",
+          "XEX-NDC3-p21-3"
+        ],
+        "reason": null
+      },
+      {
+        "page": 22,
+        "disposition": "unreadable",
+        "record_ids": [],
+        "reason": "Scanned table, OCR failed"
+      },
+      {
+        "page": 30,
+        "disposition": "extracted",
+        "record_ids": [
+          "XEX-NDC3-p30-1",
+          "XEX-NDC3-p30-2"
+        ],
+        "reason": null
+      }
+    ],
+    "limitations": [
+      "Pages 2-7, 9-11, 13-20, 23-29 and 31-40 were not in the selected sample."
+    ]
+  },
+  "records": [
+    {
+      "record_id": "XEX-NDC3-p8-1",
+      "statement_type": "context",
+      "statement_en": "Spring floods in 2024 displaced about 12,000 people in the Northern basin and caused estimated losses of USD 90 million.",
+      "reference_period": "2024",
+      "evidence": [
+        {
+          "evidence_id": "E1",
+          "page": 8,
+          "printed_page": "6",
+          "quote_original": "spring floods in 2024 displaced about 12,000 people in the Northern basin, with estimated losses of USD 90 million",
+          "quote_en": null,
+          "table_context": null
+        }
+      ],
+      "labels": {
+        "topic_ids": [
+          "DRM-02",
+          "WAT-03"
+        ],
+        "purpose": [],
+        "hazard": [
+          "flood"
+        ],
+        "risk_component": [
+          "impact",
+          "exposure"
+        ],
+        "risk_function": [],
+        "affected_group": [],
+        "cross_cutting_theme": [],
+        "policy_instrument": [],
+        "geographic_scope": "subnational"
+      },
+      "places": [
+        {
+          "source_name": "Northern basin",
+          "place_type": "basin"
+        }
+      ],
+      "stakeholders": [],
+      "facts": [
+        {
+          "fact_id": "F1",
+          "fact_type": "observation",
+          "metric": "people displaced by 2024 spring floods",
+          "value_as_stated": "about 12,000",
+          "value": "12000",
+          "lower": null,
+          "upper": null,
+          "unit": "people",
+          "currency": null,
+          "comparator": "approximate",
+          "direction": null,
+          "basis": null,
+          "total_or_additional": null,
+          "baseline": null,
+          "period_role": "observation",
+          "period": "2024",
+          "scenario": null,
+          "scope": "Northern basin",
+          "conditionality": null,
+          "condition_text": null,
+          "target_kind": null,
+          "finance_source_type": null,
+          "finance_status": null,
+          "finance_source": null,
+          "evidence_id": "E1"
+        },
+        {
+          "fact_id": "F2",
+          "fact_type": "observation",
+          "metric": "estimated losses from 2024 spring floods",
+          "value_as_stated": "USD 90 million",
+          "value": "90000000",
+          "lower": null,
+          "upper": null,
+          "unit": null,
+          "currency": "USD",
+          "comparator": "approximate",
+          "direction": null,
+          "basis": null,
+          "total_or_additional": null,
+          "baseline": null,
+          "period_role": "observation",
+          "period": "2024",
+          "scenario": null,
+          "scope": "Northern basin",
+          "conditionality": null,
+          "condition_text": null,
+          "target_kind": null,
+          "finance_source_type": null,
+          "finance_status": null,
+          "finance_source": null,
+          "evidence_id": "E1"
+        }
+      ],
+      "details": [],
+      "missing_fields": [],
+      "unmapped_concepts": [],
+      "notes": "Observed hazard impact is context, not a result of policy."
+    },
+    {
+      "record_id": "XEX-NDC3-p12-1",
+      "statement_type": "commitment",
+      "statement_en": "Exampleland will reduce greenhouse-gas emissions by 15% below 1990 by 2035 unconditionally, and by 25% subject to international support.",
+      "reference_period": null,
+      "evidence": [
+        {
+          "evidence_id": "E2",
+          "page": 12,
+          "printed_page": "10",
+          "quote_original": "reduce GHG emissions by 15% below 1990 levels by 2035 unconditionally, and by up to 25% subject to international support",
+          "quote_en": null,
+          "table_context": null
+        }
+      ],
+      "labels": {
+        "topic_ids": [
+          "CLM-06"
+        ],
+        "purpose": [
+          "mitigation"
+        ],
+        "hazard": [],
+        "risk_component": [],
+        "risk_function": [],
+        "affected_group": [],
+        "cross_cutting_theme": [],
+        "policy_instrument": [],
+        "geographic_scope": "national"
+      },
+      "places": [],
+      "stakeholders": [],
+      "facts": [
+        {
+          "fact_id": "F1",
+          "fact_type": "target",
+          "metric": "economy-wide GHG emissions",
+          "value_as_stated": "15%",
+          "value": "15",
+          "lower": null,
+          "upper": null,
+          "unit": "%",
+          "currency": null,
+          "comparator": "at_least",
+          "direction": "decrease",
+          "basis": "historical_reduction",
+          "total_or_additional": "total",
+          "baseline": {
+            "value": null,
+            "unit": null,
+            "period": "1990"
+          },
+          "period_role": "target",
+          "period": "2035",
+          "scenario": null,
+          "scope": "economy-wide",
+          "conditionality": "unconditional",
+          "condition_text": null,
+          "target_kind": "quantitative",
+          "finance_source_type": null,
+          "finance_status": null,
+          "finance_source": null,
+          "evidence_id": "E2"
+        },
+        {
+          "fact_id": "F2",
+          "fact_type": "target",
+          "metric": "economy-wide GHG emissions",
+          "value_as_stated": "up to 25%",
+          "value": "25",
+          "lower": null,
+          "upper": null,
+          "unit": "%",
+          "currency": null,
+          "comparator": "at_most",
+          "direction": "decrease",
+          "basis": "historical_reduction",
+          "total_or_additional": "total",
+          "baseline": {
+            "value": null,
+            "unit": null,
+            "period": "1990"
+          },
+          "period_role": "target",
+          "period": "2035",
+          "scenario": null,
+          "scope": "economy-wide",
+          "conditionality": "conditional",
+          "condition_text": "subject to international support",
+          "target_kind": "quantitative",
+          "finance_source_type": null,
+          "finance_status": null,
+          "finance_source": null,
+          "evidence_id": "E2"
+        }
+      ],
+      "details": [],
+      "missing_fields": [
+        {
+          "field": "facts/F1/baseline/value",
+          "reason": "not_stated",
+          "detail": "1990 emissions level is not given on this page"
+        }
+      ],
+      "unmapped_concepts": [],
+      "notes": "Two target variants: never averaged, never summed."
+    },
+    {
+      "record_id": "XEX-NDC3-p21-1",
+      "statement_type": "planned_action",
+      "statement_en": "The Ministry of Emergency Situations will install 40 automatic river gauges with SMS flood warnings in the Northern basin by 2028.",
+      "reference_period": null,
+      "evidence": [
+        {
+          "evidence_id": "E3",
+          "page": 21,
+          "printed_page": "19",
+          "quote_original": "install 40 automatic river-level gauges linked to SMS flood warnings in the Northern basin by 2028",
+          "quote_en": null,
+          "table_context": "Table 5: Adaptation measures, column 'Responsible body': Ministry of Emergency Situations"
+        }
+      ],
+      "labels": {
+        "topic_ids": [
+          "DRM-03"
+        ],
+        "purpose": [
+          "adaptation",
+          "disaster_risk_reduction"
+        ],
+        "hazard": [
+          "flood"
+        ],
+        "risk_component": [],
+        "risk_function": [
+          "early_warning_preparedness"
+        ],
+        "affected_group": [],
+        "cross_cutting_theme": [],
+        "policy_instrument": [
+          "information_warning",
+          "infrastructure_service"
+        ],
+        "geographic_scope": "subnational"
+      },
+      "places": [
+        {
+          "source_name": "Northern basin",
+          "place_type": "basin"
+        }
+      ],
+      "stakeholders": [
+        {
+          "name_original": "Ministry of Emergency Situations",
+          "name_en": "Ministry of Emergency Situations",
+          "role": "responsible",
+          "evidence_id": "E3"
+        }
+      ],
+      "facts": [
+        {
+          "fact_id": "F1",
+          "fact_type": "target",
+          "metric": "automatic river gauges installed",
+          "value_as_stated": "40",
+          "value": "40",
+          "lower": null,
+          "upper": null,
+          "unit": "gauges",
+          "currency": null,
+          "comparator": "equal",
+          "direction": "increase",
+          "basis": "absolute",
+          "total_or_additional": "not_stated",
+          "baseline": null,
+          "period_role": "target",
+          "period": "2028",
+          "scenario": null,
+          "scope": "Northern basin",
+          "conditionality": "not_stated",
+          "condition_text": null,
+          "target_kind": "quantitative",
+          "finance_source_type": null,
+          "finance_status": null,
+          "finance_source": null,
+          "evidence_id": "E3"
+        }
+      ],
+      "details": [],
+      "missing_fields": [],
+      "unmapped_concepts": [],
+      "notes": "Purpose: the table sits under 'Adaptation measures' and the row says 'to reduce flood risk'.",
+      "review_status": "accepted",
+      "review_note": "Checked against p. 21; table row and responsible body confirmed."
+    },
+    {
+      "record_id": "XEX-NDC3-p21-2",
+      "statement_type": "implementation_underway",
+      "statement_en": "Procurement of the first 15 gauges began in 2025, with USD 1.2 million allocated from the national budget.",
+      "reference_period": "2025",
+      "evidence": [
+        {
+          "evidence_id": "E4",
+          "page": 21,
+          "printed_page": "19",
+          "quote_original": "procurement of the first 15 gauges started in 2025; USD 1.2 million has been allocated from the state budget",
+          "quote_en": null,
+          "table_context": "Table 5, column 'Status'"
+        }
+      ],
+      "labels": {
+        "topic_ids": [
+          "DRM-03"
+        ],
+        "purpose": [],
+        "hazard": [
+          "flood"
+        ],
+        "risk_component": [],
+        "risk_function": [
+          "early_warning_preparedness"
+        ],
+        "affected_group": [],
+        "cross_cutting_theme": [],
+        "policy_instrument": [
+          "public_investment"
+        ],
+        "geographic_scope": "subnational"
+      },
+      "places": [
+        {
+          "source_name": "Northern basin",
+          "place_type": "basin"
+        }
+      ],
+      "stakeholders": [],
+      "facts": [
+        {
+          "fact_id": "F1",
+          "fact_type": "finance",
+          "metric": "budget allocated to river gauges",
+          "value_as_stated": "USD 1.2 million",
+          "value": "1200000",
+          "lower": null,
+          "upper": null,
+          "unit": null,
+          "currency": "USD",
+          "comparator": "equal",
+          "direction": null,
+          "basis": null,
+          "total_or_additional": null,
+          "baseline": null,
+          "period_role": "implementation",
+          "period": "2025",
+          "scenario": null,
+          "scope": null,
+          "conditionality": null,
+          "condition_text": null,
+          "target_kind": null,
+          "finance_source_type": "domestic_public",
+          "finance_status": "allocated",
+          "finance_source": "state budget",
+          "evidence_id": "E4"
+        }
+      ],
+      "details": [],
+      "missing_fields": [],
+      "unmapped_concepts": [],
+      "notes": null
+    },
+    {
+      "record_id": "XEX-NDC3-p21-3",
+      "statement_type": "context",
+      "statement_en": "Limited hydrological data on small tributaries constrains flood-warning lead times.",
+      "reference_period": null,
+      "evidence": [
+        {
+          "evidence_id": "E5",
+          "page": 21,
+          "printed_page": "19",
+          "quote_original": "limited hydrological data on small tributaries constrains warning lead times",
+          "quote_en": null,
+          "table_context": "Table 5, column 'Barriers'"
+        }
+      ],
+      "labels": {
+        "topic_ids": [
+          "DRM-03"
+        ],
+        "purpose": [],
+        "hazard": [
+          "flood"
+        ],
+        "risk_component": [
+          "capacity"
+        ],
+        "risk_function": [],
+        "affected_group": [],
+        "cross_cutting_theme": [],
+        "policy_instrument": [],
+        "geographic_scope": null
+      },
+      "places": [],
+      "stakeholders": [],
+      "facts": [],
+      "details": [
+        {
+          "kind": "barrier",
+          "text_en": "Limited hydrological data on small tributaries",
+          "fact_ids": [],
+          "evidence_id": "E5"
+        }
+      ],
+      "missing_fields": [],
+      "unmapped_concepts": [],
+      "notes": null
+    },
+    {
+      "record_id": "XEX-NDC3-p30-1",
+      "statement_type": "output_delivered",
+      "statement_en": "A national drought management plan was adopted in 2023 and requires herder communities to keep emergency fodder reserves.",
+      "reference_period": "2023",
+      "evidence": [
+        {
+          "evidence_id": "E6",
+          "page": 30,
+          "printed_page": "28",
+          "quote_original": "the National Drought Management Plan, adopted in 2023, requires herder communities to maintain emergency fodder reserves",
+          "quote_en": null,
+          "table_context": null
+        }
+      ],
+      "labels": {
+        "topic_ids": [
+          "WAT-06",
+          "AGR-03"
+        ],
+        "purpose": [
+          "adaptation"
+        ],
+        "hazard": [
+          "drought"
+        ],
+        "risk_component": [],
+        "risk_function": [
+          "early_warning_preparedness",
+          "coping_continuity"
+        ],
+        "affected_group": [
+          "herders"
+        ],
+        "cross_cutting_theme": [],
+        "policy_instrument": [
+          "strategy_plan"
+        ],
+        "geographic_scope": "national"
+      },
+      "places": [],
+      "stakeholders": [],
+      "facts": [],
+      "details": [],
+      "missing_fields": [],
+      "unmapped_concepts": [
+        {
+          "facet": "topic",
+          "source_term": "emergency fodder reserves",
+          "proposed_label": "Livestock drought reserves",
+          "reason": "AGR-03 fits the sector but not the reserve mechanism; review if it recurs.",
+          "evidence_id": "E6"
+        }
+      ],
+      "notes": "Adoption is a delivered output; it does not prove drought impacts fell."
+    },
+    {
+      "record_id": "XEX-NDC3-p30-2",
+      "statement_type": "context",
+      "statement_en": "A summary table reports that the 2024 floods displaced 15,000 people.",
+      "reference_period": "2024",
+      "evidence": [
+        {
+          "evidence_id": "E7",
+          "page": 30,
+          "printed_page": "28",
+          "quote_original": "2024 floods | displaced: 15 000",
+          "quote_en": null,
+          "table_context": "Table 9: Major disasters 2020-2024, column 'Displaced persons'"
+        }
+      ],
+      "labels": {
+        "topic_ids": [
+          "DRM-02"
+        ],
+        "purpose": [],
+        "hazard": [
+          "flood"
+        ],
+        "risk_component": [
+          "impact"
+        ],
+        "risk_function": [],
+        "affected_group": [
+          "migrants_displaced_people"
+        ],
+        "cross_cutting_theme": [],
+        "policy_instrument": [],
+        "geographic_scope": "national"
+      },
+      "places": [],
+      "stakeholders": [],
+      "facts": [
+        {
+          "fact_id": "F1",
+          "fact_type": "observation",
+          "metric": "people displaced by 2024 floods",
+          "value_as_stated": "15 000",
+          "value": "15000",
+          "lower": null,
+          "upper": null,
+          "unit": "people",
+          "currency": null,
+          "comparator": "equal",
+          "direction": null,
+          "basis": null,
+          "total_or_additional": null,
+          "baseline": null,
+          "period_role": "observation",
+          "period": "2024",
+          "scenario": null,
+          "scope": "national",
+          "conditionality": null,
+          "condition_text": null,
+          "target_kind": null,
+          "finance_source_type": null,
+          "finance_status": null,
+          "finance_source": null,
+          "evidence_id": "E7"
+        }
+      ],
+      "details": [],
+      "missing_fields": [],
+      "unmapped_concepts": [],
+      "notes": "Differs from p. 8 (about 12,000, Northern basin only). Scope may explain it; kept as a variant."
+    }
+  ]
+}

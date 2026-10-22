@@ -1,0 +1,394 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mxfile host="app.diagrams.net" modified="2026-10-19T00:00:00.000Z" agent="Policy tracker specification" version="24.7.17" type="device" compressed="false">
+  <diagram id="simple" name="Simple overview">
+    <mxGraphModel dx="1650" dy="590" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1650" pageHeight="590" math="0" shadow="0" background="#F7F9FC">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="s-title" parent="1" value="&lt;div style=&quot;line-height:1.4;&quot;&gt;Policy tracker: simple process&lt;/div&gt;" vertex="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontFamily=Arial;fontSize=32;fontColor=#23364D;fontStyle=1;spacing=0;">
+          <mxGeometry x="32" y="28" width="1580" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="s-subtitle" parent="1" value="&lt;div style=&quot;line-height:1.4;&quot;&gt;Two LLM stages. Code handles pooling, evidence checks and documentation bands.&lt;/div&gt;" vertex="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontFamily=Arial;fontSize=19;fontColor=#52667B;fontStyle=0;spacing=0;">
+          <mxGeometry x="32" y="78" width="1580" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="s-step-1" parent="1" value="" vertex="1" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#CBD5E1;strokeWidth=2;shadow=0;">
+          <mxGeometry x="32" y="165" width="205" height="215" as="geometry" />
+        </mxCell>
+        <mxCell id="s-step-1-number" parent="1" value="&lt;div style=&quot;line-height:1.4;&quot;&gt;01  SOURCES&lt;/div&gt;" vertex="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontFamily=Arial;fontSize=11;fontColor=#42648A;fontStyle=1;spacing=0;">
+          <mxGeometry x="49" y="180" width="171" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="s-step-1-title" parent="1" value="&lt;div style=&quot;line-height:1.4;&quot;&gt;Documents&lt;/div&gt;" vertex="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontFamily=Arial;fontSize=22;fontColor=#23364D;fontStyle=1;spacing=0;">
+          <mxGeometry x="49" y="220" width="175" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="s-step-1-body" parent="1" value="&lt;div style=&quot;line-height:1.4;&quot;&gt;NDC / NAP / DRR&lt;br/&gt;Keep each edition&lt;br/&gt;and source page&lt;/div&gt;" vertex="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontFamily=Arial;fontSize=12;fontColor=#23364D;fontStyle=0;spacing=0;">
+          <mxGeometry x="49" y="268" width="175" height="77" as="geometry" />
+        </mxCell>
+        <mxCell id="s-step-2" parent="1" value="" vertex="1" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#CBD5E1;strokeWidth=2;shadow=0;">
+          <mxGeometry x="262" y="165" width="205" height="215" as="geometry" />
+        </mxCell>
+        <mxCell id="s-step-2-number" parent="1" value="&lt;div style=&quot;line-height:1.4;&quot;&gt;02  CODE&lt;/div&gt;" vertex="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontFamily=Arial;fontSize=11;fontColor=#42648A;fontStyle=1;spacing=0;">
+          <mxGeometry x="279" y="180" width="171" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="s-step-2-title" parent="1" value="&lt;div style=&quot;line-height:1.4;&quot;&gt;Prepare&lt;/div&gt;" vertex="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontFamily=Arial;fontSize=22;fontColor=#23364D;fontStyle=1;spacing=0;">
+          <mxGeometry x="279" y="220" width="175" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="s-step-2-body" parent="1" value="&lt;div style=&quot;line-height:1.4;&quot;&gt;Index readable pages&lt;br/&gt;Record source scope&lt;br/&gt;and search coverage&lt;/div&gt;" vertex="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontFamily=Arial;fontSize=12;fontColor=#23364D;fontStyle=0;spacing=0;">
+          <mxGeometry x="279" y="268" width="175" height="77" as="geometry" />
+        </mxCell>
+        <mxCell id="s-arrow-1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;strokeColor=#60758A;dashed=0;" edge="1" parent="1" source="s-step-1" target="s-step-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="s-step-3" parent="1" value="" vertex="1" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#EAF2FF;strokeColor=#6B98D1;strokeWidth=2;shadow=0;">
+          <mxGeometry x="492" y="165" width="205" height="215" as="geometry" />
+        </mxCell>
+        <mxCell id="s-step-3-number" parent="1" value="&lt;div style=&quot;line-height:1.4;&quot;&gt;03  LLM - STAGE 1&lt;/div&gt;" vertex="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontFamily=Arial;fontSize=11;fontColor=#42648A;fontStyle=1;spacing=0;">
+          <mxGeometry x="509" y="180" width="171" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="s-step-3-title" parent="1" value="&lt;div style=&quot;line-height:1.4;&quot;&gt;Extract&lt;/div&gt;" vertex="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontFamily=Arial;fontSize=22;fontColor=#23364D;fontStyle=1;spacing=0;">
+          <mxGeometry x="509" y="220" width="175" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="s-step-3-body" parent="1" value="&lt;div style=&quot;line-height:1.4;&quot;&gt;One document/domain&lt;br/&gt;Atomic statements&lt;br/&gt;with exact evidence&lt;/div&gt;" vertex="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontFamily=Arial;fontSize=12;fontColor=#23364D;fontStyle=0;spacing=0;">
+          <mxGeometry x="509" y="268" width="175" height="77" as="geometry" />
+        </mxCell>
+        <mxCell id="s-arrow-2" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;strokeColor=#60758A;dashed=0;" edge="1" parent="1" source="s-step-2" target="s-step-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="s-step-4" parent="1" value="" vertex="1" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#CBD5E1;strokeWidth=2;shadow=0;">
+          <mxGeometry x="722" y="165" width="205" height="215" as="geometry" />
+        </mxCell>
+        <mxCell id="s-step-4-number" parent="1" value="&lt;div style=&quot;line-height:1.4;&quot;&gt;04  CODE - NO LLM&lt;/div&gt;" vertex="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontFamily=Arial;fontSize=11;fontColor=#42648A;fontStyle=1;spacing=0;">
+          <mxGeometry x="739" y="180" width="171" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="s-step-4-title" parent="1" value="&lt;div style=&quot;line-height:1.4;&quot;&gt;Pool&lt;/div&gt;" vertex="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontFamily=Arial;fontSize=22;fontColor=#23364D;fontStyle=1;spacing=0;">
+          <mxGeometry x="739" y="220" width="175" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="s-step-4-body" parent="1" value="&lt;div style=&quot;line-height:1.4;&quot;&gt;Resolve true duplicates&lt;br/&gt;Use assigned topics&lt;br/&gt;across documents&lt;/div&gt;" vertex="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontFamily=Arial;fontSize=12;fontColor=#23364D;fontStyle=0;spacing=0;">
+          <mxGeometry x="739" y="268" width="175" height="77" as="geometry" />
+        </mxCell>
+        <mxCell id="s-arrow-3" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;strokeColor=#60758A;dashed=0;" edge="1" parent="1" source="s-step-3" target="s-step-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="s-step-5" parent="1" value="" vertex="1" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#EAF2FF;strokeColor=#6B98D1;strokeWidth=2;shadow=0;">
+          <mxGeometry x="952" y="165" width="205" height="215" as="geometry" />
+        </mxCell>
+        <mxCell id="s-step-5-number" parent="1" value="&lt;div style=&quot;line-height:1.4;&quot;&gt;05  LLM - STAGE 2&lt;/div&gt;" vertex="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontFamily=Arial;fontSize=11;fontColor=#42648A;fontStyle=1;spacing=0;">
+          <mxGeometry x="969" y="180" width="171" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="s-step-5-title" parent="1" value="&lt;div style=&quot;line-height:1.4;&quot;&gt;Organize&lt;/div&gt;" vertex="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontFamily=Arial;fontSize=22;fontColor=#23364D;fontStyle=1;spacing=0;">
+          <mxGeometry x="969" y="220" width="175" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="s-step-5-body" parent="1" value="&lt;div style=&quot;line-height:1.4;&quot;&gt;Country/domain packs&lt;br/&gt;Common claims&lt;br/&gt;and typed links&lt;/div&gt;" vertex="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontFamily=Arial;fontSize=12;fontColor=#23364D;fontStyle=0;spacing=0;">
+          <mxGeometry x="969" y="268" width="175" height="77" as="geometry" />
+        </mxCell>
+        <mxCell id="s-arrow-4" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;strokeColor=#60758A;dashed=0;" edge="1" parent="1" source="s-step-4" target="s-step-5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="s-step-6" parent="1" value="" vertex="1" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#CBD5E1;strokeWidth=2;shadow=0;">
+          <mxGeometry x="1182" y="165" width="205" height="215" as="geometry" />
+        </mxCell>
+        <mxCell id="s-step-6-number" parent="1" value="&lt;div style=&quot;line-height:1.4;&quot;&gt;06  CODE&lt;/div&gt;" vertex="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontFamily=Arial;fontSize=11;fontColor=#42648A;fontStyle=1;spacing=0;">
+          <mxGeometry x="1199" y="180" width="171" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="s-step-6-title" parent="1" value="&lt;div style=&quot;line-height:1.4;&quot;&gt;Assign bands&lt;/div&gt;" vertex="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontFamily=Arial;fontSize=22;fontColor=#23364D;fontStyle=1;spacing=0;">
+          <mxGeometry x="1199" y="220" width="175" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="s-step-6-body" parent="1" value="&lt;div style=&quot;line-height:1.4;&quot;&gt;Repeatable rules&lt;br/&gt;Evidence-based labels&lt;br/&gt;No LLM scoring&lt;/div&gt;" vertex="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontFamily=Arial;fontSize=12;fontColor=#23364D;fontStyle=0;spacing=0;">
+          <mxGeometry x="1199" y="268" width="175" height="77" as="geometry" />
+        </mxCell>
+        <mxCell id="s-arrow-5" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;strokeColor=#60758A;dashed=0;" edge="1" parent="1" source="s-step-5" target="s-step-6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="s-step-7" parent="1" value="" vertex="1" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#CBD5E1;strokeWidth=2;shadow=0;">
+          <mxGeometry x="1412" y="165" width="205" height="215" as="geometry" />
+        </mxCell>
+        <mxCell id="s-step-7-number" parent="1" value="&lt;div style=&quot;line-height:1.4;&quot;&gt;07  AUTOMATIC&lt;/div&gt;" vertex="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontFamily=Arial;fontSize=11;fontColor=#42648A;fontStyle=1;spacing=0;">
+          <mxGeometry x="1429" y="180" width="171" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="s-step-7-title" parent="1" value="&lt;div style=&quot;line-height:1.4;&quot;&gt;Publish&lt;/div&gt;" vertex="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontFamily=Arial;fontSize=22;fontColor=#23364D;fontStyle=1;spacing=0;">
+          <mxGeometry x="1429" y="220" width="175" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="s-step-7-body" parent="1" value="&lt;div style=&quot;line-height:1.4;&quot;&gt;Country + document&lt;br/&gt;views with source links&lt;br/&gt;Incomplete work visible&lt;/div&gt;" vertex="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontFamily=Arial;fontSize=12;fontColor=#23364D;fontStyle=0;spacing=0;">
+          <mxGeometry x="1429" y="268" width="175" height="77" as="geometry" />
+        </mxCell>
+        <mxCell id="s-arrow-6" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;strokeColor=#60758A;dashed=0;" edge="1" parent="1" source="s-step-6" target="s-step-7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="s-footer" parent="1" value="" vertex="1" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#EEF3F8;strokeColor=#D9E2EC;strokeWidth=2;shadow=0;">
+          <mxGeometry x="32" y="424" width="1585" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="s-footer-title" parent="1" value="&lt;div style=&quot;line-height:1.4;&quot;&gt;One traceable evidence chain&lt;/div&gt;" vertex="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontFamily=Arial;fontSize=19;fontColor=#23364D;fontStyle=1;spacing=0;">
+          <mxGeometry x="54" y="440" width="1510" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="s-footer-text" parent="1" value="&lt;div style=&quot;line-height:1.4;&quot;&gt;Documents retain their own results. Combined claims preserve support, conditions and contradictions.&lt;br/&gt;No mandatory human review. Results publish automatically; users can flag or hide items afterward.&lt;/div&gt;" vertex="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontFamily=Arial;fontSize=17;fontColor=#23364D;fontStyle=0;spacing=0;">
+          <mxGeometry x="54" y="475" width="1510" height="66" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="engineering" name="Engineering flow">
+    <mxGraphModel dx="1780" dy="1740" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1780" pageHeight="1740" math="0" shadow="0" background="#F7F9FC">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="e-title" parent="1" value="&lt;div style=&quot;line-height:1.4;&quot;&gt;Policy tracker: engineering flow&lt;/div&gt;" vertex="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontFamily=Arial;fontSize=32;fontColor=#23364D;fontStyle=1;spacing=0;">
+          <mxGeometry x="60" y="25" width="1660" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="e-subtitle" parent="1" value="&lt;div style=&quot;line-height:1.4;&quot;&gt;Preserve sources, organize across documents, calculate transparent bands and publish automatically.&lt;/div&gt;" vertex="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontFamily=Arial;fontSize=18;fontColor=#52667B;fontStyle=0;spacing=0;">
+          <mxGeometry x="60" y="77" width="1660" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="e-step-1" parent="1" value="" vertex="1" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#CBD5E1;strokeWidth=2;shadow=0;">
+          <mxGeometry x="60" y="145" width="850" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="e-step-1-role" parent="1" value="&lt;div style=&quot;line-height:1.4;&quot;&gt;01  CODE&lt;/div&gt;" vertex="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontFamily=Arial;fontSize=11;fontColor=#42648A;fontStyle=1;spacing=0;">
+          <mxGeometry x="80" y="156" width="800" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="e-step-1-title" parent="1" value="&lt;div style=&quot;line-height:1.4;&quot;&gt;Sources&lt;/div&gt;" vertex="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontFamily=Arial;fontSize=21;fontColor=#23364D;fontStyle=1;spacing=0;">
+          <mxGeometry x="80" y="175" width="800" height="38" as="geometry" />
+        </mxCell>
+        <mxCell id="e-step-1-body" parent="1" value="&lt;div style=&quot;line-height:1.4;&quot;&gt;Country + document identities, editions, source role and document hash.&lt;/div&gt;" vertex="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontFamily=Arial;fontSize=14;fontColor=#23364D;fontStyle=0;spacing=0;">
+          <mxGeometry x="80" y="206" width="800" height="29" as="geometry" />
+        </mxCell>
+        <mxCell id="e-step-2" parent="1" value="" vertex="1" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#CBD5E1;strokeWidth=2;shadow=0;">
+          <mxGeometry x="60" y="265" width="850" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="e-step-2-role" parent="1" value="&lt;div style=&quot;line-height:1.4;&quot;&gt;02  CODE&lt;/div&gt;" vertex="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontFamily=Arial;fontSize=11;fontColor=#42648A;fontStyle=1;spacing=0;">
+          <mxGeometry x="80" y="276" width="800" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="e-step-2-title" parent="1" value="&lt;div style=&quot;line-height:1.4;&quot;&gt;Prepare pages and coverage&lt;/div&gt;" vertex="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontFamily=Arial;fontSize=21;fontColor=#23364D;fontStyle=1;spacing=0;">
+          <mxGeometry x="80" y="295" width="800" height="38" as="geometry" />
+        </mxCell>
+        <mxCell id="e-step-2-body" parent="1" value="&lt;div style=&quot;line-height:1.4;&quot;&gt;Extract/index readable pages; retain original files and physical page numbers.&lt;br/&gt;Record unreadable material and bounded search scope.&lt;/div&gt;" vertex="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontFamily=Arial;fontSize=14;fontColor=#23364D;fontStyle=0;spacing=0;">
+          <mxGeometry x="80" y="326" width="800" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="e-arrow-1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;strokeColor=#60758A;dashed=0;" edge="1" parent="1" source="e-step-1" target="e-step-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-step-3" parent="1" value="" vertex="1" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#EAF2FF;strokeColor=#6B98D1;strokeWidth=2;shadow=0;">
+          <mxGeometry x="60" y="395" width="850" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="e-step-3-role" parent="1" value="&lt;div style=&quot;line-height:1.4;&quot;&gt;03  LLM - STAGE 1&lt;/div&gt;" vertex="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontFamily=Arial;fontSize=11;fontColor=#42648A;fontStyle=1;spacing=0;">
+          <mxGeometry x="80" y="406" width="800" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="e-step-3-title" parent="1" value="&lt;div style=&quot;line-height:1.4;&quot;&gt;Extract per document and domain&lt;/div&gt;" vertex="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontFamily=Arial;fontSize=21;fontColor=#23364D;fontStyle=1;spacing=0;">
+          <mxGeometry x="80" y="425" width="800" height="38" as="geometry" />
+        </mxCell>
+        <mxCell id="e-step-3-body" parent="1" value="&lt;div style=&quot;line-height:1.4;&quot;&gt;Use relevant taxonomy definitions and the full topic-ID catalogue.&lt;br/&gt;Return atomic records, labels, exact quotes and source-linked factual fields.&lt;/div&gt;" vertex="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontFamily=Arial;fontSize=14;fontColor=#23364D;fontStyle=0;spacing=0;">
+          <mxGeometry x="80" y="456" width="800" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="e-arrow-2" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;strokeColor=#60758A;dashed=0;" edge="1" parent="1" source="e-step-2" target="e-step-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-step-4" parent="1" value="" vertex="1" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#CBD5E1;strokeWidth=2;shadow=0;">
+          <mxGeometry x="60" y="535" width="850" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="e-step-4-role" parent="1" value="&lt;div style=&quot;line-height:1.4;&quot;&gt;04  CODE&lt;/div&gt;" vertex="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontFamily=Arial;fontSize=11;fontColor=#42648A;fontStyle=1;spacing=0;">
+          <mxGeometry x="80" y="546" width="800" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="e-step-4-title" parent="1" value="&lt;div style=&quot;line-height:1.4;&quot;&gt;Check source evidence and schema&lt;/div&gt;" vertex="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontFamily=Arial;fontSize=21;fontColor=#23364D;fontStyle=1;spacing=0;">
+          <mxGeometry x="80" y="565" width="800" height="38" as="geometry" />
+        </mxCell>
+        <mxCell id="e-step-4-body" parent="1" value="&lt;div style=&quot;line-height:1.4;&quot;&gt;Check known IDs, quotes, figures and required factual provenance.&lt;br/&gt;Bounded repair uses the same stage prompt; unresolved fields stay unsupported.&lt;/div&gt;" vertex="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontFamily=Arial;fontSize=14;fontColor=#23364D;fontStyle=0;spacing=0;">
+          <mxGeometry x="80" y="596" width="800" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="e-arrow-3" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;strokeColor=#60758A;dashed=0;" edge="1" parent="1" source="e-step-3" target="e-step-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-step-5" parent="1" value="" vertex="1" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#CBD5E1;strokeWidth=2;shadow=0;">
+          <mxGeometry x="60" y="675" width="850" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="e-step-5-role" parent="1" value="&lt;div style=&quot;line-height:1.4;&quot;&gt;05  CODE&lt;/div&gt;" vertex="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontFamily=Arial;fontSize=11;fontColor=#42648A;fontStyle=1;spacing=0;">
+          <mxGeometry x="80" y="686" width="800" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="e-step-5-title" parent="1" value="&lt;div style=&quot;line-height:1.4;&quot;&gt;Persist durable records&lt;/div&gt;" vertex="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontFamily=Arial;fontSize=21;fontColor=#23364D;fontStyle=1;spacing=0;">
+          <mxGeometry x="80" y="705" width="800" height="38" as="geometry" />
+        </mxCell>
+        <mxCell id="e-step-5-body" parent="1" value="&lt;div style=&quot;line-height:1.4;&quot;&gt;Assign record/evidence IDs and preserve prior versions and source-specific facts.&lt;br/&gt;Cache unchanged extraction; keep discovery aliases and coverage metadata.&lt;/div&gt;" vertex="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontFamily=Arial;fontSize=14;fontColor=#23364D;fontStyle=0;spacing=0;">
+          <mxGeometry x="80" y="736" width="800" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="e-arrow-4" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;strokeColor=#60758A;dashed=0;" edge="1" parent="1" source="e-step-4" target="e-step-5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-step-6" parent="1" value="" vertex="1" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#CBD5E1;strokeWidth=2;shadow=0;">
+          <mxGeometry x="60" y="805" width="850" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="e-step-6-role" parent="1" value="&lt;div style=&quot;line-height:1.4;&quot;&gt;06  CODE - NO LLM&lt;/div&gt;" vertex="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontFamily=Arial;fontSize=11;fontColor=#42648A;fontStyle=1;spacing=0;">
+          <mxGeometry x="80" y="816" width="800" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="e-step-6-title" parent="1" value="&lt;div style=&quot;line-height:1.4;&quot;&gt;Pool by assigned topics&lt;/div&gt;" vertex="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontFamily=Arial;fontSize=21;fontColor=#23364D;fontStyle=1;spacing=0;">
+          <mxGeometry x="80" y="835" width="800" height="38" as="geometry" />
+        </mxCell>
+        <mxCell id="e-step-6-body" parent="1" value="&lt;div style=&quot;line-height:1.4;&quot;&gt;Reconcile true duplicates; each primary topic has one owning home domain.&lt;br/&gt;Other relevant records are context-only; keep all eligible owned records.&lt;/div&gt;" vertex="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontFamily=Arial;fontSize=14;fontColor=#23364D;fontStyle=0;spacing=0;">
+          <mxGeometry x="80" y="866" width="800" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="e-arrow-5" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;strokeColor=#60758A;dashed=0;" edge="1" parent="1" source="e-step-5" target="e-step-6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-step-7" parent="1" value="" vertex="1" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#EAF2FF;strokeColor=#6B98D1;strokeWidth=2;shadow=0;">
+          <mxGeometry x="60" y="935" width="850" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="e-step-7-role" parent="1" value="&lt;div style=&quot;line-height:1.4;&quot;&gt;07  LLM - STAGE 2&lt;/div&gt;" vertex="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontFamily=Arial;fontSize=11;fontColor=#42648A;fontStyle=1;spacing=0;">
+          <mxGeometry x="80" y="946" width="800" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="e-step-7-title" parent="1" value="&lt;div style=&quot;line-height:1.4;&quot;&gt;Organize country/domain packs&lt;/div&gt;" vertex="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontFamily=Arial;fontSize=21;fontColor=#23364D;fontStyle=1;spacing=0;">
+          <mxGeometry x="80" y="965" width="800" height="38" as="geometry" />
+        </mxCell>
+        <mxCell id="e-step-7-body" parent="1" value="&lt;div style=&quot;line-height:1.4;&quot;&gt;Group equivalent assertions; retain variants and supporting/contextual links.&lt;br/&gt;Input is sourced records, not PDFs. Bounded overflow reconciliation stays Stage 2.&lt;/div&gt;" vertex="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontFamily=Arial;fontSize=14;fontColor=#23364D;fontStyle=0;spacing=0;">
+          <mxGeometry x="80" y="996" width="800" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="e-arrow-6" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;strokeColor=#60758A;dashed=0;" edge="1" parent="1" source="e-step-6" target="e-step-7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-step-8" parent="1" value="" vertex="1" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#CBD5E1;strokeWidth=2;shadow=0;">
+          <mxGeometry x="60" y="1085" width="850" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="e-step-8-role" parent="1" value="&lt;div style=&quot;line-height:1.4;&quot;&gt;08  CODE&lt;/div&gt;" vertex="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontFamily=Arial;fontSize=11;fontColor=#42648A;fontStyle=1;spacing=0;">
+          <mxGeometry x="80" y="1096" width="800" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="e-step-8-title" parent="1" value="&lt;div style=&quot;line-height:1.4;&quot;&gt;Check accounting and identity&lt;/div&gt;" vertex="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontFamily=Arial;fontSize=21;fontColor=#23364D;fontStyle=1;spacing=0;">
+          <mxGeometry x="80" y="1115" width="800" height="38" as="geometry" />
+        </mxCell>
+        <mxCell id="e-step-8-body" parent="1" value="&lt;div style=&quot;line-height:1.4;&quot;&gt;Every owned record appears once; links resolve; comparable targets stay explicit.&lt;br/&gt;Reconcile stable claim IDs and split/merge history; preserve partial-state diagnostics.&lt;/div&gt;" vertex="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontFamily=Arial;fontSize=14;fontColor=#23364D;fontStyle=0;spacing=0;">
+          <mxGeometry x="80" y="1146" width="800" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="e-arrow-7" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;strokeColor=#60758A;dashed=0;" edge="1" parent="1" source="e-step-7" target="e-step-8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-step-9" parent="1" value="" vertex="1" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#CBD5E1;strokeWidth=2;shadow=0;">
+          <mxGeometry x="60" y="1225" width="850" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="e-step-9-role" parent="1" value="&lt;div style=&quot;line-height:1.4;&quot;&gt;09  CODE&lt;/div&gt;" vertex="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontFamily=Arial;fontSize=11;fontColor=#42648A;fontStyle=1;spacing=0;">
+          <mxGeometry x="80" y="1236" width="800" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="e-step-9-title" parent="1" value="&lt;div style=&quot;line-height:1.4;&quot;&gt;Calculate source-scoped bands&lt;/div&gt;" vertex="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontFamily=Arial;fontSize=21;fontColor=#23364D;fontStyle=1;spacing=0;">
+          <mxGeometry x="80" y="1255" width="800" height="38" as="geometry" />
+        </mxCell>
+        <mxCell id="e-step-9-body" parent="1" value="&lt;div style=&quot;line-height:1.4;&quot;&gt;Same rules, separate evidence sets: each document and the combined country.&lt;br/&gt;Four bands + response-coverage bounds; progress and contradictions stay separate.&lt;/div&gt;" vertex="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontFamily=Arial;fontSize=14;fontColor=#23364D;fontStyle=0;spacing=0;">
+          <mxGeometry x="80" y="1286" width="800" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="e-arrow-8" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;strokeColor=#60758A;dashed=0;" edge="1" parent="1" source="e-step-8" target="e-step-9">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-step-10" parent="1" value="" vertex="1" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#CBD5E1;strokeWidth=2;shadow=0;">
+          <mxGeometry x="60" y="1365" width="850" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="e-step-10-role" parent="1" value="&lt;div style=&quot;line-height:1.4;&quot;&gt;10  CODE - AUTOMATIC&lt;/div&gt;" vertex="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontFamily=Arial;fontSize=11;fontColor=#42648A;fontStyle=1;spacing=0;">
+          <mxGeometry x="80" y="1376" width="800" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="e-step-10-title" parent="1" value="&lt;div style=&quot;line-height:1.4;&quot;&gt;Publish an atomic country snapshot&lt;/div&gt;" vertex="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontFamily=Arial;fontSize=21;fontColor=#23364D;fontStyle=1;spacing=0;">
+          <mxGeometry x="80" y="1395" width="800" height="38" as="geometry" />
+        </mxCell>
+        <mxCell id="e-step-10-body" parent="1" value="&lt;div style=&quot;line-height:1.4;&quot;&gt;Publish when jobs terminate or the configured deadline is reached.&lt;br/&gt;Keep dated prior results while updating; later success publishes a newer snapshot.&lt;/div&gt;" vertex="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontFamily=Arial;fontSize=14;fontColor=#23364D;fontStyle=0;spacing=0;">
+          <mxGeometry x="80" y="1426" width="800" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="e-arrow-9" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;strokeColor=#60758A;dashed=0;" edge="1" parent="1" source="e-step-9" target="e-step-10">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-step-11" parent="1" value="" vertex="1" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#CBD5E1;strokeWidth=2;shadow=0;">
+          <mxGeometry x="60" y="1505" width="850" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="e-step-11-role" parent="1" value="&lt;div style=&quot;line-height:1.4;&quot;&gt;11  UI&lt;/div&gt;" vertex="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontFamily=Arial;fontSize=11;fontColor=#42648A;fontStyle=1;spacing=0;">
+          <mxGeometry x="80" y="1516" width="800" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="e-step-11-title" parent="1" value="&lt;div style=&quot;line-height:1.4;&quot;&gt;Show the dashboard and evidence&lt;/div&gt;" vertex="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontFamily=Arial;fontSize=21;fontColor=#23364D;fontStyle=1;spacing=0;">
+          <mxGeometry x="80" y="1535" width="800" height="38" as="geometry" />
+        </mxCell>
+        <mxCell id="e-step-11-body" parent="1" value="&lt;div style=&quot;line-height:1.4;&quot;&gt;Domain distributions &amp;gt; topic bands &amp;gt; claims &amp;gt; exact sources.&lt;br/&gt;Switch combined / document / historical views; allow post-publication flag and hide.&lt;/div&gt;" vertex="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontFamily=Arial;fontSize=14;fontColor=#23364D;fontStyle=0;spacing=0;">
+          <mxGeometry x="80" y="1566" width="800" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="e-arrow-10" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;strokeColor=#60758A;dashed=0;" edge="1" parent="1" source="e-step-10" target="e-step-11">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-config" parent="1" value="" vertex="1" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#EAF7F4;strokeColor=#92C3B5;strokeWidth=2;shadow=0;">
+          <mxGeometry x="1100" y="145" width="620" height="185" as="geometry" />
+        </mxCell>
+        <mxCell id="e-config-title" parent="1" value="&lt;div style=&quot;line-height:1.4;&quot;&gt;One versioned configuration bundle&lt;/div&gt;" vertex="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontFamily=Arial;fontSize=22;fontColor=#23364D;fontStyle=1;spacing=0;">
+          <mxGeometry x="1120" y="165" width="570" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="e-config-body" parent="1" value="&lt;div style=&quot;line-height:1.4;&quot;&gt;Taxonomy + labels + prompts + schema&lt;br/&gt;Band rules + retrieval/model settings&lt;br/&gt;UI edits and file exports share the same version.&lt;br/&gt;Feeds extraction, pooling, organization and bands.&lt;/div&gt;" vertex="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontFamily=Arial;fontSize=15;fontColor=#23364D;fontStyle=0;spacing=0;">
+          <mxGeometry x="1120" y="208" width="570" height="108" as="geometry" />
+        </mxCell>
+        <mxCell id="e-config-bus" value="" style="edgeStyle=none;rounded=0;html=1;endArrow=none;endFill=1;strokeWidth=2;strokeColor=#60758A;dashed=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1100" y="240" as="sourcePoint" />
+            <mxPoint x="1020" y="1280" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="1020" y="240" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e-config-to-extract" value="" style="edgeStyle=none;rounded=0;html=1;endArrow=block;endFill=1;strokeWidth=2;strokeColor=#60758A;dashed=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1020" y="450" as="sourcePoint" />
+            <mxPoint x="912" y="450" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e-config-to-pool" value="" style="edgeStyle=none;rounded=0;html=1;endArrow=block;endFill=1;strokeWidth=2;strokeColor=#60758A;dashed=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1020" y="855" as="sourcePoint" />
+            <mxPoint x="912" y="855" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e-config-to-organize" value="" style="edgeStyle=none;rounded=0;html=1;endArrow=block;endFill=1;strokeWidth=2;strokeColor=#60758A;dashed=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1020" y="995" as="sourcePoint" />
+            <mxPoint x="912" y="995" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e-config-to-bands" value="" style="edgeStyle=none;rounded=0;html=1;endArrow=block;endFill=1;strokeWidth=2;strokeColor=#60758A;dashed=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1020" y="1280" as="sourcePoint" />
+            <mxPoint x="912" y="1280" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e-note-0" parent="1" value="" vertex="1" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#F0F4F8;strokeColor=#D7E0EA;strokeWidth=2;shadow=0;">
+          <mxGeometry x="1100" y="385" width="620" height="170" as="geometry" />
+        </mxCell>
+        <mxCell id="e-note-0-title" parent="1" value="&lt;div style=&quot;line-height:1.4;&quot;&gt;Two model roles, not a model chain&lt;/div&gt;" vertex="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontFamily=Arial;fontSize=21;fontColor=#23364D;fontStyle=1;spacing=0;">
+          <mxGeometry x="1120" y="403" width="575" height="38" as="geometry" />
+        </mxCell>
+        <mxCell id="e-note-0-body" parent="1" value="&lt;div style=&quot;line-height:1.4;&quot;&gt;Pooling and scoring are application code.&lt;br/&gt;Retagging is maintenance, not a routine third stage.&lt;br/&gt;No separate judge/scoring model.&lt;br/&gt;Two roles can use the same tested model.&lt;/div&gt;" vertex="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontFamily=Arial;fontSize=15;fontColor=#23364D;fontStyle=0;spacing=0;">
+          <mxGeometry x="1120" y="443" width="575" height="108" as="geometry" />
+        </mxCell>
+        <mxCell id="e-note-1" parent="1" value="" vertex="1" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#F0F4F8;strokeColor=#D7E0EA;strokeWidth=2;shadow=0;">
+          <mxGeometry x="1100" y="605" width="620" height="210" as="geometry" />
+        </mxCell>
+        <mxCell id="e-note-1-title" parent="1" value="&lt;div style=&quot;line-height:1.4;&quot;&gt;Bounded work, visible limitations&lt;/div&gt;" vertex="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontFamily=Arial;fontSize=21;fontColor=#23364D;fontStyle=1;spacing=0;">
+          <mxGeometry x="1120" y="623" width="575" height="38" as="geometry" />
+        </mxCell>
+        <mxCell id="e-note-1-body" parent="1" value="&lt;div style=&quot;line-height:1.4;&quot;&gt;One country-update budget covers retries,&lt;br/&gt;search, repairs and overflow.&lt;br/&gt;Never truncate input and label it complete.&lt;br/&gt;Failed or unreadable work is incomplete,&lt;br/&gt;not evidence that a policy is absent.&lt;/div&gt;" vertex="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontFamily=Arial;fontSize=15;fontColor=#23364D;fontStyle=0;spacing=0;">
+          <mxGeometry x="1120" y="663" width="575" height="133" as="geometry" />
+        </mxCell>
+        <mxCell id="e-note-2" parent="1" value="" vertex="1" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#F0F4F8;strokeColor=#D7E0EA;strokeWidth=2;shadow=0;">
+          <mxGeometry x="1100" y="865" width="620" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="e-note-2-title" parent="1" value="&lt;div style=&quot;line-height:1.4;&quot;&gt;Stage 2 preserves meaning&lt;/div&gt;" vertex="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontFamily=Arial;fontSize=21;fontColor=#23364D;fontStyle=1;spacing=0;">
+          <mxGeometry x="1120" y="883" width="575" height="38" as="geometry" />
+        </mxCell>
+        <mxCell id="e-note-2-body" parent="1" value="&lt;div style=&quot;line-height:1.4;&quot;&gt;100,000 ha versus comparable 80,000 ha:&lt;br/&gt;retain conflicting target variants.&lt;br/&gt;60,000 ha of existing capacity:&lt;br/&gt;keep a separate contextual claim.&lt;br/&gt;Support never proves target achievement.&lt;/div&gt;" vertex="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontFamily=Arial;fontSize=15;fontColor=#23364D;fontStyle=0;spacing=0;">
+          <mxGeometry x="1120" y="923" width="575" height="133" as="geometry" />
+        </mxCell>
+        <mxCell id="e-note-3" parent="1" value="" vertex="1" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#F0F4F8;strokeColor=#D7E0EA;strokeWidth=2;shadow=0;">
+          <mxGeometry x="1100" y="1115" width="620" height="210" as="geometry" />
+        </mxCell>
+        <mxCell id="e-note-3-title" parent="1" value="&lt;div style=&quot;line-height:1.4;&quot;&gt;Document and combined views&lt;/div&gt;" vertex="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontFamily=Arial;fontSize=21;fontColor=#23364D;fontStyle=1;spacing=0;">
+          <mxGeometry x="1120" y="1133" width="575" height="38" as="geometry" />
+        </mxCell>
+        <mxCell id="e-note-3-body" parent="1" value="&lt;div style=&quot;line-height:1.4;&quot;&gt;Each document keeps its own assertions.&lt;br/&gt;Combined views can link evidence across sources.&lt;br/&gt;Historical views exclude future documents.&lt;br/&gt;Four bands are categories, not numbers to average.&lt;br/&gt;Cross-domain display does not double-count topics.&lt;/div&gt;" vertex="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontFamily=Arial;fontSize=15;fontColor=#23364D;fontStyle=0;spacing=0;">
+          <mxGeometry x="1120" y="1173" width="575" height="133" as="geometry" />
+        </mxCell>
+        <mxCell id="e-note-4" parent="1" value="" vertex="1" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#F0F4F8;strokeColor=#D7E0EA;strokeWidth=2;shadow=0;">
+          <mxGeometry x="1100" y="1375" width="620" height="250" as="geometry" />
+        </mxCell>
+        <mxCell id="e-note-4-title" parent="1" value="&lt;div style=&quot;line-height:1.4;&quot;&gt;Automatic publication&lt;/div&gt;" vertex="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontFamily=Arial;fontSize=21;fontColor=#23364D;fontStyle=1;spacing=0;">
+          <mxGeometry x="1120" y="1393" width="575" height="38" as="geometry" />
+        </mxCell>
+        <mxCell id="e-note-4-body" parent="1" value="&lt;div style=&quot;line-height:1.4;&quot;&gt;No human approval or moderation gate.&lt;br/&gt;Partial snapshots identify unresolved work.&lt;br/&gt;Progress, contradictions and conditions&lt;br/&gt;appear beside the documentation band.&lt;br/&gt;Users flag or hide items after publication.&lt;br/&gt;Hiding does not silently change the benchmark.&lt;/div&gt;" vertex="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontFamily=Arial;fontSize=15;fontColor=#23364D;fontStyle=0;spacing=0;">
+          <mxGeometry x="1120" y="1433" width="575" height="158" as="geometry" />
+        </mxCell>
+        <mxCell id="e-footer" parent="1" value="&lt;div style=&quot;line-height:1.4;&quot;&gt;Specification v2.0.0 | Climate and disaster scope | 16 domains / 64 topics | Runtime integration still required&lt;/div&gt;" vertex="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontFamily=Arial;fontSize=17;fontColor=#52667B;fontStyle=0;spacing=0;">
+          <mxGeometry x="60" y="1671" width="1660" height="33" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

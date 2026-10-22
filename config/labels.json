@@ -1,0 +1,370 @@
+{
+  "version": "2026-10-20.1",
+  "status": "active",
+  "rules": [
+    "Only extract labels explicitly supported by the record's own evidence.",
+    "One primary topic; secondary topics only for substantive additional subjects.",
+    "Empty arrays mean not stated or not extracted, never that the concept does not exist.",
+    "Unknown labels go in unmapped_concepts with the source wording; never invent enum values.",
+    "No human review_status field. Automatic check states and post-publication user overlays are separate.",
+    "Do not reward a record for carrying more labels.",
+    "Delivery details require source-linked actor, action timeframe and specific verifiable deliverable for the same coherent response and variant. A broad programme name alone is not shared identity.",
+    "Only enabled facets are included in the routine extraction contract. Disabled vocabularies remain editable optional modules, not empty claims about the absence of those concepts.",
+    "priority_evidence is a nullable sourced field, not an importance label, ranking or scoring weight.",
+    "A null primary_topic_id means an unmapped subject. statement_type other means a sourced assertion for which no predefined statement type fits. Missing classification is not other. Preserve these independently; never move unmapped records into an invented Other domain."
+  ],
+  "statement_type": {
+    "required": true,
+    "selection": "one",
+    "options": [
+      {
+        "id": "concern",
+        "meaning": "A stated risk, vulnerability, impact, need, barrier or gap",
+        "response_stage": null
+      },
+      {
+        "id": "context",
+        "meaning": "A current or historical condition, capacity or baseline",
+        "response_stage": null
+      },
+      {
+        "id": "projection",
+        "meaning": "A modeled or expected future condition, not a policy undertaking",
+        "response_stage": null
+      },
+      {
+        "id": "commitment",
+        "meaning": "An attributable policy goal, priority or target",
+        "response_stage": 1
+      },
+      {
+        "id": "planned_action",
+        "meaning": "A specific planned measure, programme or instrument",
+        "response_stage": 2
+      },
+      {
+        "id": "implementation_underway",
+        "meaning": "Explicit implementation, procurement, construction or operation of the identified action",
+        "response_stage": 3
+      },
+      {
+        "id": "output_delivered",
+        "meaning": "Explicitly completed, installed or adopted output of the identified action",
+        "response_stage": 4
+      },
+      {
+        "id": "result_reported",
+        "meaning": "A reported outcome or effect; does not by itself prove causation or target achievement",
+        "response_stage": null
+      },
+      {
+        "id": "proposal",
+        "meaning": "A recommendation without an attributable adopted undertaking",
+        "response_stage": null
+      },
+      {
+        "id": "other",
+        "meaning": "Relevant sourced statement that no listed type fits",
+        "response_stage": null
+      }
+    ]
+  },
+  "facets": {
+    "purpose": {
+      "enabled": true,
+      "selection": "many",
+      "options": [
+        "adaptation",
+        "mitigation",
+        "disaster_risk_reduction"
+      ],
+      "module": "core"
+    },
+    "geographic_scope": {
+      "enabled": true,
+      "selection": "one_or_null",
+      "options": [
+        "local",
+        "subnational",
+        "national",
+        "transboundary",
+        "regional",
+        "EU",
+        "global"
+      ],
+      "module": "core"
+    },
+    "hazards": {
+      "enabled": true,
+      "selection": "many",
+      "options": [
+        "flood",
+        "heavy_precipitation",
+        "drought",
+        "water_scarcity",
+        "extreme_heat",
+        "extreme_cold",
+        "storm_wind",
+        "dust_sand_storm",
+        "wildfire",
+        "landslide_mudflow",
+        "avalanche",
+        "glacial_lake_outburst",
+        "glacier_permafrost_loss",
+        "desertification_land_degradation",
+        "sea_level_rise",
+        "coastal_hazard",
+        "disease_biological",
+        "earthquake",
+        "tsunami",
+        "technological",
+        "compound_cascading"
+      ],
+      "module": "core"
+    },
+    "themes": {
+      "enabled": true,
+      "selection": "many",
+      "options": [
+        "gender_equality",
+        "social_inclusion",
+        "poverty_inequality",
+        "participation",
+        "capacity_building",
+        "technology_transfer",
+        "transboundary_cooperation",
+        "nature_based_solutions"
+      ],
+      "module": "additional_context"
+    },
+    "affected_groups": {
+      "enabled": true,
+      "selection": "many",
+      "options": [
+        "women",
+        "men",
+        "children",
+        "youth",
+        "older_people",
+        "persons_with_disabilities",
+        "low_income_households",
+        "farmers",
+        "herders",
+        "fishers",
+        "rural_communities",
+        "urban_communities",
+        "workers",
+        "indigenous_local_communities",
+        "migrants_displaced_people"
+      ],
+      "module": "additional_context"
+    },
+    "policy_instruments": {
+      "enabled": true,
+      "selection": "many",
+      "options": [
+        "strategy_plan",
+        "law_regulation",
+        "standard_code",
+        "public_investment",
+        "subsidy_incentive",
+        "tax_pricing",
+        "market_mechanism",
+        "insurance_risk_finance",
+        "institution_coordination",
+        "information_warning",
+        "research_data",
+        "training_capacity",
+        "ecosystem_management",
+        "infrastructure_service"
+      ],
+      "module": "core"
+    },
+    "risk_component": {
+      "enabled": true,
+      "selection": "many",
+      "options": [
+        "hazard",
+        "exposure",
+        "vulnerability",
+        "capacity",
+        "impact",
+        "residual_risk",
+        "systemic_cascading_risk"
+      ],
+      "module": "specialist_risk"
+    },
+    "risk_function": {
+      "enabled": true,
+      "selection": "many",
+      "options": [
+        "risk_understanding",
+        "risk_prevention_reduction",
+        "early_warning_preparedness",
+        "anticipatory_action",
+        "emergency_response",
+        "recovery_reconstruction",
+        "coping_continuity",
+        "systemic_transformation"
+      ],
+      "module": "specialist_risk"
+    }
+  },
+  "fact_enums": {
+    "fact_type": [
+      "target",
+      "observation",
+      "projection",
+      "finance",
+      "indicator"
+    ],
+    "conditionality": [
+      "unconditional",
+      "conditional",
+      "not_stated"
+    ],
+    "comparator": [
+      "equal",
+      "at_least",
+      "at_most",
+      "range",
+      "approximate",
+      "not_stated"
+    ],
+    "direction": [
+      "increase",
+      "decrease",
+      "maintain",
+      "complete",
+      "not_stated"
+    ],
+    "basis": [
+      "absolute",
+      "historical_reduction",
+      "BAU_reduction",
+      "intensity",
+      "share",
+      "other",
+      "not_stated"
+    ],
+    "total_or_additional": [
+      "total",
+      "additional",
+      "not_stated"
+    ],
+    "finance_status": [
+      "need_or_estimate",
+      "requested",
+      "pledged",
+      "committed",
+      "allocated",
+      "mobilized",
+      "disbursed",
+      "spent",
+      "not_stated"
+    ]
+  },
+  "actor_roles": [
+    "responsible",
+    "implementing",
+    "financing",
+    "supporting",
+    "monitoring_reporting",
+    "consulted",
+    "unspecified"
+  ],
+  "relationship_types": [
+    "restates",
+    "progress_of",
+    "supports",
+    "contextualizes",
+    "revises",
+    "supersedes",
+    "part_of",
+    "contradicts",
+    "not_comparable"
+  ],
+  "relationship_rule": "Equivalent restatements, explicit progress and revisions may connect assertions of the same identified proposition/intervention. A shared programme name or topic is insufficient identity. Supporting/context assertions retain their own identities and documentation bands. Supersession requires explicit evidence. Contradiction requires comparable scope and basis.",
+  "comparability": [
+    "comparable",
+    "not_comparable",
+    "insufficient_detail"
+  ],
+  "automatic_states": [
+    "passed",
+    "repairing",
+    "evidence_unavailable",
+    "organization_partial"
+  ],
+  "user_overlay": {
+    "visibility": [
+      "visible",
+      "hidden"
+    ],
+    "flags": [
+      "incorrect",
+      "duplicate",
+      "wrong_topic",
+      "outdated",
+      "other"
+    ],
+    "rule": "Store reason, actor, timestamp and claim version separately. A flag does not stop publication. Hiding changes presentation only by default; a custom exclusion produces a labeled adjusted score, leaving the generated regional benchmark intact."
+  },
+  "delivery_enums": {
+    "timeframe_anchor": [
+      "action",
+      "publication"
+    ],
+    "deliverable_kind": [
+      "quantified_output",
+      "named_asset",
+      "named_legal_instrument",
+      "named_milestone",
+      "generic_action"
+    ]
+  },
+  "facet_modules": {
+    "core": {
+      "enabled_by_default": true,
+      "fields": [
+        "purpose",
+        "hazards",
+        "geographic_scope",
+        "policy_instruments"
+      ],
+      "reason": "The smallest useful set for routine regional climate and disaster policy filtering."
+    },
+    "additional_context": {
+      "enabled_by_default": true,
+      "fields": [
+        "themes",
+        "affected_groups"
+      ],
+      "reason": "Enable for an explicit inclusion or thematic analysis question. Source statements and quotations remain available while structured tags are disabled; automatic structured coverage is not promised until retagging or re-extraction."
+    },
+    "specialist_risk": {
+      "enabled_by_default": true,
+      "fields": [
+        "risk_component",
+        "risk_function"
+      ],
+      "reason": "Specialist risk analysis beyond the ordinary topic/band dashboard."
+    }
+  },
+  "priority_evidence": {
+    "enabled": true,
+    "selection": "one_or_null",
+    "meaning": "Exact source wording that explicitly calls this concern, need or response a priority; never inferred importance.",
+    "raw_shape": {
+      "text": "Exact priority wording from an allowed evidence quotation",
+      "evidence_refs": "Non-empty list of local evidence references from this extraction response"
+    },
+    "normalized_shape": {
+      "text": "Same exact priority wording",
+      "evidence_ids": "Non-empty list of persistent evidence IDs mapped by code"
+    },
+    "not_a_facet": true,
+    "ranking_or_weight": false,
+    "rule": "A source may prioritize a risk or need without documenting a response. Repetition, hazard severity, document length and model judgement never create priority_evidence. Priority filtering does not change benchmark denominators or bands."
+  }
+}

@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="615" viewBox="0 0 1100 615">
+<defs><marker id="arrow" markerWidth="9" markerHeight="9" refX="8" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8" fill="#587b90"/></marker></defs>
+<rect width="1100" height="615" fill="#f4f7fa"/>
+<text x="45" y="56" font-family="Arial" font-size="29" font-weight="bold" fill="#17374b">Two model stages. One traceable result.</text>
+<text x="45" y="87" font-family="Arial" font-size="17" fill="#536c7c">Final plan / 20 October 2026 / proposed, not active</text>
+<text x="45" y="121" font-family="Arial" font-size="16" fill="#176d69">Teal = LLM reasoning   /   Blue-gray = deterministic code and stored data</text>
+<rect x="50" y="155" width="300" height="110" rx="9" fill="#ffffff" stroke="#abc0cd" stroke-width="1.5"/>
+<text x="67" y="184" font-family="Arial" font-size="17" font-weight="bold" fill="#17374b">1  Prepare every source</text>
+<text x="67" y="220" font-family="Arial" font-size="16" font-weight="normal" fill="#17374b">Text + layout + targeted OCR</text>
+<text x="67" y="245" font-family="Arial" font-size="16" font-weight="normal" fill="#17374b">Conditional image recovery</text>
+<rect x="400" y="155" width="300" height="110" rx="9" fill="#e4f3ef" stroke="#2b847b" stroke-width="1.5"/>
+<text x="417" y="184" font-family="Arial" font-size="17" font-weight="bold" fill="#17374b">2  Extract records - LLM 1</text>
+<text x="417" y="220" font-family="Arial" font-size="16" font-weight="normal" fill="#17374b">Every packet, across all topics</text>
+<text x="417" y="245" font-family="Arial" font-size="16" font-weight="normal" fill="#17374b">Titles + facts + exact evidence</text>
+<rect x="750" y="155" width="300" height="110" rx="9" fill="#ffffff" stroke="#abc0cd" stroke-width="1.5"/>
+<text x="767" y="184" font-family="Arial" font-size="17" font-weight="bold" fill="#17374b">3  Check and pool - code</text>
+<text x="767" y="220" font-family="Arial" font-size="16" font-weight="normal" fill="#17374b">Recover omissions / errors</text>
+<text x="767" y="245" font-family="Arial" font-size="16" font-weight="normal" fill="#17374b">Select source scope; retain all</text>
+<rect x="750" y="345" width="300" height="110" rx="9" fill="#e4f3ef" stroke="#2b847b" stroke-width="1.5"/>
+<text x="767" y="374" font-family="Arial" font-size="17" font-weight="bold" fill="#17374b">4  Organize claims - LLM 2</text>
+<text x="767" y="410" font-family="Arial" font-size="16" font-weight="normal" fill="#17374b">Group the same proposition</text>
+<text x="767" y="435" font-family="Arial" font-size="16" font-weight="normal" fill="#17374b">Keep variants, context and links</text>
+<rect x="400" y="345" width="300" height="110" rx="9" fill="#ffffff" stroke="#abc0cd" stroke-width="1.5"/>
+<text x="417" y="374" font-family="Arial" font-size="17" font-weight="bold" fill="#17374b">5  Calculate scores - code</text>
+<text x="417" y="410" font-family="Arial" font-size="16" font-weight="normal" fill="#17374b">Four checks per response</text>
+<text x="417" y="435" font-family="Arial" font-size="16" font-weight="normal" fill="#17374b">Topic means + distinct counts</text>
+<rect x="50" y="345" width="300" height="110" rx="9" fill="#ffffff" stroke="#abc0cd" stroke-width="1.5"/>
+<text x="67" y="374" font-family="Arial" font-size="17" font-weight="bold" fill="#17374b">6  Publish automatically</text>
+<text x="67" y="410" font-family="Arial" font-size="16" font-weight="normal" fill="#17374b">Country, region and documents</text>
+<text x="67" y="435" font-family="Arial" font-size="16" font-weight="normal" fill="#17374b">Flag / hide / restore afterward</text>
+<path d="M350 210.0 L400 210.0" stroke="#587b90" fill="none" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M700 210.0 L750 210.0" stroke="#587b90" fill="none" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M900.0 265 L900.0 345" stroke="#587b90" fill="none" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M750 400.0 L700 400.0" stroke="#587b90" fill="none" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M400 400.0 L350 400.0" stroke="#587b90" fill="none" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="45" y="539" font-family="Arial" font-size="16" fill="#536c7c">One country at a time; two shared request slots initially. Recovery runs only where needed.</text>
+<text x="45" y="566" font-family="Arial" font-size="16" fill="#536c7c">Scoring and pooling use code. Incomplete work stays visible; it never becomes a false zero.</text>
+</svg>

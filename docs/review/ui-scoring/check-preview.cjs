@@ -1,0 +1,145 @@
+/* Local browser checks for the synthetic review mockup, not the application. */
+const { chromium } = require(process.env.PLAYWRIGHT_PATH || 'C:/Users/Meriç/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright');
+const fs = require('fs');
+const path = require('path');
+const { pathToFileURL } = require('url');
+const assert = require('assert/strict');
+const folder = __dirname;
+const output = path.resolve(folder, '../../../tmp/pdfs/ui-v4');
+fs.mkdirSync(output, { recursive: true });
+let activeBrowser;
+
+(async () => {
+  const browser = await chromium.launch({ headless: true, executablePath: process.env.BROWSER_BIN || 'C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe' });
+  activeBrowser = browser;
+  const page = await browser.newPage({ viewport: { width: 1060, height: 1100 }, colorScheme: 'light' });
+  const errors = [];
+  page.on('pageerror', error => errors.push(error.message));
+  await page.goto(pathToFileURL(path.join(folder, 'dashboard.html')).href);
+  const frame = await (await page.waitForSelector('iframe')).contentFrame();
+  const root = frame.locator('#policy-score-studio');
+  await root.locator('[data-country]').waitFor();
+  const checks = [];
+  const passed = name => checks.push(name);
+  assert.equal(await root.locator('.pt-domain-grid [data-domain]').count(), 16);
+  assert.match(await root.innerText(), /Policy Tracker/);
+  assert.match(await root.innerText(), /synthetic/i);
+  passed('Country overview renders 16 domains and labels synthetic data');
+  await page.screenshot({ path: path.join(output, 'country-overview.png'), fullPage: false });
+  await root.locator('.pt-domain-grid [data-domain="agriculture"]').click();
+  assert.equal(await root.locator('.pt-hero').count(), 0);
+  assert.equal(await root.getAttribute('data-country-level'), 'domain');
+  assert.ok(await root.locator('[data-back-overview]').evaluate(element => element === document.activeElement));
+  await root.locator('.pt-table-panel').screenshot({ path: path.join(output, 'domain-topics.png') });
+  passed('Domain selection opens focused topics and moves keyboard focus to back navigation');
+  await root.locator('[data-topic="AGR-01"]').click();
+  const detail = root.locator('.pt-detail');
+  await detail.waitFor();
+  assert.match(await detail.innerText(), /87\.5/);
+  assert.equal(await detail.locator('.pt-claim').count(), 3);
+  assert.match(await detail.innerText(), /unscored/i);
+  assert.match(await detail.innerText(), /conflict/i);
+  assert.match(await detail.innerText(), /planned/i);
+  passed('Water topic links 87.5 score to three claims, two responses, conflict and unscored context');
+  await detail.locator('[data-source]').first().click();
+  assert.match(await root.locator('.pt-source-quote').innerText(), /100,000/);
+  passed('Source control exposes the original synthetic quotation');
+  await root.locator('.pt-detail').screenshot({ path: path.join(output, 'topic-detail.png') });
+  assert.equal(await root.locator('.pt-table-panel').count(), 0);
+  await root.locator('[data-back-topics]').click();
+  assert.equal(await root.getAttribute('data-country-level'), 'domain');
+  await root.locator('[data-back-overview]').click();
+  assert.equal(await root.locator('.pt-domain-grid [data-domain]').count(), 16);
+  passed('Topic evidence replaces the topic table; back controls restore domain and country views');
+  await root.locator('.pt-domain-grid [data-domain="agriculture"]').click();
+  await root.locator('[data-topic="AGR-01"]').click();
+  await root.locator('[data-view="region"]').click();
+  assert.match(await root.innerText(), /Country A/);
+  assert.match(await root.innerText(), /Country B/);
+  assert.match(await root.innerText(), /Country C/);
+  assert.match(await root.innerText(), /1 eligible|n\s*=\s*1|1 matched/);
+  passed('Regional screen includes all three countries and discloses the eligible cohort');
+  await root.locator('[data-region-topic]').selectOption('AGR-01');
+  assert.match(await root.locator('.pt-region-grid').innerText(), /87\.5/);
+  passed('Regional comparison switches from domain to the same topic across countries');
+  await root.locator('[data-open-country="SYN-A"][data-open-topic="AGR-01"]').click();
+  assert.equal(await root.getAttribute('data-country-level'), 'topic');
+  assert.match(await root.locator('.pt-detail').innerText(), /87\.5/);
+  await root.locator('[data-view="region"]').click();
+  passed('Regional topic comparison links directly to country evidence');
+  await root.locator('[data-region-topic]').selectOption('');
+  await root.locator('.pt-heading').scrollIntoViewIfNeeded();
+  await page.screenshot({ path: path.join(output, 'regional-overview.png'), fullPage: false });
+  await root.locator('[data-view="documents"]').click();
+  assert.equal(await root.locator('[data-document]').count(), 3);
+  await root.locator('[data-document="SYN-A-NDC-2025"]').click();
+  await root.locator('[data-domain-select]').selectOption('agriculture');
+  await root.locator('[data-topic="AGR-01"]').click();
+  assert.match(await root.locator('.pt-detail').innerText(), /75/);
+  assert.equal(await root.locator('.pt-detail .pt-claim').count(), 1);
+  assert.doesNotMatch(await root.locator('.pt-detail').innerText(), /30 km|60,000/);
+  passed('NDC-only view has one 75-point claim without borrowed NAP capacity or canal evidence');
+  await root.locator('.pt-detail').screenshot({ path: path.join(output, 'document-detail.png') });
+  await root.locator('[data-view="country"]').click();
+  await root.locator('[data-country]').selectOption('SYN-B');
+  assert.match(await root.locator('.pt-hero').innerText(), /[↑↓→]/);
+  passed('Matched new-edition country exposes a documentation-change arrow');
+  await root.locator('.pt-heading').scrollIntoViewIfNeeded();
+  await page.screenshot({ path: path.join(output, 'country-changes.png'), fullPage: false });
+  await root.locator('[data-country]').selectOption('SYN-C');
+  assert.equal((await root.locator('.pt-gauge-value').innerText()).trim(), '—');
+  assert.match(await root.locator('.pt-hero').innerText(), /at least/);
+  passed('Partial inventory withholds the headline score and qualifies observed counts');
+  await root.locator('[data-country]').selectOption('SYN-A');
+  await page.emulateMedia({ colorScheme: 'dark' });
+  await root.locator('.pt-heading').scrollIntoViewIfNeeded();
+  await page.screenshot({ path: path.join(output, 'country-dark.png'), fullPage: false });
+  await page.emulateMedia({ colorScheme: 'light' });
+  for (const width of [1024, 390, 320]) {
+    await page.setViewportSize({ width, height: 1100 });
+    await frame.waitForTimeout(120);
+    const layout = await root.evaluate(element => {
+      const box = element.getBoundingClientRect();
+      const documentWidth = document.documentElement.clientWidth;
+      const smallText = [...element.querySelectorAll('*')].filter(e => e.textContent.trim() && e.children.length === 0 && e.getBoundingClientRect().width > 0 && Number.parseFloat(getComputedStyle(e).fontSize) < 11).map(e => e.textContent.slice(0, 40));
+      return { width: box.width, scrollWidth: element.scrollWidth, documentWidth, smallText };
+    });
+    assert.ok(layout.scrollWidth <= layout.width + 2, `Root overflow at ${width}: ${JSON.stringify(layout)}`);
+    assert.ok(layout.width <= layout.documentWidth + 2, `Viewport overflow at ${width}`);
+    assert.deepEqual(layout.smallText, [], `Text below 11px at ${width}`);
+    passed(`Responsive country layout at ${width}px, no outer overflow or sub-11px text`);
+    if (width === 390) {
+      await root.locator('.pt-heading').scrollIntoViewIfNeeded();
+      await page.screenshot({ path: path.join(output, 'country-mobile.png'), fullPage: false });
+    }
+    await root.locator('.pt-domain-grid [data-domain="agriculture"]').click();
+    assert.ok(await root.evaluate(element => element.scrollWidth <= element.getBoundingClientRect().width + 2), `Focused domain overflow at ${width}`);
+    await root.locator('[data-topic="AGR-01"]').click();
+    assert.ok(await root.evaluate(element => element.scrollWidth <= element.getBoundingClientRect().width + 2), `Focused evidence overflow at ${width}`);
+    if (width === 390) await root.locator('.pt-detail').screenshot({ path: path.join(output, 'topic-mobile.png') });
+    for (const view of ['region', 'documents']) {
+      await root.locator(`[data-view="${view}"]`).click();
+      const fits = await root.evaluate(element => element.scrollWidth <= element.getBoundingClientRect().width + 2);
+      assert.ok(fits, `${view} overflow at ${width}`);
+    }
+    await root.locator('[data-view="country"]').click();
+  }
+  passed('Region and document layouts fit all three tested viewport widths');
+  passed('Focused domain and evidence layouts fit all three tested viewport widths');
+  const labels = await root.locator('#pt-demo-data').evaluate(element => JSON.parse(element.textContent).levels.map(level => level.label));
+  assert.deepEqual(labels, ['Limited policy detail', 'Basic policy detail', 'Moderate policy detail', 'Substantial policy detail']);
+  assert.doesNotMatch(await root.innerText(), /Developing|Detailed 75/);
+  passed('Shared presentation configuration supplies the revised policy-detail legend');
+  assert.deepEqual(errors, []);
+  passed('No JavaScript runtime errors');
+  const result = { status: 'passed', checks: checks.length, details: checks, screenshots: output };
+  fs.writeFileSync(path.join(output, 'browser-checks.json'), JSON.stringify(result, null, 2) + '\n');
+  console.log(JSON.stringify(result, null, 2));
+  // The diagram sources are generated separately; refresh their PDF image copies.
+  for (const [slug, width, height] of [['process-simple', 1100, 615], ['process-technical', 1270, 1020]]) {
+    await page.setViewportSize({ width, height });
+    await page.goto(pathToFileURL(path.resolve(folder, '../visuals/' + slug + '.svg')).href);
+    await page.locator('svg').screenshot({ path: path.resolve(folder, '../visuals/' + slug + '.png') });
+  }
+  await browser.close();
+})().catch(async error => { console.error(error); if (activeBrowser) await activeBrowser.close(); process.exit(1); });

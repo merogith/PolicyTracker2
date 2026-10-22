@@ -1,0 +1,749 @@
+{
+  "id": "label-vocabulary",
+  "version": "0.2.0-draft",
+  "status": "draft_for_review",
+  "principles": [
+    "Each facet answers one question. A concept has exactly one home: a subject is a topic, what the statement does is its statement type, money is a finance fact.",
+    "Only statement_type is required. Every other list may be empty; empty means 'nothing extracted', never 'the country has none'.",
+    "Select a value only when the record's own evidence supports it. A word match is not evidence.",
+    "Closed facets accept only listed IDs. Facets marked closed_with_other also accept {id: 'other', source_term: '...'}; recurring source terms are reviewed for promotion to a listed value.",
+    "Code derives everything that can be derived (domains, response stage, rollups). The model is never asked to produce a value that code can compute.",
+    "A reviewer may set review_status on a record, relation or claim. That is the only edit ever made to a model output; anything else is a re-run with a new version."
+  ],
+  "record_facets": [
+    {
+      "id": "statement_type",
+      "label": "Statement type",
+      "question": "What does this statement assert?",
+      "cardinality": "exactly_one",
+      "value_set": "closed",
+      "rule": "One value per coherent proposition. Split independently actionable measures, and split promises from reports of delivery. response_stage is looked up from this value by code; it is never asked of the model.",
+      "values": [
+        {
+          "id": "context",
+          "response_stage": 0,
+          "label": "Context or finding",
+          "definition": "A condition, trend, risk, need, barrier or observed hazard impact, with no undertaking. Includes 'no warning system exists'."
+        },
+        {
+          "id": "projection",
+          "response_stage": 0,
+          "label": "Projection or scenario",
+          "definition": "An estimated future condition or effect based on modelling or assumptions. Scenario names and horizons go in facts."
+        },
+        {
+          "id": "proposal",
+          "response_stage": 0,
+          "label": "Proposal or recommendation",
+          "definition": "An action suggested or recommended without established adoption by the responsible government."
+        },
+        {
+          "id": "priority",
+          "response_stage": 1,
+          "label": "Priority or goal",
+          "definition": "An area or goal stated as important by the reporting party, without a concrete undertaking. An actionable priority is a commitment."
+        },
+        {
+          "id": "commitment",
+          "response_stage": 1,
+          "label": "Commitment or target",
+          "definition": "An attributable undertaking to achieve a goal or target, quantitative or qualitative, conditional or not, without a specified measure for how."
+        },
+        {
+          "id": "planned_action",
+          "response_stage": 2,
+          "label": "Planned action",
+          "definition": "A specific measure, instrument, programme or project describing what will be done. A target paired with a defined measure is a planned action."
+        },
+        {
+          "id": "implementation_underway",
+          "response_stage": 3,
+          "label": "Implementation underway",
+          "definition": "The source reports allocated or mobilised resources, procurement, construction or an operating programme. A finance need or estimate is not resourcing."
+        },
+        {
+          "id": "output_delivered",
+          "response_stage": 4,
+          "label": "Output delivered",
+          "definition": "The source reports a completed, checkable output: a law or plan adopted, a system installed, a facility built. Delivery does not prove the intended outcome."
+        },
+        {
+          "id": "result_reported",
+          "response_stage": null,
+          "label": "Result reported",
+          "definition": "A reported change in an outcome linked to a response (losses fell, coverage rose). Not a response stage; it sets the claim's outcome signal."
+        },
+        {
+          "id": "unclear",
+          "response_stage": null,
+          "label": "Unclear",
+          "definition": "The evidence does not support a reliable type. Explain why in notes."
+        }
+      ]
+    },
+    {
+      "id": "purpose",
+      "label": "Policy purpose",
+      "question": "What policy purpose does the source state or clearly establish?",
+      "cardinality": "zero_or_more",
+      "value_set": "closed",
+      "rule": "Leave empty when no purpose is established. A NAP location alone does not establish adaptation. 'Flood mitigation' is disaster risk reduction, not mitigation.",
+      "values": [
+        {
+          "id": "adaptation",
+          "label": "Adaptation",
+          "definition": "Adjustment to actual or expected climate effects and their consequences."
+        },
+        {
+          "id": "mitigation",
+          "label": "Mitigation",
+          "definition": "Reducing greenhouse-gas emissions or enhancing carbon sinks."
+        },
+        {
+          "id": "disaster_risk_reduction",
+          "label": "Disaster risk reduction",
+          "definition": "Preventing new disaster risk, reducing existing risk or managing residual risk."
+        }
+      ]
+    },
+    {
+      "id": "hazard",
+      "label": "Hazard",
+      "question": "Which potentially damaging process is discussed?",
+      "cardinality": "zero_or_more",
+      "value_set": "closed_with_other",
+      "rule": "Use only when the hazard is substantively discussed. A hazard is not exposure, vulnerability or a policy purpose. Earthquakes and tsunamis are never climate evidence.",
+      "values": [
+        {
+          "id": "flood",
+          "onset": "sudden",
+          "label": "Flood",
+          "definition": "Riverine, flash, pluvial or snowmelt inundation of normally dry land. Keep the flood type in the statement."
+        },
+        {
+          "id": "heavy_precipitation",
+          "onset": "sudden",
+          "label": "Heavy precipitation",
+          "definition": "Intense rain or snowfall discussed as a hazard in its own right."
+        },
+        {
+          "id": "drought",
+          "onset": "slow",
+          "label": "Drought",
+          "definition": "A sustained precipitation or water deficit."
+        },
+        {
+          "id": "water_scarcity",
+          "onset": "slow",
+          "label": "Water scarcity",
+          "definition": "Insufficient usable water relative to demand; distinguish from drought when the source does."
+        },
+        {
+          "id": "extreme_heat",
+          "onset": "sudden",
+          "label": "Extreme heat",
+          "definition": "Heatwaves and unusually high temperatures."
+        },
+        {
+          "id": "extreme_cold",
+          "onset": "sudden",
+          "label": "Extreme cold",
+          "definition": "Cold waves, frost and severe winters."
+        },
+        {
+          "id": "storm_wind",
+          "onset": "sudden",
+          "label": "Storm or high wind",
+          "definition": "Damaging storms, hail and high winds."
+        },
+        {
+          "id": "dust_sand_storm",
+          "onset": "sudden",
+          "label": "Dust or sand storm",
+          "definition": "Wind-blown dust or sand events."
+        },
+        {
+          "id": "wildfire",
+          "onset": "sudden",
+          "label": "Wildfire",
+          "definition": "Uncontrolled vegetation fire."
+        },
+        {
+          "id": "landslide_mudflow",
+          "onset": "sudden",
+          "label": "Landslide or mudflow",
+          "definition": "Downslope movement of soil, rock or debris, including mudflows (sel)."
+        },
+        {
+          "id": "avalanche",
+          "onset": "sudden",
+          "label": "Avalanche",
+          "definition": "Rapid downslope movement of snow or ice."
+        },
+        {
+          "id": "glacial_lake_outburst",
+          "onset": "sudden",
+          "label": "Glacial lake outburst flood",
+          "definition": "Sudden release of water from a glacial or moraine-dammed lake."
+        },
+        {
+          "id": "glacier_permafrost_loss",
+          "onset": "slow",
+          "label": "Glacier, snow or permafrost loss",
+          "definition": "Retreat of glaciers, reduced snowpack or permafrost thaw."
+        },
+        {
+          "id": "desertification_land_degradation",
+          "onset": "slow",
+          "label": "Desertification or land degradation",
+          "definition": "Loss of land productivity, including soil erosion and salinisation."
+        },
+        {
+          "id": "sea_level_rise",
+          "onset": "slow",
+          "label": "Sea-level rise",
+          "definition": "Rising mean sea level, including in inland seas when the source frames it so."
+        },
+        {
+          "id": "coastal_hazard",
+          "onset": "sudden",
+          "label": "Coastal hazard",
+          "definition": "Storm surge, coastal flooding and coastal erosion."
+        },
+        {
+          "id": "disease_biological",
+          "onset": "sudden",
+          "label": "Disease or biological hazard",
+          "definition": "Epidemics, vectors, pests and other biological threats."
+        },
+        {
+          "id": "earthquake",
+          "onset": "sudden",
+          "label": "Earthquake",
+          "definition": "Seismic ground shaking and its secondary effects."
+        },
+        {
+          "id": "tsunami",
+          "onset": "sudden",
+          "label": "Tsunami",
+          "definition": "Waves generated by displacement of water."
+        },
+        {
+          "id": "technological",
+          "onset": "sudden",
+          "label": "Technological or industrial",
+          "definition": "Industrial, chemical, radiological, dam-failure or tailings accidents."
+        },
+        {
+          "id": "compound_cascading",
+          "onset": "sudden",
+          "label": "Compound or cascading",
+          "definition": "Hazards explicitly discussed as concurrent or triggering each other."
+        }
+      ]
+    },
+    {
+      "id": "risk_component",
+      "label": "Risk component",
+      "question": "Which part of risk does the statement describe?",
+      "cardinality": "zero_or_more",
+      "value_set": "closed",
+      "rule": "Use only when the statement explicitly concerns that component. A hazard mention does not establish exposure or vulnerability.",
+      "values": [
+        {
+          "id": "hazard",
+          "label": "Hazard",
+          "definition": "The damaging event, process or trend itself."
+        },
+        {
+          "id": "exposure",
+          "label": "Exposure",
+          "definition": "People, livelihoods, assets or systems located where hazards occur."
+        },
+        {
+          "id": "vulnerability",
+          "label": "Vulnerability",
+          "definition": "Conditions that make exposed people or systems more susceptible to harm."
+        },
+        {
+          "id": "capacity",
+          "label": "Capacity",
+          "definition": "Resources, skills and institutions available to manage risk, or their absence."
+        },
+        {
+          "id": "impact",
+          "label": "Impact",
+          "definition": "Losses, damage or consequences that occurred or are projected."
+        },
+        {
+          "id": "residual_risk",
+          "label": "Residual risk",
+          "definition": "Risk remaining after measures."
+        },
+        {
+          "id": "systemic_cascading_risk",
+          "label": "Systemic or cascading risk",
+          "definition": "Risk spreading through linked systems."
+        }
+      ]
+    },
+    {
+      "id": "risk_function",
+      "label": "Risk function",
+      "question": "What does the action do about risk?",
+      "cardinality": "zero_or_more",
+      "value_set": "closed",
+      "rule": "Applies to actions in any sector. Topics say what the action is about; this says what it does about risk. Leave empty for generic 'resilience' wording.",
+      "values": [
+        {
+          "id": "risk_understanding",
+          "label": "Risk understanding",
+          "definition": "Assessing hazards, exposure, vulnerability or risk, or producing risk information."
+        },
+        {
+          "id": "risk_prevention_reduction",
+          "label": "Prevention and reduction",
+          "definition": "Avoiding new risk or reducing existing exposure or vulnerability."
+        },
+        {
+          "id": "early_warning_preparedness",
+          "label": "Warning and preparedness",
+          "definition": "Warning capability, contingency plans, exercises and readiness to act."
+        },
+        {
+          "id": "anticipatory_action",
+          "label": "Anticipatory action",
+          "definition": "Action triggered by a forecast before an event. General readiness is not enough."
+        },
+        {
+          "id": "emergency_response",
+          "label": "Emergency response",
+          "definition": "Protecting people and meeting urgent needs during or right after an event."
+        },
+        {
+          "id": "recovery_reconstruction",
+          "label": "Recovery and reconstruction",
+          "definition": "Restoring livelihoods, infrastructure and services, including rebuilding more safely."
+        },
+        {
+          "id": "coping_continuity",
+          "label": "Coping and continuity",
+          "definition": "Keeping essential functions running during disruption through buffers or backups."
+        },
+        {
+          "id": "systemic_transformation",
+          "label": "Systemic transformation",
+          "definition": "Fundamental change of systems or development pathways. Routine improvement is not enough."
+        }
+      ]
+    },
+    {
+      "id": "affected_group",
+      "label": "Affected or target group",
+      "question": "Which people does the statement explicitly address?",
+      "cardinality": "zero_or_more",
+      "value_set": "closed_with_other",
+      "rule": "A mention does not establish a benefit. Never infer a group from a sector (an agriculture topic does not imply farmers). Named organisations are stakeholders, not groups.",
+      "values": [
+        {
+          "id": "women",
+          "label": "Women"
+        },
+        {
+          "id": "men",
+          "label": "Men"
+        },
+        {
+          "id": "children",
+          "label": "Children"
+        },
+        {
+          "id": "youth",
+          "label": "Youth"
+        },
+        {
+          "id": "older_people",
+          "label": "Older people"
+        },
+        {
+          "id": "persons_with_disabilities",
+          "label": "Persons with disabilities"
+        },
+        {
+          "id": "low_income_households",
+          "label": "Low-income households"
+        },
+        {
+          "id": "farmers",
+          "label": "Farmers"
+        },
+        {
+          "id": "herders",
+          "label": "Herders and pastoralists"
+        },
+        {
+          "id": "fishers",
+          "label": "Fishers"
+        },
+        {
+          "id": "rural_communities",
+          "label": "Rural communities"
+        },
+        {
+          "id": "urban_communities",
+          "label": "Urban communities"
+        },
+        {
+          "id": "workers",
+          "label": "Workers"
+        },
+        {
+          "id": "indigenous_local_communities",
+          "label": "Indigenous peoples or local communities"
+        },
+        {
+          "id": "migrants_displaced_people",
+          "label": "Migrants or displaced people"
+        }
+      ]
+    },
+    {
+      "id": "cross_cutting_theme",
+      "label": "Cross-cutting theme",
+      "question": "Which cross-cutting issue does the statement treat substantively?",
+      "cardinality": "zero_or_more",
+      "value_set": "closed",
+      "rule": "Only for substantive treatment. Themes that already exist as topics (finance, livelihoods, just transition, data, local knowledge) are not repeated here.",
+      "values": [
+        {
+          "id": "gender_equality",
+          "label": "Gender equality",
+          "definition": "Gender roles, gaps, participation or outcomes are analysed or addressed."
+        },
+        {
+          "id": "social_inclusion",
+          "label": "Social inclusion",
+          "definition": "Inclusion of youth, older people, persons with disabilities or other marginalised groups is addressed."
+        },
+        {
+          "id": "poverty_inequality",
+          "label": "Poverty and inequality",
+          "definition": "Poverty or distributional effects are analysed or addressed."
+        },
+        {
+          "id": "participation",
+          "label": "Participation",
+          "definition": "Consultation, stakeholder engagement or participatory processes."
+        },
+        {
+          "id": "capacity_building",
+          "label": "Capacity building",
+          "definition": "Institutional, technical or human capacity development."
+        },
+        {
+          "id": "technology_transfer",
+          "label": "Technology transfer",
+          "definition": "Technology development, access or transfer."
+        },
+        {
+          "id": "transboundary_cooperation",
+          "label": "Transboundary cooperation",
+          "definition": "Cooperation across national borders."
+        },
+        {
+          "id": "nature_based_solutions",
+          "label": "Nature-based solutions",
+          "definition": "Using ecosystems or natural processes, when that role is evidenced."
+        }
+      ]
+    },
+    {
+      "id": "policy_instrument",
+      "label": "Policy instrument",
+      "question": "What mechanism is used or proposed?",
+      "cardinality": "zero_or_more",
+      "value_set": "closed_with_other",
+      "rule": "Classify the mechanism, not the sector. A policy document does not by itself establish legal force.",
+      "values": [
+        {
+          "id": "strategy_plan",
+          "label": "Strategy or plan"
+        },
+        {
+          "id": "law_regulation",
+          "label": "Law or regulation"
+        },
+        {
+          "id": "standard_code",
+          "label": "Standard or code"
+        },
+        {
+          "id": "public_investment",
+          "label": "Public investment"
+        },
+        {
+          "id": "subsidy_incentive",
+          "label": "Subsidy or incentive"
+        },
+        {
+          "id": "tax_pricing",
+          "label": "Tax or pricing"
+        },
+        {
+          "id": "market_mechanism",
+          "label": "Market mechanism"
+        },
+        {
+          "id": "insurance_risk_finance",
+          "label": "Insurance or risk finance"
+        },
+        {
+          "id": "institution_coordination",
+          "label": "Institution or coordination"
+        },
+        {
+          "id": "information_warning",
+          "label": "Information or warning"
+        },
+        {
+          "id": "research_data",
+          "label": "Research or data"
+        },
+        {
+          "id": "training_capacity",
+          "label": "Training or capacity"
+        },
+        {
+          "id": "ecosystem_management",
+          "label": "Ecosystem management"
+        },
+        {
+          "id": "infrastructure_service",
+          "label": "Infrastructure or service"
+        }
+      ]
+    },
+    {
+      "id": "geographic_scope",
+      "label": "Geographic scope",
+      "question": "At what geographic level does the statement apply?",
+      "cardinality": "zero_or_one",
+      "value_set": "closed",
+      "rule": "Record only an explicit or unambiguous scope. Named places go in places. EU-level or regional statements are never reassigned to the reporting country.",
+      "values": [
+        {
+          "id": "local",
+          "label": "Local"
+        },
+        {
+          "id": "subnational",
+          "label": "Subnational"
+        },
+        {
+          "id": "national",
+          "label": "National"
+        },
+        {
+          "id": "transboundary",
+          "label": "Transboundary (shared basin, border area)"
+        },
+        {
+          "id": "regional",
+          "label": "Multi-country region"
+        },
+        {
+          "id": "EU",
+          "label": "European Union"
+        },
+        {
+          "id": "global",
+          "label": "Global"
+        }
+      ]
+    }
+  ],
+  "linked_fields": [
+    {
+      "id": "stakeholder_role",
+      "label": "Stakeholder role",
+      "question": "What does the named organisation do in relation to this statement?",
+      "applies_to": "stakeholders[].role",
+      "value_set": "closed",
+      "rule": "Keep the source name. A ministry mention does not establish responsibility; use unspecified.",
+      "values": [
+        "responsible",
+        "implementing",
+        "financing",
+        "supporting",
+        "monitoring_reporting",
+        "consulted",
+        "other",
+        "unspecified"
+      ]
+    },
+    {
+      "id": "place_type",
+      "label": "Place type",
+      "applies_to": "places[].place_type",
+      "value_set": "closed",
+      "values": [
+        "region",
+        "district",
+        "city",
+        "basin",
+        "site",
+        "other"
+      ]
+    },
+    {
+      "id": "detail_kind",
+      "label": "Linked detail kind",
+      "question": "What non-numeric supporting information is linked to the record?",
+      "applies_to": "details[].kind",
+      "value_set": "closed",
+      "values": [
+        "barrier",
+        "support_need",
+        "implementation_step",
+        "coordination",
+        "dependency",
+        "co_benefit",
+        "tradeoff",
+        "inclusion"
+      ]
+    },
+    {
+      "id": "missing_reason",
+      "label": "Missing-value reason",
+      "applies_to": "missing_fields[].reason",
+      "value_set": "closed",
+      "rule": "Only for blanks that change interpretation, such as a target with no baseline. Unreadable pages belong in coverage, not here.",
+      "values": [
+        "not_stated",
+        "ambiguous",
+        "not_applicable"
+      ]
+    },
+    {
+      "id": "page_disposition",
+      "label": "Page disposition",
+      "applies_to": "coverage.pages[].disposition",
+      "value_set": "closed",
+      "rule": "Every page in scope gets exactly one disposition. not_found statements are only valid for extracted or background pages.",
+      "values": [
+        "extracted",
+        "background",
+        "unreadable",
+        "not_read"
+      ]
+    },
+    {
+      "id": "document_kind",
+      "label": "Document kind",
+      "applies_to": "document.kind",
+      "value_set": "closed",
+      "values": [
+        "NDC",
+        "NAP",
+        "NDRR",
+        "LTS",
+        "BTR",
+        "other"
+      ]
+    },
+    {
+      "id": "review_status",
+      "label": "Review status",
+      "question": "Has a person checked this record against the PDF?",
+      "applies_to": "records[].review_status",
+      "value_set": "closed",
+      "rule": "Absent or null means not reviewed. A rejected record stays in the file for the audit trail but is excluded from stage 2 and from every view. A wrong label is never corrected in place: reject the record, fix the prompt or the vocabulary, and re-run.",
+      "values": [
+        "proposed",
+        "accepted",
+        "rejected"
+      ]
+    }
+  ],
+  "fact_fields": {
+    "rule": "Every number becomes a fact with its own period, condition, scope and evidence. Never turn an observation, projection or finance need into a target. Unknown is null, never zero. Do not compare facts until metric, unit, baseline, denominator, period, scope, scenario and condition match.",
+    "fact_type": [
+      "target",
+      "observation",
+      "projection",
+      "finance",
+      "indicator"
+    ],
+    "target_kind": [
+      "quantitative",
+      "deliverable",
+      "qualitative"
+    ],
+    "comparator": [
+      "equal",
+      "at_least",
+      "at_most",
+      "range",
+      "approximate",
+      "not_stated"
+    ],
+    "direction": [
+      "increase",
+      "decrease",
+      "maintain",
+      "complete",
+      "unspecified"
+    ],
+    "basis": [
+      "absolute",
+      "historical_reduction",
+      "BAU_reduction",
+      "intensity",
+      "share",
+      "other",
+      "not_stated"
+    ],
+    "total_or_additional": [
+      "total",
+      "additional",
+      "not_stated"
+    ],
+    "conditionality": [
+      "unconditional",
+      "conditional",
+      "partly_conditional",
+      "not_stated",
+      "unclear"
+    ],
+    "period_role": [
+      "target",
+      "baseline",
+      "observation",
+      "projection_horizon",
+      "implementation"
+    ],
+    "finance_source_type": [
+      "domestic_public",
+      "international_grant",
+      "international_loan",
+      "private",
+      "blended",
+      "green_bond_or_loan",
+      "carbon_market",
+      "insurance_risk_finance",
+      "other",
+      "not_stated"
+    ],
+    "finance_status": [
+      "need_or_estimate",
+      "requested",
+      "pledged",
+      "committed",
+      "allocated",
+      "mobilized",
+      "disbursed",
+      "spent",
+      "not_stated"
+    ]
+  }
+}

@@ -1,0 +1,660 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "extraction.schema.json",
+  "title": "Stage 1 output: source records extracted and labeled from one document",
+  "description": "Structure only. Allowed label values come from config/taxonomy.json and config/vocabulary.json and are checked by scripts/check.py, so value lists are never duplicated here.",
+  "type": "object",
+  "required": [
+    "document",
+    "versions",
+    "coverage",
+    "records"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "document": {
+      "type": "object",
+      "required": [
+        "document_id",
+        "country",
+        "kind",
+        "title",
+        "edition_date",
+        "language",
+        "page_count"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "document_id": {
+          "type": "string"
+        },
+        "country": {
+          "type": "string",
+          "description": "ISO 3166-1 alpha-3 of the reporting party"
+        },
+        "kind": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "edition_date": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "language": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "page_count": {
+          "type": "integer"
+        },
+        "sha256": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "versions": {
+      "type": "object",
+      "required": [
+        "taxonomy",
+        "vocabulary",
+        "prompt"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "taxonomy": {
+          "type": "string"
+        },
+        "vocabulary": {
+          "type": "string"
+        },
+        "prompt": {
+          "type": "string"
+        },
+        "model": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "coverage": {
+      "type": "object",
+      "required": [
+        "pages",
+        "limitations"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "pages": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "page",
+              "disposition",
+              "record_ids"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "page": {
+                "type": "integer",
+                "description": "Physical PDF page index, 1-based"
+              },
+              "disposition": {
+                "type": "string"
+              },
+              "record_ids": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "reason": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            }
+          }
+        },
+        "limitations": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "records": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/record"
+      }
+    }
+  },
+  "$defs": {
+    "coded": {
+      "description": "A controlled value, or {id: 'other', source_term} for closed_with_other facets.",
+      "oneOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "object",
+          "required": [
+            "id",
+            "source_term"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "id": {
+              "const": "other"
+            },
+            "source_term": {
+              "type": "string"
+            }
+          }
+        }
+      ]
+    },
+    "evidence": {
+      "type": "object",
+      "required": [
+        "evidence_id",
+        "page",
+        "quote_original"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "evidence_id": {
+          "type": "string"
+        },
+        "page": {
+          "type": "integer"
+        },
+        "printed_page": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "quote_original": {
+          "type": "string",
+          "description": "Exact source text, original language"
+        },
+        "quote_en": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "table_context": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Table title, column header or footnote that governs the quote"
+        }
+      }
+    },
+    "fact": {
+      "type": "object",
+      "required": [
+        "fact_id",
+        "fact_type",
+        "metric",
+        "value_as_stated",
+        "evidence_id"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "fact_id": {
+          "type": "string"
+        },
+        "fact_type": {
+          "type": "string"
+        },
+        "metric": {
+          "type": "string"
+        },
+        "value_as_stated": {
+          "type": "string",
+          "description": "Exact source wording of the number or deliverable"
+        },
+        "value": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Decimal string without thousands separators, or null when ambiguous"
+        },
+        "lower": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "upper": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "unit": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "currency": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "comparator": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "direction": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "basis": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "total_or_additional": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "baseline": {
+          "type": [
+            "object",
+            "null"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "value": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "unit": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "period": {
+              "type": [
+                "string",
+                "null"
+              ]
+            }
+          }
+        },
+        "period_role": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "period": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "scenario": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "scope": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Sector, gas, geography or accounting scope as stated"
+        },
+        "conditionality": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "condition_text": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "target_kind": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "finance_source_type": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "finance_status": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "finance_source": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "evidence_id": {
+          "type": "string"
+        }
+      }
+    },
+    "record": {
+      "type": "object",
+      "required": [
+        "record_id",
+        "statement_type",
+        "statement_en",
+        "reference_period",
+        "evidence",
+        "labels",
+        "places",
+        "stakeholders",
+        "facts",
+        "details",
+        "missing_fields",
+        "unmapped_concepts"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "record_id": {
+          "type": "string",
+          "description": "<document_id>-p<page>-<seq>"
+        },
+        "statement_type": {
+          "type": "string"
+        },
+        "statement_en": {
+          "type": "string",
+          "description": "One faithful English proposition"
+        },
+        "reference_period": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "When the statement applies (event year, adoption date, observation period). Number-specific periods go on each fact."
+        },
+        "evidence": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/evidence"
+          }
+        },
+        "labels": {
+          "type": "object",
+          "required": [
+            "topic_ids",
+            "purpose",
+            "hazard",
+            "risk_component",
+            "risk_function",
+            "affected_group",
+            "cross_cutting_theme",
+            "policy_instrument",
+            "geographic_scope"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "topic_ids": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "purpose": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "hazard": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/coded"
+              }
+            },
+            "risk_component": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "risk_function": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "affected_group": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/coded"
+              }
+            },
+            "cross_cutting_theme": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "policy_instrument": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/coded"
+              }
+            },
+            "geographic_scope": {
+              "type": [
+                "string",
+                "null"
+              ]
+            }
+          }
+        },
+        "places": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "source_name",
+              "place_type"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "source_name": {
+                "type": "string"
+              },
+              "place_type": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "stakeholders": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "name_original",
+              "name_en",
+              "role",
+              "evidence_id"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "name_original": {
+                "type": "string"
+              },
+              "name_en": {
+                "type": "string"
+              },
+              "role": {
+                "type": "string"
+              },
+              "evidence_id": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "facts": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/fact"
+          }
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "kind",
+              "text_en",
+              "evidence_id"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "kind": {
+                "type": "string"
+              },
+              "text_en": {
+                "type": "string"
+              },
+              "fact_ids": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "evidence_id": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "missing_fields": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "field",
+              "reason"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "field": {
+                "type": "string",
+                "description": "e.g. facts/F1/baseline"
+              },
+              "reason": {
+                "type": "string"
+              },
+              "detail": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            }
+          }
+        },
+        "unmapped_concepts": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "facet",
+              "source_term",
+              "proposed_label",
+              "evidence_id"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "facet": {
+                "type": "string",
+                "description": "topic or a vocabulary facet id"
+              },
+              "source_term": {
+                "type": "string"
+              },
+              "proposed_label": {
+                "type": "string"
+              },
+              "reason": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "evidence_id": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "notes": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "review_status": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Set by a reviewer, never by the model. Values in vocabulary.linked_fields.review_status."
+        },
+        "review_note": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,33 @@
+/* Domain cards use the same score treatment in profiles and the design preview. */
+.policy-score-card { display: flex; flex-direction: column; gap: 14px; padding: 16px; height: 100%; min-width: 0; text-align: left; border: 1px solid color-mix(in srgb, var(--mark) 35%, var(--border)); border-top: 3px solid var(--mark); border-radius: 10px; background: color-mix(in srgb, var(--mark) 7%, var(--surface)); transition: background .15s, border-color .15s; }
+.policy-score-card:hover { background: color-mix(in srgb, var(--mark) 14%, var(--surface)); border-color: var(--mark); }
+.policy-score-card:focus-visible { outline: 2px solid var(--primary); outline-offset: 3px; }
+.policy-score-name { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; font-size: 13px; font-weight: 500; line-height: 1.4; min-height: 36px; }
+.policy-score-name svg { flex-shrink: 0; color: var(--muted); }
+.policy-score-summary { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: auto; }
+.policy-score-context { font-size: 11px; line-height: 1.5; color: var(--muted); text-align: right; }
+.policy-score-value { display: inline-flex; flex-wrap: wrap; align-items: center; gap: 7px; min-width: 0; }
+.policy-score-badge { display: inline-flex; align-items: baseline; gap: 4px; padding: 8px 10px; border-radius: 7px; background: var(--mark); color: var(--score-ink); font-variant-numeric: tabular-nums; }
+.policy-score-badge strong { font-size: 26px; font-weight: 600; line-height: 1.1; letter-spacing: -.04em; }
+.policy-score-badge small { font-size: 11px; font-weight: 400; }
+.policy-score-empty { font-size: 11px; color: var(--muted); }
+.policy-score-value[data-state="unavailable"] .policy-score-badge, .policy-score-value[data-state="no-action"] .policy-score-badge { background: var(--surface-2); color: var(--muted); }
+.policy-score-track { display: block; height: 6px; border-radius: 3px; background: var(--surface-2); overflow: hidden; }
+.policy-score-track > i { display: block; height: 100%; border-radius: inherit; background: var(--mark); }
+.policy-score-track[data-state="unavailable"] { background: var(--data-unavailable-soft); }
+.policy-score-track[data-state="no-action"] { background: transparent; border: 1px solid var(--border); }
+.policy-score-card[data-state="unavailable"], .policy-score-card[data-state="no-action"] { border-color: var(--border); background: var(--surface); }
+.policy-score-key { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 20px; color: var(--muted); font-size: 11px; line-height: 1.5; }
+.policy-score-key > span:first-child { font-weight: 500; color: var(--foreground); }
+.policy-score-key-range { display: inline-flex; align-items: center; gap: 8px; }
+.policy-score-swatches { display: inline-flex; gap: 3px; }
+.policy-score-swatches i { width: 23px; height: 9px; border-radius: 2px; }
+@media (max-width: 570px) {
+  .policy-score-summary { flex-wrap: wrap; }
+  .policy-score-badge { padding: 7px 8px; }
+  .policy-score-badge strong { font-size: 24px; }
+  .policy-score-context { text-align: left; }
+  .policy-score-key { gap: 6px 12px; }
+  .policy-score-swatches i { width: 18px; }
+}
+@media (prefers-reduced-motion: reduce) { .policy-score-card { transition: none; } }

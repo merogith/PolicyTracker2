@@ -1,0 +1,615 @@
+{
+  "example_status": "entirely_synthetic_not_country_evidence",
+  "purpose": "Show NDC/NAP target variants, linked implementation planning and supporting capacity without treating context as achievement",
+  "country": "XEX",
+  "documents": [
+    {
+      "id": "XEX-NAP1",
+      "kind": "NAP",
+      "edition_date": "2024-12-01",
+      "document_family_id": "XEX-NAP",
+      "supersedes_document_id": null
+    },
+    {
+      "id": "XEX-NDC1",
+      "kind": "NDC",
+      "edition_date": "2025-06-01",
+      "document_family_id": "XEX-NDC",
+      "supersedes_document_id": null
+    },
+    {
+      "id": "XEX-NAP2",
+      "kind": "NAP",
+      "edition_date": "2026-06-01",
+      "document_family_id": "XEX-NAP",
+      "supersedes_document_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "E1",
+      "document_id": "XEX-NDC1",
+      "page": 12,
+      "quote": "Under the Efficient Irrigation Programme, countrywide efficient irrigation will cover a total of 100,000 hectares by 2030, without conditions.",
+      "automatic_state": "passed"
+    },
+    {
+      "id": "E2",
+      "document_id": "XEX-NAP1",
+      "page": 8,
+      "quote": "The national irrigation network used by the Efficient Irrigation Programme served 60,000 hectares in 2024.",
+      "automatic_state": "passed"
+    },
+    {
+      "id": "E3",
+      "document_id": "XEX-NAP2",
+      "page": 19,
+      "quote": "Under the Efficient Irrigation Programme, countrywide efficient irrigation will cover a total of 80,000 hectares by 2030, without conditions.",
+      "automatic_state": "passed"
+    },
+    {
+      "id": "E4",
+      "document_id": "XEX-NAP2",
+      "page": 20,
+      "quote": "The Ministry of Agriculture will rehabilitate 30 km of irrigation canals under the Efficient Irrigation Programme during 2026–2030.",
+      "automatic_state": "passed"
+    }
+  ],
+  "records": [
+    {
+      "id": "R1",
+      "document_id": "XEX-NDC1",
+      "evidence_ids": [
+        "E1"
+      ],
+      "statement": "Efficient irrigation is targeted to cover 100,000 hectares countrywide by 2030.",
+      "statement_type": "commitment",
+      "primary_topic_id": "AGR-01",
+      "secondary_topic_ids": [],
+      "policy_object": "Efficient Irrigation Programme",
+      "labels": {
+        "purpose": [],
+        "geographic_scope": "national"
+      },
+      "facts": [
+        {
+          "fact_type": "target",
+          "metric": "total efficient irrigation area",
+          "value_as_stated": "100,000 hectares",
+          "value": "100000",
+          "unit": "ha",
+          "period": "2030",
+          "basis": "absolute",
+          "baseline_value": null,
+          "baseline_period": null,
+          "baseline_relevance": "not_required_for_absolute_total_comparison",
+          "total_or_additional": "total",
+          "conditionality": "unconditional",
+          "scenario": null,
+          "evidence_ids": [
+            "E1"
+          ]
+        }
+      ],
+      "field_evidence": {
+        "/statement": [
+          "E1"
+        ],
+        "/primary_topic_id": [
+          "E1"
+        ],
+        "/statement_type": [
+          "E1"
+        ],
+        "/policy_object": [
+          "E1"
+        ],
+        "/facts": [
+          "E1"
+        ],
+        "/delivery/timeframe/text": [
+          "E1"
+        ],
+        "/delivery/deliverable/text": [
+          "E1"
+        ],
+        "/labels/geographic_scope": [
+          "E1"
+        ],
+        "/facts/0/period": [
+          "E1"
+        ]
+      },
+      "policy_object_id": "XEX-efficient-irrigation-target-2030",
+      "delivery": {
+        "actor": null,
+        "timeframe": {
+          "text": "by 2030",
+          "policy_object_id": "XEX-efficient-irrigation-target-2030",
+          "evidence_ids": [
+            "E1"
+          ],
+          "anchor": "action"
+        },
+        "deliverable": {
+          "text": "100,000 hectares total national efficient irrigation coverage",
+          "policy_object_id": "XEX-efficient-irrigation-target-2030",
+          "evidence_ids": [
+            "E1"
+          ],
+          "kind": "quantified_output"
+        }
+      }
+    },
+    {
+      "id": "R2",
+      "document_id": "XEX-NAP1",
+      "evidence_ids": [
+        "E2"
+      ],
+      "statement": "The programme's national irrigation network served 60,000 hectares in 2024.",
+      "statement_type": "context",
+      "primary_topic_id": "AGR-01",
+      "secondary_topic_ids": [],
+      "policy_object": "Efficient Irrigation Programme",
+      "labels": {
+        "purpose": [],
+        "geographic_scope": "national"
+      },
+      "facts": [
+        {
+          "fact_type": "observation",
+          "metric": "area served by irrigation network",
+          "value_as_stated": "60,000 hectares",
+          "value": "60000",
+          "unit": "ha",
+          "period": "2024",
+          "basis": "absolute",
+          "baseline_value": null,
+          "baseline_period": null,
+          "total_or_additional": "not_stated",
+          "conditionality": "not_stated",
+          "scenario": null,
+          "evidence_ids": [
+            "E2"
+          ]
+        }
+      ],
+      "field_evidence": {
+        "/statement": [
+          "E2"
+        ],
+        "/primary_topic_id": [
+          "E2"
+        ],
+        "/statement_type": [
+          "E2"
+        ],
+        "/policy_object": [
+          "E2"
+        ],
+        "/facts": [
+          "E2"
+        ],
+        "/labels/geographic_scope": [
+          "E2"
+        ],
+        "/facts/0/period": [
+          "E2"
+        ]
+      },
+      "policy_object_id": "XEX-network-capacity-2024",
+      "delivery": {
+        "actor": null,
+        "timeframe": null,
+        "deliverable": null
+      }
+    },
+    {
+      "id": "R3",
+      "document_id": "XEX-NAP2",
+      "evidence_ids": [
+        "E3"
+      ],
+      "statement": "Efficient irrigation is targeted to cover 80,000 hectares countrywide by 2030.",
+      "statement_type": "commitment",
+      "primary_topic_id": "AGR-01",
+      "secondary_topic_ids": [],
+      "policy_object": "Efficient Irrigation Programme",
+      "labels": {
+        "purpose": [],
+        "geographic_scope": "national"
+      },
+      "facts": [
+        {
+          "fact_type": "target",
+          "metric": "total efficient irrigation area",
+          "value_as_stated": "80,000 hectares",
+          "value": "80000",
+          "unit": "ha",
+          "period": "2030",
+          "basis": "absolute",
+          "baseline_value": null,
+          "baseline_period": null,
+          "baseline_relevance": "not_required_for_absolute_total_comparison",
+          "total_or_additional": "total",
+          "conditionality": "unconditional",
+          "scenario": null,
+          "evidence_ids": [
+            "E3"
+          ]
+        }
+      ],
+      "field_evidence": {
+        "/statement": [
+          "E3"
+        ],
+        "/primary_topic_id": [
+          "E3"
+        ],
+        "/statement_type": [
+          "E3"
+        ],
+        "/policy_object": [
+          "E3"
+        ],
+        "/facts": [
+          "E3"
+        ],
+        "/delivery/timeframe/text": [
+          "E3"
+        ],
+        "/delivery/deliverable/text": [
+          "E3"
+        ],
+        "/labels/geographic_scope": [
+          "E3"
+        ],
+        "/facts/0/period": [
+          "E3"
+        ]
+      },
+      "policy_object_id": "XEX-efficient-irrigation-target-2030",
+      "delivery": {
+        "actor": null,
+        "timeframe": {
+          "text": "by 2030",
+          "policy_object_id": "XEX-efficient-irrigation-target-2030",
+          "evidence_ids": [
+            "E3"
+          ],
+          "anchor": "action"
+        },
+        "deliverable": {
+          "text": "80,000 hectares total national efficient irrigation coverage",
+          "policy_object_id": "XEX-efficient-irrigation-target-2030",
+          "evidence_ids": [
+            "E3"
+          ],
+          "kind": "quantified_output"
+        }
+      }
+    },
+    {
+      "id": "R4",
+      "document_id": "XEX-NAP2",
+      "evidence_ids": [
+        "E4"
+      ],
+      "statement": "The Ministry of Agriculture plans to rehabilitate 30 km of programme irrigation canals during 2026–2030.",
+      "statement_type": "planned_action",
+      "primary_topic_id": "AGR-01",
+      "secondary_topic_ids": [],
+      "policy_object": "Efficient Irrigation Programme",
+      "labels": {
+        "purpose": [],
+        "geographic_scope": null
+      },
+      "facts": [
+        {
+          "fact_type": "target",
+          "metric": "length of irrigation canals rehabilitated",
+          "value_as_stated": "30 km",
+          "value": "30",
+          "unit": "km",
+          "period": "2026–2030",
+          "basis": "absolute",
+          "baseline_value": null,
+          "baseline_period": null,
+          "total_or_additional": "not_stated",
+          "conditionality": "not_stated",
+          "scenario": null,
+          "evidence_ids": [
+            "E4"
+          ]
+        }
+      ],
+      "timeframe": "2026–2030",
+      "scope_as_stated": "Irrigation canals under the Efficient Irrigation Programme",
+      "actors": [
+        {
+          "name": "Ministry of Agriculture",
+          "role": "implementing",
+          "evidence_ids": [
+            "E4"
+          ]
+        }
+      ],
+      "field_evidence": {
+        "/statement": [
+          "E4"
+        ],
+        "/primary_topic_id": [
+          "E4"
+        ],
+        "/statement_type": [
+          "E4"
+        ],
+        "/timeframe": [
+          "E4"
+        ],
+        "/policy_object": [
+          "E4"
+        ],
+        "/actors": [
+          "E4"
+        ],
+        "/facts/0/value_as_stated": [
+          "E4"
+        ],
+        "/delivery/actor/text": [
+          "E4"
+        ],
+        "/delivery/timeframe/text": [
+          "E4"
+        ],
+        "/delivery/deliverable/text": [
+          "E4"
+        ],
+        "/scope_as_stated": [
+          "E4"
+        ]
+      },
+      "policy_object_id": "XEX-canal-rehabilitation-2026-2030",
+      "delivery": {
+        "actor": {
+          "text": "Ministry of Agriculture",
+          "role": "implementing",
+          "policy_object_id": "XEX-canal-rehabilitation-2026-2030",
+          "evidence_ids": [
+            "E4"
+          ]
+        },
+        "timeframe": {
+          "text": "during 2026–2030",
+          "anchor": "action",
+          "policy_object_id": "XEX-canal-rehabilitation-2026-2030",
+          "evidence_ids": [
+            "E4"
+          ]
+        },
+        "deliverable": {
+          "text": "Rehabilitate 30 km of programme irrigation canals",
+          "kind": "quantified_output",
+          "policy_object_id": "XEX-canal-rehabilitation-2026-2030",
+          "evidence_ids": [
+            "E4"
+          ]
+        }
+      }
+    }
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "title": "Efficient irrigation area target for 2030",
+      "primary_topic_id": "AGR-01",
+      "member_record_ids": [
+        "R1",
+        "R3"
+      ],
+      "variants": [
+        {
+          "id": "V1",
+          "record_ids": [
+            "R1"
+          ]
+        },
+        {
+          "id": "V2",
+          "record_ids": [
+            "R3"
+          ]
+        }
+      ],
+      "current_target_state": "conflicting_assertions",
+      "resolved_value": null,
+      "response_stage": 1,
+      "documentation_band": {
+        "code": 2,
+        "label": "Policy response documented",
+        "possible_upper": 2,
+        "rule_version": "3.0.0"
+      },
+      "delivery_checks": {
+        "actor": false,
+        "timeframe": true,
+        "specific_deliverable": true
+      }
+    },
+    {
+      "id": "C2",
+      "title": "Existing programme irrigation network capacity",
+      "primary_topic_id": "AGR-01",
+      "member_record_ids": [
+        "R2"
+      ],
+      "variants": [],
+      "response_stage": null,
+      "documentation_band": {
+        "code": 1,
+        "label": "Context documented",
+        "possible_upper": 1,
+        "rule_version": "3.0.0"
+      },
+      "delivery_checks": {
+        "actor": false,
+        "timeframe": false,
+        "specific_deliverable": false
+      }
+    },
+    {
+      "id": "C3",
+      "title": "Programme irrigation canal rehabilitation",
+      "primary_topic_id": "AGR-01",
+      "member_record_ids": [
+        "R4"
+      ],
+      "variants": [],
+      "response_stage": 2,
+      "documentation_band": {
+        "code": 3,
+        "label": "Delivery details documented",
+        "possible_upper": 3,
+        "rule_version": "3.0.0"
+      },
+      "delivery_checks": {
+        "actor": true,
+        "timeframe": true,
+        "specific_deliverable": true
+      }
+    }
+  ],
+  "relationships": [
+    {
+      "id": "L1",
+      "type": "contradicts",
+      "from_record_id": "R1",
+      "to_record_id": "R3",
+      "evidence_record_ids": [
+        "R1",
+        "R3"
+      ],
+      "comparability": "comparable",
+      "rationale": "Same named programme, total efficient-irrigation metric, countrywide scope, absolute hectares, 2030 horizon and unconditional pathway; values differ and no explicit replacement is evidenced."
+    },
+    {
+      "id": "L2",
+      "type": "contextualizes",
+      "from_claim_id": "C2",
+      "to_claim_id": "C1",
+      "evidence_record_ids": [
+        "R2",
+        "R1"
+      ],
+      "comparability": "not_comparable",
+      "rationale": "The programme's existing irrigation network is relevant context. Area served by a network is not necessarily efficient-irrigation area; no baseline or achievement inference follows."
+    },
+    {
+      "id": "L3",
+      "type": "supports",
+      "from_claim_id": "C3",
+      "to_claim_id": "C1",
+      "evidence_record_ids": [
+        "R4",
+        "R1",
+        "R3"
+      ],
+      "comparability": "not_comparable",
+      "rationale": "Named programme rehabilitation is a planned associated action. It does not resolve the target conflict or establish implementation/delivery."
+    }
+  ],
+  "topic_view": {
+    "topic_id": "AGR-01",
+    "home_scoring_domain": "agriculture",
+    "display_note": "Agriculture owns the score; the same irrigation claims are also visible through the topic's Water placement.",
+    "stage_distribution": {
+      "commitment": 1,
+      "planned": 1,
+      "underway": 0,
+      "delivered": 0,
+      "context_without_response_stage": 1
+    },
+    "conflicting_claims": [
+      "C1"
+    ],
+    "interpretation": "At least one response has delivery details: the separate canal action. Target variants remain band 2 with an unresolved conflict. No implementation or achievement is established.",
+    "documentation_band": {
+      "code": 3,
+      "label": "Delivery details documented",
+      "possible_upper": 3
+    },
+    "processing_complete": true,
+    "response_claim_count": 2,
+    "detail_ready_claim_count": 1
+  },
+  "document_views": [
+    {
+      "document_id": "XEX-NDC1",
+      "claims": [
+        {
+          "claim_id": "C1",
+          "record_ids": [
+            "R1"
+          ],
+          "response_stage": 1
+        }
+      ],
+      "AGR-01_band": {
+        "code": 2,
+        "label": "Policy response documented"
+      }
+    },
+    {
+      "document_id": "XEX-NAP1",
+      "claims": [
+        {
+          "claim_id": "C2",
+          "record_ids": [
+            "R2"
+          ],
+          "response_stage": null
+        }
+      ],
+      "AGR-01_band": {
+        "code": 1,
+        "label": "Context documented"
+      }
+    },
+    {
+      "document_id": "XEX-NAP2",
+      "claims": [
+        {
+          "claim_id": "C1",
+          "record_ids": [
+            "R3"
+          ],
+          "response_stage": 1
+        },
+        {
+          "claim_id": "C3",
+          "record_ids": [
+            "R4"
+          ],
+          "response_stage": 2
+        }
+      ],
+      "AGR-01_band": {
+        "code": 3,
+        "label": "Delivery details documented"
+      }
+    }
+  ],
+  "expected_checks": [
+    "All four source records belong to exactly one core claim.",
+    "Both target values remain visible; no 90,000-hectare average is produced.",
+    "Existing network capacity does not count as reported progress on the efficient-irrigation target.",
+    "A newer NAP target does not silently supersede the NDC target.",
+    "Document-specific bands use only their own evidence; later delivery details cannot leak into earlier documents.",
+    "Example evidence states are illustrative; there are no real PDFs behind this synthetic file.",
+    "The planned canal action has actor, action timeframe and 30-km deliverable for the same response.",
+    "The target claim does not borrow the linked action actor/deliverable.",
+    "No response stage is inferred from its documentation band."
+  ],
+  "method_version": "3.0.0"
+}

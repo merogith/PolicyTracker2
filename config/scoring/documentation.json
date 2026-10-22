@@ -1,0 +1,11 @@
+{
+  "version": "average-action-stage-v1",
+  "name": "Average action stage",
+  "maximum": 4,
+  "displayMaximum": 100,
+  "pointSource": "config/labels.json: statement_type.options[].response_stage",
+  "levels": ["No action documented", "25–<50", "50–<75", "75–<100", "100"],
+  "topicRule": "Mean stage of distinct source-matched action claims explicitly tagged to the topic, scaled to 100. Context claims are excluded.",
+  "aggregation": "Equal-weight mean of scored home topics. Topics without action claims are shown separately and excluded from the average. Incomplete scores are provisional averages, not lower bounds, and never enter benchmarks.",
+  "interpretation": "What the supplied documents report, not verified delivery, policy quality or climate performance"
+}

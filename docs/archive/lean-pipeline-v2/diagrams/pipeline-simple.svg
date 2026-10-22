@@ -1,0 +1,115 @@
+<?xml version='1.0' encoding='utf-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1650" height="590" viewBox="0 0 1650 590" role="img" aria-labelledby="simple-title simple-desc">
+  <title id="simple-title">Simple overview</title>
+  <desc id="simple-desc">Regional climate and disaster policy tracker. Two model stages, deterministic pooling and documentation bands, automatic publication with source-specific evidence.</desc>
+  <defs>
+    <marker id="simple-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#60758A" />
+    </marker>
+  </defs>
+  <rect x="0" y="0" width="1650" height="590" fill="#F7F9FC" />
+  <text x="32" y="60" font-family="Arial, Helvetica, sans-serif" font-size="32" font-weight="700" fill="#23364D">
+    <tspan x="32" dy="0">Policy tracker: simple process</tspan>
+  </text>
+  <text x="32" y="97" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="400" fill="#52667B">
+    <tspan x="32" dy="0">Two LLM stages. Code handles pooling, evidence checks and documentation bands.</tspan>
+  </text>
+  <rect x="32" y="165" width="205" height="215" rx="14" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="2" />
+  <text x="49" y="191" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="700" fill="#42648A">
+    <tspan x="49" dy="0">01  SOURCES</tspan>
+  </text>
+  <text x="49" y="242" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700" fill="#23364D">
+    <tspan x="49" dy="0">Documents</tspan>
+  </text>
+  <text x="49" y="280" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="400" fill="#23364D">
+    <tspan x="49" dy="0">NDC / NAP / DRR</tspan>
+    <tspan x="49" dy="23">Keep each edition</tspan>
+    <tspan x="49" dy="23">and source page</tspan>
+  </text>
+  <rect x="262" y="165" width="205" height="215" rx="14" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="2" />
+  <text x="279" y="191" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="700" fill="#42648A">
+    <tspan x="279" dy="0">02  CODE</tspan>
+  </text>
+  <text x="279" y="242" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700" fill="#23364D">
+    <tspan x="279" dy="0">Prepare</tspan>
+  </text>
+  <text x="279" y="280" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="400" fill="#23364D">
+    <tspan x="279" dy="0">Index readable pages</tspan>
+    <tspan x="279" dy="23">Record source scope</tspan>
+    <tspan x="279" dy="23">and search coverage</tspan>
+  </text>
+  <path d="M237,272.5 L262,272.5" fill="none" stroke="#60758A" stroke-width="2" marker-end="url(#simple-arrow)" />
+  <rect x="492" y="165" width="205" height="215" rx="14" fill="#EAF2FF" stroke="#6B98D1" stroke-width="2" />
+  <text x="509" y="191" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="700" fill="#42648A">
+    <tspan x="509" dy="0">03  LLM - STAGE 1</tspan>
+  </text>
+  <text x="509" y="242" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700" fill="#23364D">
+    <tspan x="509" dy="0">Extract</tspan>
+  </text>
+  <text x="509" y="280" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="400" fill="#23364D">
+    <tspan x="509" dy="0">One document/domain</tspan>
+    <tspan x="509" dy="23">Atomic statements</tspan>
+    <tspan x="509" dy="23">with exact evidence</tspan>
+  </text>
+  <path d="M467,272.5 L492,272.5" fill="none" stroke="#60758A" stroke-width="2" marker-end="url(#simple-arrow)" />
+  <rect x="722" y="165" width="205" height="215" rx="14" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="2" />
+  <text x="739" y="191" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="700" fill="#42648A">
+    <tspan x="739" dy="0">04  CODE - NO LLM</tspan>
+  </text>
+  <text x="739" y="242" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700" fill="#23364D">
+    <tspan x="739" dy="0">Pool</tspan>
+  </text>
+  <text x="739" y="280" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="400" fill="#23364D">
+    <tspan x="739" dy="0">Resolve true duplicates</tspan>
+    <tspan x="739" dy="23">Use assigned topics</tspan>
+    <tspan x="739" dy="23">across documents</tspan>
+  </text>
+  <path d="M697,272.5 L722,272.5" fill="none" stroke="#60758A" stroke-width="2" marker-end="url(#simple-arrow)" />
+  <rect x="952" y="165" width="205" height="215" rx="14" fill="#EAF2FF" stroke="#6B98D1" stroke-width="2" />
+  <text x="969" y="191" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="700" fill="#42648A">
+    <tspan x="969" dy="0">05  LLM - STAGE 2</tspan>
+  </text>
+  <text x="969" y="242" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700" fill="#23364D">
+    <tspan x="969" dy="0">Organize</tspan>
+  </text>
+  <text x="969" y="280" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="400" fill="#23364D">
+    <tspan x="969" dy="0">Country/domain packs</tspan>
+    <tspan x="969" dy="23">Common claims</tspan>
+    <tspan x="969" dy="23">and typed links</tspan>
+  </text>
+  <path d="M927,272.5 L952,272.5" fill="none" stroke="#60758A" stroke-width="2" marker-end="url(#simple-arrow)" />
+  <rect x="1182" y="165" width="205" height="215" rx="14" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="2" />
+  <text x="1199" y="191" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="700" fill="#42648A">
+    <tspan x="1199" dy="0">06  CODE</tspan>
+  </text>
+  <text x="1199" y="242" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700" fill="#23364D">
+    <tspan x="1199" dy="0">Assign bands</tspan>
+  </text>
+  <text x="1199" y="280" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="400" fill="#23364D">
+    <tspan x="1199" dy="0">Repeatable rules</tspan>
+    <tspan x="1199" dy="23">Evidence-based labels</tspan>
+    <tspan x="1199" dy="23">No LLM scoring</tspan>
+  </text>
+  <path d="M1157,272.5 L1182,272.5" fill="none" stroke="#60758A" stroke-width="2" marker-end="url(#simple-arrow)" />
+  <rect x="1412" y="165" width="205" height="215" rx="14" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="2" />
+  <text x="1429" y="191" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="700" fill="#42648A">
+    <tspan x="1429" dy="0">07  AUTOMATIC</tspan>
+  </text>
+  <text x="1429" y="242" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700" fill="#23364D">
+    <tspan x="1429" dy="0">Publish</tspan>
+  </text>
+  <text x="1429" y="280" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="400" fill="#23364D">
+    <tspan x="1429" dy="0">Country + document</tspan>
+    <tspan x="1429" dy="23">views with source links</tspan>
+    <tspan x="1429" dy="23">Incomplete work visible</tspan>
+  </text>
+  <path d="M1387,272.5 L1412,272.5" fill="none" stroke="#60758A" stroke-width="2" marker-end="url(#simple-arrow)" />
+  <rect x="32" y="424" width="1585" height="130" rx="14" fill="#EEF3F8" stroke="#D9E2EC" stroke-width="2" />
+  <text x="54" y="459" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="700" fill="#23364D">
+    <tspan x="54" dy="0">One traceable evidence chain</tspan>
+  </text>
+  <text x="54" y="492" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="400" fill="#23364D">
+    <tspan x="54" dy="0">Documents retain their own results. Combined claims preserve support, conditions and contradictions.</tspan>
+    <tspan x="54" dy="29">No mandatory human review. Results publish automatically; users can flag or hide items afterward.</tspan>
+  </text>
+</svg>

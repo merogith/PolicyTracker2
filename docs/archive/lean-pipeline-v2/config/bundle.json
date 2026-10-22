@@ -1,0 +1,56 @@
+{
+  "id": "regional-climate-disaster-policy-tracker",
+  "version": "2.0.0",
+  "status": "recommended_specification_not_active",
+  "date": "2026-10-19",
+  "runtime_loaded": false,
+  "path_base": "parent_of_config_directory",
+  "configuration_authority": "Once implemented: immutable active database bundle per run; files are portable seed/import/export of the same version",
+  "files": [
+    {
+      "path": "config/taxonomy.json",
+      "sha256": "a343cbc5eb88f24263567e4530a5626050f4348f3c36176b7482c5cb14b4ca7d"
+    },
+    {
+      "path": "config/labels.json",
+      "sha256": "9f83764cb568c6bac1f0f619e8cb04157c43a57ac568c6a873f8ff08ff0013ce"
+    },
+    {
+      "path": "config/pipeline.json",
+      "sha256": "1b14b8f4f4553391aea2dac8fbb70a3d489e100345fcfbdced8e30ea690b587c"
+    },
+    {
+      "path": "config/scoring.json",
+      "sha256": "4c32572d94a636fe71b2cfdebe20d8f70907b55998fc3afe56f7d9be649ecc94"
+    },
+    {
+      "path": "prompts/extract.md",
+      "sha256": "b448a0e0688cad57d4dd151f1f49d0aea3fb30385d1503c8b1fd7aa8b919eeae"
+    },
+    {
+      "path": "prompts/organize.md",
+      "sha256": "b4df8c7f5ebf72d91f15bfa1dbd94efc4d218f94cb5679c3da2e9b43cb8347a8"
+    },
+    {
+      "path": "prompts/retag.md",
+      "sha256": "5779974a16878937df8d43164f00ab92cedf22cf4175002b2fecb4eee6b737fb"
+    },
+    {
+      "path": "reference/score-bands.mjs",
+      "sha256": "a1f573c2c1ed3f4fe2f4001ade2f01ee61d67b8c64c07fa80618dc5706b2a727"
+    },
+    {
+      "path": "DATA-DICTIONARY.md",
+      "sha256": "19d83ad4e5eb42dd931b32ecf5cb1ed2bd61a8f644b075d0da2bae71ed58a4cb"
+    }
+  ],
+  "stages": {
+    "extract": "prompts/extract.md",
+    "organize": "prompts/organize.md",
+    "maintenance_retag": "prompts/retag.md"
+  },
+  "schema_authority": "Proposed field contract: DATA-DICTIONARY.md; implement in src/lib/analysis/schemas.ts with enums derived from the active bundle. Current actual runtime schemas are preserved in runtime-reference/source.",
+  "default_comparison_mode": "Exploratory documentation bands and coverage bounds; common source profile required for like-for-like comparison; no ordinal mean or z-score",
+  "implementation_plan": "IMPLEMENTATION-PLAN.md",
+  "reference_scoring_engine": "reference/score-bands.mjs"
+}

@@ -1,0 +1,176 @@
+{
+  "id": "current-runtime-reference",
+  "captured_on": "2026-10-19",
+  "source_workspace": "D:/Policy-tracker-main",
+  "purpose": "Read-only reference copies of current source; application does not load this folder.",
+  "prompt_version": "2026-10-18.4",
+  "taxonomy_seed_version": "0.1.0-draft",
+  "database_snapshot_available": false,
+  "deployed_environment_available": false,
+  "actual_country_request_available": false,
+  "live_configuration_warning": "DB taxonomy and environment model/settings values may differ. These exports are synthetic seed renders, not captured production requests.",
+  "copied_files": [
+    {
+      "original_path": "src/lib/analysis/prompt.ts",
+      "reference_copy": "source/src/lib/analysis/prompt.ts",
+      "sha256": "f3b0115497a7a77aac94378658e336a6c31b8e54c6ff226ce2e618e5f8b93362",
+      "bytes": 7107,
+      "role": "active_prompt_builder",
+      "description": "All extraction, synthesis, retag and retry wording."
+    },
+    {
+      "original_path": "src/lib/analysis/schemas.ts",
+      "reference_copy": "source/src/lib/analysis/schemas.ts",
+      "sha256": "cccda383783c8bd58ce6b4b6f8454606e77ab940fbc2cae96508af9bd11f6b2a",
+      "bytes": 4038,
+      "role": "active_output_schema_builder",
+      "description": "Zod schemas converted to strict JSON schema by the gateway."
+    },
+    {
+      "original_path": "src/lib/analysis/run.ts",
+      "reference_copy": "source/src/lib/analysis/run.ts",
+      "sha256": "2f16be656b63f93b076144b0246c924dfb27ecb231d76e9190565a366e0398ff",
+      "bytes": 4419,
+      "role": "active_extraction_assembly",
+      "description": "Document metadata, taxonomy, schema and document-only search filter."
+    },
+    {
+      "original_path": "src/lib/analysis/synthesise.ts",
+      "reference_copy": "source/src/lib/analysis/synthesise.ts",
+      "sha256": "472edd5004884cee05d56b33ecf6fd29b74669bd003583eea3e747f0df5b4590",
+      "bytes": 6643,
+      "role": "active_synthesis_assembly",
+      "description": "Serializes prior findings; removes quotes/topic tags; restores citations by reference."
+    },
+    {
+      "original_path": "src/lib/analysis/retag.ts",
+      "reference_copy": "source/src/lib/analysis/retag.ts",
+      "sha256": "1385b7c218e8be23cb82e6804f8e03a26533d24f3a842461f75a589441340e48",
+      "bytes": 2579,
+      "role": "active_maintenance_assembly",
+      "description": "Current-taxonomy relabeling of stored finding text and quotes."
+    },
+    {
+      "original_path": "src/lib/analysis/call.ts",
+      "reference_copy": "source/src/lib/analysis/call.ts",
+      "sha256": "58d8653abb66bcbd1ecc8feeca81d3cf6d1af0f8dd959e96cb00775766343b71",
+      "bytes": 2565,
+      "role": "active_call_and_repair",
+      "description": "JSON/schema parsing and one repair attempt."
+    },
+    {
+      "original_path": "src/lib/openai.ts",
+      "reference_copy": "source/src/lib/openai.ts",
+      "sha256": "bf3a0e194ac442a7e7ca973cfefcf1321f74da6d2cf94f7bf0b3fec6cd57efc1",
+      "bytes": 14164,
+      "role": "active_gateway",
+      "description": "Responses API request settings, model environment variables, file search and structured output."
+    },
+    {
+      "original_path": "src/lib/taxonomy.ts",
+      "reference_copy": "source/src/lib/taxonomy.ts",
+      "sha256": "0e669d125c5a8212f1c262d58323d14f034ae860a2153dfda122b1b49515c4ba",
+      "bytes": 7699,
+      "role": "active_taxonomy_assembly",
+      "description": "Loads DB taxonomy; renders topic text, domain question and search hints."
+    },
+    {
+      "original_path": "fresh-start/config/taxonomy.json",
+      "reference_copy": "source/fresh-start/config/taxonomy.json",
+      "sha256": "556f3227991f73d33163e255b9974bc89d5e52a0716f692724c1e3cce2927adc",
+      "bytes": 41395,
+      "role": "seed_not_live_taxonomy_snapshot",
+      "description": "Initial 16-domain, 64-topic seed. Runtime topic/domain data comes from the database after seeding."
+    },
+    {
+      "original_path": "src/lib/ingest.ts",
+      "reference_copy": "source/src/lib/ingest.ts",
+      "sha256": "b1e39070e52a109ba0e8e9382b18a07fd519f71109bcc14e66ad46e6f4a910e8",
+      "bytes": 6343,
+      "role": "active_source_preparation",
+      "description": "Page file names/text/metadata; upload and indexing; queues domain jobs."
+    },
+    {
+      "original_path": "src/lib/pdf.ts",
+      "reference_copy": "source/src/lib/pdf.ts",
+      "sha256": "98e466432f553aee93771ceafc969b87a0d7d6cd84bf64eae1ac8d74d5c2d6e1",
+      "bytes": 2527,
+      "role": "active_page_extraction",
+      "description": "PDF page text extraction before upload; no OCR."
+    },
+    {
+      "original_path": "src/lib/domain.ts",
+      "reference_copy": "source/src/lib/domain.ts",
+      "sha256": "4864209f6004dcd50dc2d87814962bb3b5853a8bc4bb65d8726d818030cfed9b",
+      "bytes": 1716,
+      "role": "active_source_enumerations",
+      "description": "Document kinds and page readability threshold."
+    },
+    {
+      "original_path": "src/lib/analysis/verify.ts",
+      "reference_copy": "source/src/lib/analysis/verify.ts",
+      "sha256": "36a340ade1c85402a50f40c783d1dfec4ec341e80429ac891c0c0ae203456061",
+      "bytes": 3818,
+      "role": "active_post_model_check_not_prompt",
+      "description": "Normalized source quote matching and page correction; not sent to the LLM."
+    },
+    {
+      "original_path": "src/lib/scoring.ts",
+      "reference_copy": "source/src/lib/scoring.ts",
+      "sha256": "4b32d1dc38de4985199fe19323d0fc1c47e48693429a24a28d77bfa73dc3a1f3",
+      "bytes": 1536,
+      "role": "active_post_model_scoring_not_prompt",
+      "description": "Existing numeric topic scores and domain sums; not sent to the LLM."
+    },
+    {
+      "original_path": "config/scoring/rubric.json",
+      "reference_copy": "source/config/scoring/rubric.json",
+      "sha256": "946d597fbd0c450532a79b0571b0678bd773f183b9a7721730a9e554089f1a2c",
+      "bytes": 2819,
+      "role": "active_post_model_rubric_not_prompt",
+      "description": "Existing rubric v2.0.2 (-1/0/+1), not the proposed four bands."
+    }
+  ],
+  "generated_prompt_exports": [
+    {
+      "file": "rendered/extraction-system.seed.txt",
+      "sha256": "9969470434de8166291d068c72deb0bd0e9084780cf97e78b9f651adec6b69bc",
+      "generation": "Actual current builders executed offline with seed taxonomy and/or synthetic example data; not a production request."
+    },
+    {
+      "file": "rendered/extraction-user.synthetic.txt",
+      "sha256": "71ce79641542fd6269eb09fa823135e5c1b6bb74df4930a9672e1e0a562505d1",
+      "generation": "Actual current builders executed offline with seed taxonomy and/or synthetic example data; not a production request."
+    },
+    {
+      "file": "rendered/synthesis-system.txt",
+      "sha256": "d3b3b6ec7b97bf1c3ec01196eea337ee2747679071d13cf2ad30b3c4cded0fc3",
+      "generation": "Exact current static builder return."
+    },
+    {
+      "file": "rendered/synthesis-user.synthetic.txt",
+      "sha256": "5d8f2c8bee2cd71731cff2b9cbd615339155e606c6939a603b12e539c3154bca",
+      "generation": "Actual current builders executed offline with seed taxonomy and/or synthetic example data; not a production request."
+    },
+    {
+      "file": "rendered/retag-system.seed.txt",
+      "sha256": "da65cdbe633bc81b228a5009e35776b9a5cb14eff5c753207bac82fdca9b07de",
+      "generation": "Actual current builders executed offline with seed taxonomy and/or synthetic example data; not a production request."
+    },
+    {
+      "file": "rendered/retag-user.synthetic.txt",
+      "sha256": "a0424056366a1a69e65b8c25c84705f5ab1b6f4ecbcae94b3585bf11031cd2d6",
+      "generation": "Actual current builders executed offline with seed taxonomy and/or synthetic example data; not a production request."
+    },
+    {
+      "file": "rendered/retry-suffix.synthetic.txt",
+      "sha256": "ebd7d3824ecb4fe1aa3b5dbf7b1706f08d983e29be9f73bdadf05d73ada5c4c0",
+      "generation": "Actual current builders executed offline with seed taxonomy and/or synthetic example data; not a production request."
+    },
+    {
+      "file": "rendered/taxonomy-prompt.seed.txt",
+      "sha256": "cfcc117a9ddf961b336e2f6670dcc125bcb587428ebf0f70f3ed2c99faafdcea",
+      "generation": "Actual current builders executed offline with seed taxonomy and/or synthetic example data; not a production request."
+    }
+  ]
+}

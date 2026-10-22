@@ -1,0 +1,132 @@
+<mxfile host="app.diagrams.net" version="24.7.17">
+  <diagram name="process-simple" id="process-simple">
+    <mxGraphModel dx="1100" dy="615" grid="1" gridSize="10" page="1" pageWidth="1100" pageHeight="615">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="Two model stages. One traceable result.&lt;br&gt;Final plan / 20 October 2026 / proposed, not active" style="text;html=1;align=left;verticalAlign=middle;fontSize=24;fontColor=#17374b;" vertex="1" parent="1">
+          <mxGeometry x="45" y="25" width="1010" height="65" as="geometry" />
+        </mxCell>
+        <mxCell id="s1" value="&lt;b&gt;1  Prepare every source&lt;/b&gt;&lt;br&gt;&lt;br&gt;Text + layout + targeted OCR&lt;br&gt;Conditional image recovery" style="rounded=1;whiteSpace=wrap;html=1;fontSize=16;align=left;spacingLeft=16;fillColor=#ffffff;strokeColor=#abc0cd;fontColor=#17374b;" vertex="1" parent="1">
+          <mxGeometry x="50" y="155" width="300" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="s2" value="&lt;b&gt;2  Extract records - LLM 1&lt;/b&gt;&lt;br&gt;&lt;br&gt;Every packet, across all topics&lt;br&gt;Titles + facts + exact evidence" style="rounded=1;whiteSpace=wrap;html=1;fontSize=16;align=left;spacingLeft=16;fillColor=#e4f3ef;strokeColor=#2b847b;fontColor=#17374b;" vertex="1" parent="1">
+          <mxGeometry x="400" y="155" width="300" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="s3" value="&lt;b&gt;3  Check and pool - code&lt;/b&gt;&lt;br&gt;&lt;br&gt;Recover omissions / errors&lt;br&gt;Select source scope; retain all" style="rounded=1;whiteSpace=wrap;html=1;fontSize=16;align=left;spacingLeft=16;fillColor=#ffffff;strokeColor=#abc0cd;fontColor=#17374b;" vertex="1" parent="1">
+          <mxGeometry x="750" y="155" width="300" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="s4" value="&lt;b&gt;4  Organize claims - LLM 2&lt;/b&gt;&lt;br&gt;&lt;br&gt;Group the same proposition&lt;br&gt;Keep variants, context and links" style="rounded=1;whiteSpace=wrap;html=1;fontSize=16;align=left;spacingLeft=16;fillColor=#e4f3ef;strokeColor=#2b847b;fontColor=#17374b;" vertex="1" parent="1">
+          <mxGeometry x="750" y="345" width="300" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="s5" value="&lt;b&gt;5  Calculate scores - code&lt;/b&gt;&lt;br&gt;&lt;br&gt;Four checks per response&lt;br&gt;Topic means + distinct counts" style="rounded=1;whiteSpace=wrap;html=1;fontSize=16;align=left;spacingLeft=16;fillColor=#ffffff;strokeColor=#abc0cd;fontColor=#17374b;" vertex="1" parent="1">
+          <mxGeometry x="400" y="345" width="300" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="s6" value="&lt;b&gt;6  Publish automatically&lt;/b&gt;&lt;br&gt;&lt;br&gt;Country, region and documents&lt;br&gt;Flag / hide / restore afterward" style="rounded=1;whiteSpace=wrap;html=1;fontSize=16;align=left;spacingLeft=16;fillColor=#ffffff;strokeColor=#abc0cd;fontColor=#17374b;" vertex="1" parent="1">
+          <mxGeometry x="50" y="345" width="300" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="e0" style="edgeStyle=orthogonalEdgeStyle;rounded=0;endArrow=block;strokeColor=#587b90;" edge="1" parent="1" source="s1" target="s2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;endArrow=block;strokeColor=#587b90;" edge="1" parent="1" source="s2" target="s3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;endArrow=block;strokeColor=#587b90;" edge="1" parent="1" source="s3" target="s4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;endArrow=block;strokeColor=#587b90;" edge="1" parent="1" source="s4" target="s5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;endArrow=block;strokeColor=#587b90;" edge="1" parent="1" source="s5" target="s6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="notes" value="One country at a time; two shared request slots initially. Recovery runs only where needed.&lt;br&gt;Scoring and pooling use code. Incomplete work stays visible; it never becomes a false zero." style="text;html=1;align=left;fontSize=15;fontColor=#536c7c;" vertex="1" parent="1">
+          <mxGeometry x="45" y="524" width="1010" height="54" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram name="process-technical" id="process-technical">
+    <mxGraphModel dx="1270" dy="1020" grid="1" gridSize="10" page="1" pageWidth="1270" pageHeight="1020">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="From every selected source to traceable response scores&lt;br&gt;Final engineering plan / scoring 4.0 / presentation 4.1 / no human acceptance gate" style="text;html=1;align=left;verticalAlign=middle;fontSize=24;fontColor=#17374b;" vertex="1" parent="1">
+          <mxGeometry x="45" y="25" width="1180" height="65" as="geometry" />
+        </mxCell>
+        <mxCell id="d1" value="&lt;b&gt;1  Freeze source + config manifest&lt;/b&gt;&lt;br&gt;&lt;br&gt;Country, roles, editions, as-of date&lt;br&gt;Exact bundle hashes; fixed run identity" style="rounded=1;whiteSpace=wrap;html=1;fontSize=16;align=left;spacingLeft=16;fillColor=#ffffff;strokeColor=#abc0cd;fontColor=#17374b;" vertex="1" parent="1">
+          <mxGeometry x="45" y="165" width="360" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="d2" value="&lt;b&gt;2  Prepare every page + region&lt;/b&gt;&lt;br&gt;&lt;br&gt;Text / layout; local OCR if needed&lt;br&gt;Conditional vision; retain crops" style="rounded=1;whiteSpace=wrap;html=1;fontSize=16;align=left;spacingLeft=16;fillColor=#ffffff;strokeColor=#abc0cd;fontColor=#17374b;" vertex="1" parent="1">
+          <mxGeometry x="455" y="165" width="360" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="d3" value="&lt;b&gt;3  Extract - LLM 1&lt;/b&gt;&lt;br&gt;&lt;br&gt;Every owned packet; all-topic labels&lt;br&gt;Atomic statements, titles, cited fields" style="rounded=1;whiteSpace=wrap;html=1;fontSize=16;align=left;spacingLeft=16;fillColor=#e4f3ef;strokeColor=#2b847b;fontColor=#17374b;" vertex="1" parent="1">
+          <mxGeometry x="865" y="165" width="360" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="d4" value="&lt;b&gt;4  Check + conditional recovery&lt;/b&gt;&lt;br&gt;&lt;br&gt;Evidence, unit accounting, omissions&lt;br&gt;Persist records; split exhausted output" style="rounded=1;whiteSpace=wrap;html=1;fontSize=16;align=left;spacingLeft=16;fillColor=#ffffff;strokeColor=#abc0cd;fontColor=#17374b;" vertex="1" parent="1">
+          <mxGeometry x="865" y="350" width="360" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="d5" value="&lt;b&gt;5  Account for selected sources&lt;/b&gt;&lt;br&gt;&lt;br&gt;Complete only when work resolves&lt;br&gt;Publish partial; no completion cutoff" style="rounded=1;whiteSpace=wrap;html=1;fontSize=16;align=left;spacingLeft=16;fillColor=#ffffff;strokeColor=#abc0cd;fontColor=#17374b;" vertex="1" parent="1">
+          <mxGeometry x="455" y="350" width="360" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="d6" value="&lt;b&gt;6  Select scope + pool records&lt;/b&gt;&lt;br&gt;&lt;br&gt;Document / current / historical scope&lt;br&gt;Owned records + read-only context" style="rounded=1;whiteSpace=wrap;html=1;fontSize=16;align=left;spacingLeft=16;fillColor=#ffffff;strokeColor=#abc0cd;fontColor=#17374b;" vertex="1" parent="1">
+          <mxGeometry x="45" y="350" width="360" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="d7" value="&lt;b&gt;7  Organize - LLM 2&lt;/b&gt;&lt;br&gt;&lt;br&gt;Same proposition, compatible scope&lt;br&gt;Keep conflicts; account every record" style="rounded=1;whiteSpace=wrap;html=1;fontSize=16;align=left;spacingLeft=16;fillColor=#e4f3ef;strokeColor=#2b847b;fontColor=#17374b;" vertex="1" parent="1">
+          <mxGeometry x="45" y="535" width="360" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="d8" value="&lt;b&gt;8  Check organization - code&lt;/b&gt;&lt;br&gt;&lt;br&gt;Ownership, references, group boundaries&lt;br&gt;Bounded repair / reconciliation" style="rounded=1;whiteSpace=wrap;html=1;fontSize=16;align=left;spacingLeft=16;fillColor=#ffffff;strokeColor=#abc0cd;fontColor=#17374b;" vertex="1" parent="1">
+          <mxGeometry x="455" y="535" width="360" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="d9" value="&lt;b&gt;9  Build source-qualified views&lt;/b&gt;&lt;br&gt;&lt;br&gt;No details from excluded documents&lt;br&gt;Unresolved groups: scores unavailable" style="rounded=1;whiteSpace=wrap;html=1;fontSize=16;align=left;spacingLeft=16;fillColor=#ffffff;strokeColor=#abc0cd;fontColor=#17374b;" vertex="1" parent="1">
+          <mxGeometry x="865" y="535" width="360" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="d10" value="&lt;b&gt;10  Score responses and topics&lt;/b&gt;&lt;br&gt;&lt;br&gt;Four checks; fixed-topic averages&lt;br&gt;Counts + coverage; stage separate" style="rounded=1;whiteSpace=wrap;html=1;fontSize=16;align=left;spacingLeft=16;fillColor=#ffffff;strokeColor=#abc0cd;fontColor=#17374b;" vertex="1" parent="1">
+          <mxGeometry x="865" y="720" width="360" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="d11" value="&lt;b&gt;11  Compare frozen snapshots&lt;/b&gt;&lt;br&gt;&lt;br&gt;Same basis: documentation pp change&lt;br&gt;Backfill / method change: refresh" style="rounded=1;whiteSpace=wrap;html=1;fontSize=16;align=left;spacingLeft=16;fillColor=#ffffff;strokeColor=#abc0cd;fontColor=#17374b;" vertex="1" parent="1">
+          <mxGeometry x="455" y="720" width="360" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="d12" value="&lt;b&gt;12  Atomic publication&lt;/b&gt;&lt;br&gt;&lt;br&gt;Keep prior snapshot during processing&lt;br&gt;Publish partial when needed; no queue" style="rounded=1;whiteSpace=wrap;html=1;fontSize=16;align=left;spacingLeft=16;fillColor=#ffffff;strokeColor=#abc0cd;fontColor=#17374b;" vertex="1" parent="1">
+          <mxGeometry x="45" y="720" width="360" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="e0" style="edgeStyle=orthogonalEdgeStyle;rounded=0;endArrow=block;strokeColor=#587b90;" edge="1" parent="1" source="d1" target="d2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;endArrow=block;strokeColor=#587b90;" edge="1" parent="1" source="d2" target="d3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;endArrow=block;strokeColor=#587b90;" edge="1" parent="1" source="d3" target="d4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;endArrow=block;strokeColor=#587b90;" edge="1" parent="1" source="d4" target="d5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;endArrow=block;strokeColor=#587b90;" edge="1" parent="1" source="d5" target="d6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;endArrow=block;strokeColor=#587b90;" edge="1" parent="1" source="d6" target="d7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;endArrow=block;strokeColor=#587b90;" edge="1" parent="1" source="d7" target="d8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;endArrow=block;strokeColor=#587b90;" edge="1" parent="1" source="d8" target="d9">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;endArrow=block;strokeColor=#587b90;" edge="1" parent="1" source="d9" target="d10">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;endArrow=block;strokeColor=#587b90;" edge="1" parent="1" source="d10" target="d11">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;endArrow=block;strokeColor=#587b90;" edge="1" parent="1" source="d11" target="d12">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="notes" value="MODEL ALLOWLIST: prompt + enabled vocabulary + strict schema + authorized source / record units only.&lt;br&gt;No team guides, archives, previous scores, unrelated files or arbitrary folder scans enter model context.&lt;br&gt;One country / two shared request slots. Usage ledger + resume. Stale jobs cannot replace newer snapshots." style="text;html=1;align=left;fontSize=15;fontColor=#536c7c;" vertex="1" parent="1">
+          <mxGeometry x="45" y="902" width="1180" height="81" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

@@ -1,0 +1,80 @@
+Climate (CLM): Climate-specific cross-sector policy: governance, finance, transparency, economy-wide mitigation, climate information and loss and damage. Sector measures use their sector domain.
+- CLM-01 Climate planning, governance and mainstreaming: Climate strategies and laws, institutional arrangements, coordination bodies, and mainstreaming climate into sector or budget planning. [for the subject is a finance or support mechanism use CLM-02; for the institution is a disaster-risk or civil-protection body use DRM-01]
+- CLM-02 Climate finance and support: Mobilising, channelling or requesting finance, technology transfer and capacity support for climate action, where the finance arrangement itself is the subject. [for an amount funds one sector project use the sector topic, with a finance fact; for insurance, contingency funds or risk pools for disasters use DRM-05]
+- CLM-03 Climate observations, projections and impact assessment: Observed climate trends, climate projections, and climate vulnerability or impact assessments. [for a multi-hazard risk assessment, hazard map or disaster-loss database use DRM-02; for operational forecasting for warnings use DRM-03]
+- CLM-05 Climate transparency and reporting: Greenhouse-gas inventories, MRV systems, progress tracking and reporting under the UNFCCC. [for climate observations or projections rather than reporting systems use CLM-03]
+- CLM-06 Economy-wide emissions targets and pathways: Economy-wide greenhouse-gas targets, carbon-neutrality goals and long-term emission pathways. [for a target for one sector use the sector topic; for a land sink or removals target use NAT-04]
+- CLM-09 Loss and damage: Economic and non-economic losses from climate-change impacts framed as loss and damage, and arrangements to address them. [for losses from one disaster event reported without loss-and-damage framing use DRM-02; for a displacement or relocation programme use LIV-03]
+Disaster Risk Management (DRM): All-hazards disaster-risk systems: governance, risk knowledge, warning and preparedness, response, recovery and risk finance, whether or not the hazard is climate-related.
+- DRM-01 Disaster risk governance and institutions: Disaster-risk-reduction strategies and laws, civil-protection or emergency-management agencies and coordination mechanisms. [for climate strategy or climate coordination bodies use CLM-01]
+- DRM-02 Disaster risk assessment and loss data: Hazard mapping, multi-hazard risk assessments, exposure and vulnerability databases, and disaster-loss accounting, including reported event losses. [for climate projections or climate impact studies use CLM-03]
+- DRM-03 Early warning and preparedness: Monitoring and forecasting for warnings, warning dissemination, contingency plans, drills, stockpiles and readiness to act. [for general public-awareness or education campaigns use EDU-02; for a physical flood defence use WAT-03]
+- DRM-04 Multi-hazard risk reduction programmes: Cross-sector programmes that reduce exposure or vulnerability to several hazards and have no single sector home. This is the residual home; prefer sector topics. [for flood or coastal defences use WAT-03; for settlement planning or building safety use SET-02; for hospital or health-facility safety use HEA-03]
+- DRM-05 Disaster risk finance and insurance: Contingency and reserve funds, insurance schemes, risk pools, catastrophe bonds and other pre-arranged disaster finance. [for general climate finance mobilisation use CLM-02]
+- DRM-06 Emergency response and civil protection: Search and rescue, evacuation, emergency relief and civil-protection operations during or immediately after an event.
+- DRM-07 Recovery and reconstruction: Post-disaster needs assessment, recovery frameworks, rebuilding (including building back better) and restoration of services and livelihoods.
+Agriculture & Food (AGR): Crops, soils, livestock, rangelands, farm water, fisheries and food systems.
+- AGR-01 Irrigation and farm water efficiency: Irrigation systems, on-farm water efficiency, drainage and farm water storage. [for municipal or household water supply use WAT-01; for solar-powered pumping is substantive use ENE-01 as well]
+- AGR-02 Resilient crops and soils: Crop varieties, cropping practices, on-farm soil health and agricultural adaptation of production. [for landscape-scale degradation or desertification use NAT-05; for explicit soil-carbon accounting use NAT-04]
+- AGR-03 Livestock, pastures and rangelands: Livestock production and health, manure and enteric emissions, pasture and rangeland management. [for human health use HEA-02]
+- AGR-04 Food security and farm livelihoods: Food availability and access, value chains, farm incomes and rural agricultural livelihoods.
+- AGR-05 Fisheries and aquaculture: Capture fisheries, aquaculture and the ecosystems and livelihoods they depend on.
+Water (WAT): Water resources, supply, basins, drought, floods and coasts, water quality and the cryosphere as a water source.
+- WAT-01 Water supply and groundwater: Drinking and municipal water supply, water storage and groundwater management. [for farm irrigation use AGR-01; for sanitation or wastewater use WST-03]
+- WAT-02 River basins and transboundary water: Basin planning, water allocation between users and sectors, and transboundary water cooperation. [for drought planning or drought response use WAT-06; for flood defences use WAT-03]
+- WAT-03 Flood and coastal protection: Structural and nature-based flood, river-bank and coastal protection, and floodplain management. [for flood warning systems use DRM-03; for general settlement planning use SET-02 as well]
+- WAT-04 Water quality and reuse: Receiving-water quality, pollution control and water reuse. [for wastewater treatment systems use WST-03]
+- WAT-05 Glaciers, snow and mountain water: Changes in glaciers, snowpack and permafrost as water sources, and their monitoring or management. [for a glacial-lake outburst flood as an event or warning use the hazard facet with DRM-02 or DRM-03]
+- WAT-06 Drought management: Drought monitoring, drought plans, drought response measures and water-shortage management. [for drought warnings use DRM-03 as well; for on-farm drought adaptation such as crops or fodder use AGR-02 or AGR-03 as well]
+Nature, Forests & Land (NAT): Forests, land, land degradation, biodiversity, ecosystems and land carbon.
+- NAT-01 Forest management and health: Forest management, afforestation, forest health and wildfire prevention in forests. [for a carbon-only forest target use NAT-04]
+- NAT-02 Species, habitats and protected areas: Species conservation, habitats and protected-area systems. [for active restoration of degraded ecosystems use NAT-03]
+- NAT-03 Ecosystem restoration: Active restoration of degraded ecosystems such as wetlands, steppe and riparian zones.
+- NAT-04 Land carbon and removals: Land-use, land-use change and forestry (LULUCF) sinks, removals and their accounting. [for biodiversity benefits are claimed use NAT-02 or NAT-03 only with evidence]
+- NAT-05 Land degradation, desertification and salinity: Combating desertification, land degradation, sand encroachment, soil salinisation and erosion at landscape scale. [for on-farm soil practices use AGR-02]
+Energy (ENE): Energy supply, renewables, grids, efficiency, heating, fossil-fuel transition and methane.
+- ENE-01 Renewable electricity: Renewable power generation such as solar, wind, hydro and geothermal.
+- ENE-02 Grids and energy storage: Transmission, distribution, grid flexibility and storage, including grid resilience. [for a generating plant without grid measures use ENE-01 or ENE-05]
+- ENE-03 Clean heating and fuels: District heating, heat pumps and cleaner heating or cooking fuels. [for vehicle fuels use TRN-01]
+- ENE-04 Energy efficiency and demand management: Economy-wide or cross-sector efficiency and demand management. [for a building, industrial or transport measure use SET-01, IND-01 or TRN-01]
+- ENE-05 Fossil energy transition: Coal, oil and gas phase-down, fuel switching and transition of fossil energy systems. [for worker and community impacts of the transition use ECO-02 as well]
+- ENE-06 Oil and gas methane: Methane leakage, venting and flaring in oil, gas and coal-mine operations. [for landfill methane use WST-02; for livestock methane use AGR-03]
+- ENE-07 Energy-system climate resilience: Exposure of power plants, hydropower and fuel supply to climate hazards, including drought and glacier loss affecting hydropower, heat affecting thermal plants, and the water-energy nexus. [for transmission or distribution network resilience use ENE-02; for glacier and snowmelt water supply as such use WAT-05]
+Settlements & Infrastructure (SET): Buildings, settlements, land-use planning, urban heat and critical infrastructure. Membership does not establish urban geographic scope.
+- SET-01 Building energy performance: Building codes, retrofits and energy performance of buildings.
+- SET-02 Resilient settlements, infrastructure and land-use planning: Risk-informed spatial and land-use planning, building safety, resilient housing, and continuity of public, communications and multi-utility infrastructure without a single sector home. [for energy, transport or water networks use ENE-02, TRN-03 or WAT-01]
+- SET-03 Urban heat and green space: Urban cooling, green and blue infrastructure, and parks. [for heat-health action plans use HEA-01]
+Transport (TRN): Vehicles, fuels, mobility services and transport-network resilience.
+- TRN-01 Low-emission vehicles and fuels: Vehicle efficiency, electric vehicles and low-carbon transport fuels.
+- TRN-02 Public, active and shared mobility: Public transport, walking, cycling and shared mobility.
+- TRN-03 Resilient transport networks: Protecting roads, rail, ports and airports from hazards and maintaining access.
+Industry & Mining (IND): Industrial production, processes, industrial resilience, mining and extractives.
+- IND-01 Cleaner production and industrial efficiency: Industrial energy and resource efficiency and cleaner production. [for process gases or refrigerants use IND-02]
+- IND-02 Process emissions and refrigerants: Industrial process emissions, F-gases and refrigerants.
+- IND-03 Industrial climate and disaster resilience: Protecting industrial sites and supply chains from hazards, including technological-accident risk.
+- IND-04 Mining and critical minerals: Climate and risk aspects of mining, critical minerals and extractive-sector transition, including tailings safety. [for coal phase-down for energy use ENE-05]
+Health (HEA): Climate- and disaster-related health risks and health services.
+- HEA-01 Heat and human health: Heat-health action plans, heat-related illness and health protection during heat.
+- HEA-02 Climate-sensitive disease and exposure: Vector-, water- and food-borne disease, air quality and other climate-sensitive health exposures.
+- HEA-03 Resilient health services: Health-system preparedness, safe and continuous health facilities and surveillance capacity. [for general civil protection use DRM-06]
+Waste & Circular Economy (WST): Materials and recycling, solid waste and landfill methane, wastewater.
+- WST-01 Materials, recycling and circularity: Waste prevention, recycling and circular-economy measures.
+- WST-02 Solid-waste disposal and methane: Landfills, landfill gas and solid-waste disposal.
+- WST-03 Wastewater and sanitation: Sewerage, wastewater treatment and sanitation services.
+Economy & Transition (ECO): Economic diversification, economic resilience, just transition and restructuring of climate-exposed or fossil-dependent economies.
+- ECO-01 Economic diversification and resilience: Diversifying climate-exposed or fossil-dependent economies and strengthening economic resilience.
+- ECO-02 Just transition and economic restructuring: Fair management of transition impacts on workers, regions and communities.
+Livelihoods & Social Protection (LIV): Jobs and livelihood resilience, social protection and safety nets, and displacement, migration and planned relocation.
+- LIV-01 Jobs and resilient livelihoods: Employment, skills for green jobs and livelihood resilience outside a single sector. [for farm livelihoods use AGR-04; for tourism-dependent livelihoods use TOU-01 as well]
+- LIV-02 Social protection and safety nets: Cash transfers, adaptive and shock-responsive social protection, and safety nets.
+- LIV-03 Displacement, migration and planned relocation: Disaster and climate displacement, migration and planned relocation of communities.
+Culture & Heritage (CUL): Tangible and intangible heritage and local or traditional knowledge.
+- CUL-01 Heritage risk, conservation and recovery: Hazard and climate-impact assessments of tangible or intangible heritage, and protecting, adapting and restoring heritage sites and cultural assets.
+- CUL-03 Local knowledge and cultural continuity: Traditional and local knowledge and cultural practices used or protected in climate and risk policy. [for local knowledge applied within a sector practice, such as herding or irrigation use the sector topic; add CUL-03 only when the knowledge itself is the subject]
+Education & Knowledge (EDU): Education, public awareness, research, data and knowledge systems.
+- EDU-01 Climate and disaster education: Curricula, school programmes and formal or vocational education on climate and disaster risk.
+- EDU-02 Public awareness campaigns: Public awareness and behaviour campaigns on climate and disaster risk. [for dissemination of warnings for a specific hazard use DRM-03]
+- EDU-03 Research, data and knowledge systems: Research programmes and institutions, data infrastructure and knowledge-sharing platforms. [for climate observations or projections themselves use CLM-03; for risk or loss databases use DRM-02]
+Tourism (TOU): Tourism systems, destinations and tourism-dependent livelihoods. Use only when the tourism sector is explicit.
+- TOU-01 Tourism adaptation and destination resilience: Adapting tourism destinations and services to climate and disaster risk.
+- TOU-02 Tourism resource efficiency: Energy, water and waste efficiency in tourism.

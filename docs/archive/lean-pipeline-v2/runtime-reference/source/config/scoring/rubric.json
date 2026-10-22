@@ -1,0 +1,36 @@
+{
+  "id": "topic-response-signal",
+  "version": "2.0.2",
+  "status": "draft",
+  "adopted": "2026-10-18",
+  "source": "The user's earlier Policy Tracker prototype (Kazakhstan country profile, 'Reading the score').",
+  "changes": [
+    "2.0.2 (2026-10-18): wording only. Domains replaced analysis keys: every active topic is listed in the question of the domains it sits in, so -1 now means no answer tagged an item with it.",
+    "2.0.1 (2026-10-18): wording only. From prompt 2026-10-18.3 figures and list items carry a stage too, so a target figure counts as a commitment (+1); the points are unchanged.",
+    "2.0.0 (2026-10-18): a topic with no findings scores -1, as in the prototype, at the user's decision. This departs from the fresh-start/config/claims.json roll-up rule ('a topic with no claims ... never a negative'), which applies to counts and stages, not to this separate scoring layer.",
+    "1.0.0 (2026-10-18): first version; a topic with no findings was not scored."
+  ],
+  "applies_to": "One score per topic per country, computed by code from the combined-summary findings tagged with the topic. A domain score sums the scores of the topics placed in it.",
+  "scorer": "code (this rubric); no model judges the score",
+  "points": {
+    "no_findings": -1,
+    "no_stage": 0,
+    "stage_0": 0,
+    "stage_1": 1,
+    "stage_2": 1,
+    "stage_3": 1,
+    "stage_4": 1
+  },
+  "points_help": {
+    "no_findings": "No finding tagged with the topic in the answers to the current domain questions. Set null to leave such topics unscored (version 1.0.0).",
+    "no_stage": "Only items without a stage ('other', or answers made before figures and list items carried a stage).",
+    "stage_0": "Concerns, context or outcomes only.",
+    "stage_1_to_4": "At least one response: a commitment, planned action, implementation underway or delivered output."
+  },
+  "domain_rule": "Sum of the scores of the topics placed in the domain. A topic placed in two domains counts in both, so domain scores overlap and are never added together. Always shown with the number of topics in the domain.",
+  "reading": [
+    "Each topic is -1 when no item is tagged with it, 0 when the documents only describe concerns, context, needs or observed figures, and +1 when they describe at least one response (a commitment or target, planned action, implementation underway or delivered output).",
+    "-1 means no answer tagged an item with the topic. Every topic is listed in its domains' questions, but each question reads only the pages file search returns (20 by default), so read a low domain score as an evidence gap rather than proof of poor performance.",
+    "A score summarises what the documents say, not what the country has done. It is not a performance or on-track rating, and it is never averaged across countries."
+  ]
+}

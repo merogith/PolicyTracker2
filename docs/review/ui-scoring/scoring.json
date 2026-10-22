@@ -1,0 +1,45 @@
+{
+  "version": "4.0.0",
+  "presentation_version": "4.1.0",
+  "status": "review_not_active",
+  "name": "Policy documentation specification score",
+  "purpose": "Describe how explicitly the supplied documents specify their distinct policy responses. This is not a measure of ambition, implementation, effectiveness or national policy adequacy.",
+  "claim": {
+    "response_types": ["commitment", "planned_action", "implementation_underway", "output_delivered"],
+    "context_types": ["concern", "context", "projection", "result_reported", "proposal", "other"],
+    "points": {"response": 1, "who": 1, "when": 1, "what": 1},
+    "qualifying_actor_roles": ["responsible", "implementing"],
+    "actor_roles": ["responsible", "implementing", "financing", "supporting", "monitoring_reporting", "consulted", "unspecified"],
+    "qualifying_time_anchor": "action",
+    "time_anchors": ["action", "publication"],
+    "qualifying_deliverables": ["quantified_output", "named_asset", "named_legal_instrument", "named_milestone"],
+    "deliverable_kinds": ["quantified_output", "named_asset", "named_legal_instrument", "named_milestone", "generic_action"],
+    "conditionalities": ["conditional", "unconditional", "not_stated"]
+  },
+  "aggregation": {
+    "topic": "100 * sum(response claim points) / (4 * distinct response claim count)",
+    "complete_no_response": 0,
+    "incomplete_or_unresolved": null,
+    "domain": "mean of fixed home-topic scores",
+    "country": "mean of all fixed unique topic scores; default inventory 64",
+    "counts": "Primary topic owns each canonical claim once. Related secondary claims are a separate, non-additive count.",
+    "secondary_topics": "Require explicit source-grounded topic projections; never inherit checks from tags.",
+    "unknown_bounds": "Each unavailable topic contributes [0,100] to aggregate bounds. These are arithmetic bounds, not statistical confidence intervals.",
+    "total_points": "Secondary export only; never used for country ranking."
+  },
+  "levels": [
+    {"minimum": 0, "maximum_exclusive": 25, "label": "Limited policy detail", "color": "red"},
+    {"minimum": 25, "maximum_exclusive": 50, "label": "Basic policy detail", "color": "orange"},
+    {"minimum": 50, "maximum_exclusive": 75, "label": "Moderate policy detail", "color": "amber"},
+    {"minimum": 75, "maximum_inclusive": 100, "label": "Substantial policy detail", "color": "green"}
+  ],
+  "unavailable": {"label": "Assessment unavailable", "color": "gray"},
+  "comparison": {
+    "eligible_event": "same_family_edition_update",
+    "required_basis_fields": ["method_version", "taxonomy_version", "scoring_version", "topic_profile_id", "topic_profile_version", "source_profile_id", "source_profile_version", "source_role_coverage_signature", "source_date_rule"],
+    "requires_complete_inventory_and_profile": true,
+    "requires_frozen_source_families_and_roles": true,
+    "requires_both_snapshots_recomputed_under_same_method": true,
+    "description": "Arrows show documentation score change. Backfill, ordinary uploads, method/profile changes and partial scopes show refresh/unavailable instead. No trend speed or climate improvement is inferred."
+  }
+}

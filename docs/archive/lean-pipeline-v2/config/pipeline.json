@@ -1,0 +1,126 @@
+{
+  "version": "2.0.0",
+  "status": "recommended_specification_not_active",
+  "scope": "regional_climate_and_disaster_policy",
+  "models": {
+    "extract": {
+      "environment_variable": "OPENAI_MODEL",
+      "selection_rule": "Cheapest supported model passing the extraction fixtures"
+    },
+    "organize": {
+      "environment_variable": "OPENAI_MODEL_CHEAP",
+      "fallback_environment_variable": "OPENAI_MODEL",
+      "selection_rule": "Cheapest supported model passing the grouping fixtures"
+    },
+    "repair": {
+      "environment_variable": "OPENAI_MODEL_REPAIR",
+      "optional": true,
+      "selection_rule": "Stronger tested model, failing units only"
+    }
+  },
+  "extraction": {
+    "mode": "retrieval",
+    "unit": "document_domain",
+    "max_search_calls_per_unit": 3,
+    "max_results_per_search": 20,
+    "max_page_context_tokens": 18000,
+    "overflow": "Split into topic query bundles; never truncate and label complete",
+    "ocr": {
+      "enabled": false,
+      "when_enabled": "Unreadable pages only; record method and machine-readability separately"
+    },
+    "coverage": [
+      "search_queries",
+      "returned_pages",
+      "input_pages",
+      "unreadable_pages",
+      "unsearched_topics",
+      "budget_limited"
+    ],
+    "taxonomy_context": {
+      "routing": "Compact global catalogue of all topic IDs and short definitions",
+      "detail": "Current domain and adjacent-topic definitions/exclusions",
+      "optimization_gate": "Compare against full-catalogue fixtures before reducing detail; never constrain primary_topic_id to the queried domain"
+    },
+    "coverage_meaning": "Bounded retrieval processing, not proof of exhaustive page review"
+  },
+  "organization": {
+    "pre_pack_reconciliation": "Reconcile duplicate discoveries from the same document/span AND equivalent proposition; preserve discovery aliases. A shared quote alone is insufficient. Resolve primary-topic disagreement with bounded retagging or keep identity uncertainty visible.",
+    "unit": "country_home_domain",
+    "pool_by": "Assigned primary and secondary topics across all current document records, irrespective of extraction question",
+    "ownership": "Primary topic home domain owns the record; other packs receive it as context_only",
+    "max_input_tokens": 24000,
+    "overflow": "Partition by primary topic and named policy object; bounded reconciliation remains Stage 2",
+    "required_accounting": "Every owned eligible record exactly once in a claim or explicit retained unclassified item; context-only inputs are references, never new ownership",
+    "fallback": "Retain valid single-record claims with organization_partial; unresolved identity or topic qualification increases uncertainty. Do not publish exact claim totals until accounting/reconciliation completes."
+  },
+  "automatic_checks": {
+    "targeted_repair_attempts": 1,
+    "strong_model_attempts": 1,
+    "checks": [
+      "schema",
+      "known_ids",
+      "source_spans",
+      "numeric_fidelity",
+      "primary_membership",
+      "link_targets",
+      "comparability",
+      "budget_and_coverage"
+    ],
+    "remaining_failure": "Publish diagnostics and incomplete coverage; preserve dated previous snapshot. Unsupported fields do not qualify a band. Never encode missing processing as No evidence found.",
+    "source_integrity": "Failed or unreadable required material makes affected topics processing-incomplete. Preserve source-checked positive responses. If affected topics are unknown, mark the required document scope incomplete. Use fixed-denominator coverage bounds."
+  },
+  "publication": {
+    "human_review_required": false,
+    "mode": "atomic_country_snapshot_when_jobs_terminal_or_mode_deadline",
+    "interactive_deadline_minutes": 60,
+    "backfill_deadline_minutes": 3000,
+    "deadline_is": "Configurable unmeasured product defaults. Backfill permits two dependent up-to-24-hour API stages plus overhead; overflow/repairs can still exceed it.",
+    "late_completion": "A deadline may publish a partial snapshot; later successful jobs automatically create a new complete or more complete snapshot unless superseded by a newer input bundle",
+    "partial_publication": true,
+    "while_running": "Keep previous published snapshot visible and identify pending changes",
+    "post_publication_flags": true
+  },
+  "cache": {
+    "key_fields": [
+      "document_hash_or_record_input_hash",
+      "prompt_hash",
+      "taxonomy_semantic_hash",
+      "labels_semantic_hash",
+      "schema_version",
+      "model",
+      "model_parameters",
+      "retrieval_settings"
+    ],
+    "incremental": "Only changed document units and dependent organization packs rerun"
+  },
+  "cost": {
+    "budget_environment_variable": "MAX_USD_PER_RUN",
+    "enforce_runtime_budget": true,
+    "budget_scope": "One persisted country-update allowance shared by extraction, organization, overflow reconciliation, SDK/application retries, repairs, search and optional OCR; never reset it per subjob",
+    "budget_exhaustion": "Reserve estimated cost before dispatch, reconcile actual usage, stop new billable calls at the remaining allowance and publish incomplete coverage. Track ongoing storage separately.",
+    "batch": "Optional supported offline backfills; Stage 2 starts after Stage 1 batch completes",
+    "measure": [
+      "tokens",
+      "cached_tokens",
+      "search_calls",
+      "ocr_pages",
+      "repairs",
+      "cost_per_eligible_record",
+      "cost_per_country_update"
+    ]
+  },
+  "comparison_profile": {
+    "id": "regional-climate-disaster-64",
+    "version": "2.0.0",
+    "topic_set": "All 64 topics in the bundled taxonomy; one explicit home_domain_id each",
+    "country_total_enabled": false,
+    "source_scope": "All supplied documents for overview; benchmark cohort must use an explicitly common document-role/date profile",
+    "benchmark_source_profile": null,
+    "unset_source_profile": "Publish exploratory comparisons with source-scope badge; no normalized rankings",
+    "country_specific_topic_exclusions": false,
+    "focus_filter_changes_denominator": false,
+    "aggregation": "Count each home topic once; band distributions and response coverage P/N to (P+U)/N; never average ordinal codes",
+    "normalization_enabled": false
+  }
+}

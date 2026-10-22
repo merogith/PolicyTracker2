@@ -1,0 +1,1575 @@
+{
+  "id": "subject-taxonomy",
+  "version": "0.1.0-draft",
+  "status": "draft_for_review",
+  "answers": "What is this source record about?",
+  "rules": [
+    "The model selects topic IDs only. Domains and groups are derived from topic placements by code; the model never names a domain.",
+    "Select every topic the record substantively covers, and none that it merely mentions. Zero topics is valid; keep the record and use unmapped_concepts.",
+    "A topic may sit in several domains (placements). A record therefore appears in several domain views but is counted once overall. Domain counts overlap and must not be added together.",
+    "The first placement is the topic's home domain, and the ID prefix matches the home domain's prefix.",
+    "An ID is never reused for a different meaning. A retired or moved ID is listed in legacy_ids of its successor(s). A topic carved out of a topic that still exists lists it in split_from.",
+    "Use a sector topic for a sector measure (flood defences = WAT-03). Use a Disaster Risk Management topic only when the subject is the cross-sector disaster-risk system itself.",
+    "Membership of the Climate domain does not establish climate causation; an earthquake is never climate evidence."
+  ],
+  "domains": [
+    {
+      "id": "climate",
+      "prefix": "CLM",
+      "label": "Climate",
+      "definition": "Climate-specific cross-sector policy: governance, finance, transparency, economy-wide mitigation, climate information and loss and damage. Sector measures use their sector domain.",
+      "groups": [
+        {
+          "id": "governance",
+          "label": "Governance, finance and transparency"
+        },
+        {
+          "id": "mitigation",
+          "label": "Economy-wide mitigation"
+        },
+        {
+          "id": "knowledge",
+          "label": "Climate information and impacts"
+        },
+        {
+          "id": "loss_damage",
+          "label": "Loss and damage"
+        }
+      ]
+    },
+    {
+      "id": "disaster_risk",
+      "prefix": "DRM",
+      "label": "Disaster Risk Management",
+      "definition": "All-hazards disaster-risk systems: governance, risk knowledge, warning and preparedness, response, recovery and risk finance, whether or not the hazard is climate-related.",
+      "groups": [
+        {
+          "id": "governance_knowledge",
+          "label": "Risk governance and knowledge"
+        },
+        {
+          "id": "reduction_preparedness",
+          "label": "Risk reduction, warning and preparedness"
+        },
+        {
+          "id": "response_recovery",
+          "label": "Response and recovery"
+        },
+        {
+          "id": "risk_finance",
+          "label": "Risk finance"
+        }
+      ]
+    },
+    {
+      "id": "agriculture",
+      "prefix": "AGR",
+      "label": "Agriculture & Food",
+      "definition": "Crops, soils, livestock, rangelands, farm water, fisheries and food systems.",
+      "groups": [
+        {
+          "id": "production",
+          "label": "Crops, soils and livestock"
+        },
+        {
+          "id": "farm_water",
+          "label": "Farm water"
+        },
+        {
+          "id": "food_systems",
+          "label": "Food systems and fisheries"
+        }
+      ]
+    },
+    {
+      "id": "water",
+      "prefix": "WAT",
+      "label": "Water",
+      "definition": "Water resources, supply, basins, drought, floods and coasts, water quality and the cryosphere as a water source.",
+      "groups": [
+        {
+          "id": "resources",
+          "label": "Water resources and supply"
+        },
+        {
+          "id": "hazards",
+          "label": "Floods, drought and coasts"
+        },
+        {
+          "id": "quality",
+          "label": "Water quality and sanitation"
+        }
+      ]
+    },
+    {
+      "id": "nature_land",
+      "prefix": "NAT",
+      "label": "Nature, Forests & Land",
+      "definition": "Forests, land, land degradation, biodiversity, ecosystems and land carbon.",
+      "groups": [
+        {
+          "id": "forests_land",
+          "label": "Forests and land"
+        },
+        {
+          "id": "biodiversity",
+          "label": "Biodiversity and ecosystems"
+        }
+      ]
+    },
+    {
+      "id": "energy",
+      "prefix": "ENE",
+      "label": "Energy",
+      "definition": "Energy supply, renewables, grids, efficiency, heating, fossil-fuel transition and methane.",
+      "groups": [
+        {
+          "id": "supply",
+          "label": "Supply, renewables and grids"
+        },
+        {
+          "id": "demand",
+          "label": "Efficiency, heating and demand"
+        },
+        {
+          "id": "transition",
+          "label": "Fossil transition and methane"
+        }
+      ]
+    },
+    {
+      "id": "settlements",
+      "prefix": "SET",
+      "label": "Settlements & Infrastructure",
+      "definition": "Buildings, settlements, land-use planning, urban heat and critical infrastructure. Membership does not establish urban geographic scope.",
+      "groups": [
+        {
+          "id": "built",
+          "label": "Buildings and settlements"
+        },
+        {
+          "id": "infrastructure",
+          "label": "Critical infrastructure"
+        }
+      ]
+    },
+    {
+      "id": "transport",
+      "prefix": "TRN",
+      "label": "Transport",
+      "definition": "Vehicles, fuels, mobility services and transport-network resilience.",
+      "groups": [
+        {
+          "id": "low_emission",
+          "label": "Low-emission mobility"
+        },
+        {
+          "id": "resilience",
+          "label": "Transport resilience"
+        }
+      ]
+    },
+    {
+      "id": "industry",
+      "prefix": "IND",
+      "label": "Industry & Mining",
+      "definition": "Industrial production, processes, industrial resilience, mining and extractives.",
+      "groups": [
+        {
+          "id": "production",
+          "label": "Production and processes"
+        },
+        {
+          "id": "mining",
+          "label": "Mining and extractives"
+        }
+      ]
+    },
+    {
+      "id": "health",
+      "prefix": "HEA",
+      "label": "Health",
+      "definition": "Climate- and disaster-related health risks and health services.",
+      "groups": [
+        {
+          "id": "risks",
+          "label": "Health risks"
+        },
+        {
+          "id": "services",
+          "label": "Health services and facilities"
+        }
+      ]
+    },
+    {
+      "id": "waste",
+      "prefix": "WST",
+      "label": "Waste & Circular Economy",
+      "definition": "Materials and recycling, solid waste and landfill methane, wastewater.",
+      "groups": [
+        {
+          "id": "circular",
+          "label": "Materials and circularity"
+        },
+        {
+          "id": "solid",
+          "label": "Solid waste and methane"
+        },
+        {
+          "id": "wastewater",
+          "label": "Wastewater"
+        }
+      ]
+    },
+    {
+      "id": "economy",
+      "prefix": "ECO",
+      "label": "Economy & Transition",
+      "definition": "Economic diversification, economic resilience, just transition and restructuring of climate-exposed or fossil-dependent economies.",
+      "groups": [
+        {
+          "id": "diversification",
+          "label": "Diversification and resilience"
+        },
+        {
+          "id": "transition",
+          "label": "Just transition and restructuring"
+        }
+      ]
+    },
+    {
+      "id": "livelihoods",
+      "prefix": "LIV",
+      "label": "Livelihoods & Social Protection",
+      "definition": "Jobs and livelihood resilience, social protection and safety nets, and displacement, migration and planned relocation.",
+      "groups": [
+        {
+          "id": "livelihoods",
+          "label": "Jobs and livelihoods"
+        },
+        {
+          "id": "protection",
+          "label": "Social protection and mobility"
+        }
+      ]
+    },
+    {
+      "id": "culture",
+      "prefix": "CUL",
+      "label": "Culture & Heritage",
+      "definition": "Tangible and intangible heritage and local or traditional knowledge.",
+      "groups": [
+        {
+          "id": "heritage",
+          "label": "Heritage and local knowledge"
+        }
+      ]
+    },
+    {
+      "id": "education",
+      "prefix": "EDU",
+      "label": "Education & Knowledge",
+      "definition": "Education, public awareness, research, data and knowledge systems.",
+      "groups": [
+        {
+          "id": "awareness",
+          "label": "Education and awareness"
+        },
+        {
+          "id": "research",
+          "label": "Research and knowledge systems"
+        }
+      ]
+    },
+    {
+      "id": "tourism",
+      "prefix": "TOU",
+      "label": "Tourism",
+      "definition": "Tourism systems, destinations and tourism-dependent livelihoods. Use only when the tourism sector is explicit.",
+      "groups": [
+        {
+          "id": "tourism",
+          "label": "Tourism systems and destinations"
+        }
+      ]
+    }
+  ],
+  "topics": [
+    {
+      "id": "CLM-01",
+      "label": "Climate planning, governance and mainstreaming",
+      "definition": "Climate strategies and laws, institutional arrangements, coordination bodies, and mainstreaming climate into sector or budget planning.",
+      "placements": [
+        {
+          "domain": "climate",
+          "group": "governance"
+        }
+      ],
+      "routing": [
+        {
+          "when": "the subject is a finance or support mechanism",
+          "use": "CLM-02"
+        },
+        {
+          "when": "the institution is a disaster-risk or civil-protection body",
+          "use": "DRM-01"
+        }
+      ],
+      "legacy_ids": [
+        "CLM-01"
+      ]
+    },
+    {
+      "id": "CLM-02",
+      "label": "Climate finance and support",
+      "definition": "Mobilising, channelling or requesting finance, technology transfer and capacity support for climate action, where the finance arrangement itself is the subject.",
+      "placements": [
+        {
+          "domain": "climate",
+          "group": "governance"
+        }
+      ],
+      "routing": [
+        {
+          "when": "an amount funds one sector project",
+          "use": "the sector topic, with a finance fact"
+        },
+        {
+          "when": "insurance, contingency funds or risk pools for disasters",
+          "use": "DRM-05"
+        }
+      ],
+      "legacy_ids": [
+        "CLM-02"
+      ]
+    },
+    {
+      "id": "CLM-03",
+      "label": "Climate observations, projections and impact assessment",
+      "definition": "Observed climate trends, climate projections, and climate vulnerability or impact assessments.",
+      "placements": [
+        {
+          "domain": "climate",
+          "group": "knowledge"
+        },
+        {
+          "domain": "disaster_risk",
+          "group": "governance_knowledge"
+        }
+      ],
+      "routing": [
+        {
+          "when": "a multi-hazard risk assessment, hazard map or disaster-loss database",
+          "use": "DRM-02"
+        },
+        {
+          "when": "operational forecasting for warnings",
+          "use": "DRM-03"
+        }
+      ],
+      "legacy_ids": [
+        "CLM-03"
+      ]
+    },
+    {
+      "id": "CLM-05",
+      "label": "Climate transparency and reporting",
+      "definition": "Greenhouse-gas inventories, MRV systems, progress tracking and reporting under the UNFCCC.",
+      "placements": [
+        {
+          "domain": "climate",
+          "group": "governance"
+        }
+      ],
+      "routing": [
+        {
+          "when": "climate observations or projections rather than reporting systems",
+          "use": "CLM-03"
+        }
+      ],
+      "legacy_ids": [
+        "CLM-05"
+      ]
+    },
+    {
+      "id": "CLM-06",
+      "label": "Economy-wide emissions targets and pathways",
+      "definition": "Economy-wide greenhouse-gas targets, carbon-neutrality goals and long-term emission pathways.",
+      "placements": [
+        {
+          "domain": "climate",
+          "group": "mitigation"
+        }
+      ],
+      "routing": [
+        {
+          "when": "a target for one sector",
+          "use": "the sector topic"
+        },
+        {
+          "when": "a land sink or removals target",
+          "use": "NAT-04"
+        }
+      ],
+      "legacy_ids": [
+        "CLM-06"
+      ]
+    },
+    {
+      "id": "CLM-09",
+      "label": "Loss and damage",
+      "definition": "Economic and non-economic losses from climate-change impacts framed as loss and damage, and arrangements to address them.",
+      "placements": [
+        {
+          "domain": "climate",
+          "group": "loss_damage"
+        }
+      ],
+      "routing": [
+        {
+          "when": "losses from one disaster event reported without loss-and-damage framing",
+          "use": "DRM-02"
+        },
+        {
+          "when": "a displacement or relocation programme",
+          "use": "LIV-03"
+        }
+      ],
+      "legacy_ids": []
+    },
+    {
+      "id": "DRM-01",
+      "label": "Disaster risk governance and institutions",
+      "definition": "Disaster-risk-reduction strategies and laws, civil-protection or emergency-management agencies and coordination mechanisms.",
+      "placements": [
+        {
+          "domain": "disaster_risk",
+          "group": "governance_knowledge"
+        }
+      ],
+      "routing": [
+        {
+          "when": "climate strategy or climate coordination bodies",
+          "use": "CLM-01"
+        }
+      ],
+      "legacy_ids": [
+        "CLM-08"
+      ]
+    },
+    {
+      "id": "DRM-02",
+      "label": "Disaster risk assessment and loss data",
+      "definition": "Hazard mapping, multi-hazard risk assessments, exposure and vulnerability databases, and disaster-loss accounting, including reported event losses.",
+      "placements": [
+        {
+          "domain": "disaster_risk",
+          "group": "governance_knowledge"
+        }
+      ],
+      "routing": [
+        {
+          "when": "climate projections or climate impact studies",
+          "use": "CLM-03"
+        }
+      ],
+      "legacy_ids": [
+        "CLM-08"
+      ]
+    },
+    {
+      "id": "DRM-03",
+      "label": "Early warning and preparedness",
+      "definition": "Monitoring and forecasting for warnings, warning dissemination, contingency plans, drills, stockpiles and readiness to act.",
+      "placements": [
+        {
+          "domain": "disaster_risk",
+          "group": "reduction_preparedness"
+        }
+      ],
+      "routing": [
+        {
+          "when": "general public-awareness or education campaigns",
+          "use": "EDU-02"
+        },
+        {
+          "when": "a physical flood defence",
+          "use": "WAT-03"
+        }
+      ],
+      "legacy_ids": [
+        "CLM-04"
+      ]
+    },
+    {
+      "id": "DRM-04",
+      "label": "Multi-hazard risk reduction programmes",
+      "definition": "Cross-sector programmes that reduce exposure or vulnerability to several hazards and have no single sector home. This is the residual home; prefer sector topics.",
+      "placements": [
+        {
+          "domain": "disaster_risk",
+          "group": "reduction_preparedness"
+        }
+      ],
+      "routing": [
+        {
+          "when": "flood or coastal defences",
+          "use": "WAT-03"
+        },
+        {
+          "when": "settlement planning or building safety",
+          "use": "SET-02"
+        },
+        {
+          "when": "hospital or health-facility safety",
+          "use": "HEA-03"
+        }
+      ],
+      "legacy_ids": [
+        "CLM-08"
+      ]
+    },
+    {
+      "id": "DRM-05",
+      "label": "Disaster risk finance and insurance",
+      "definition": "Contingency and reserve funds, insurance schemes, risk pools, catastrophe bonds and other pre-arranged disaster finance.",
+      "placements": [
+        {
+          "domain": "disaster_risk",
+          "group": "risk_finance"
+        }
+      ],
+      "routing": [
+        {
+          "when": "general climate finance mobilisation",
+          "use": "CLM-02"
+        }
+      ],
+      "legacy_ids": []
+    },
+    {
+      "id": "DRM-06",
+      "label": "Emergency response and civil protection",
+      "definition": "Search and rescue, evacuation, emergency relief and civil-protection operations during or immediately after an event.",
+      "placements": [
+        {
+          "domain": "disaster_risk",
+          "group": "response_recovery"
+        }
+      ],
+      "routing": [],
+      "legacy_ids": [
+        "CLM-08"
+      ]
+    },
+    {
+      "id": "DRM-07",
+      "label": "Recovery and reconstruction",
+      "definition": "Post-disaster needs assessment, recovery frameworks, rebuilding (including building back better) and restoration of services and livelihoods.",
+      "placements": [
+        {
+          "domain": "disaster_risk",
+          "group": "response_recovery"
+        }
+      ],
+      "routing": [],
+      "legacy_ids": [
+        "CLM-08"
+      ]
+    },
+    {
+      "id": "AGR-01",
+      "label": "Irrigation and farm water efficiency",
+      "definition": "Irrigation systems, on-farm water efficiency, drainage and farm water storage.",
+      "placements": [
+        {
+          "domain": "agriculture",
+          "group": "farm_water"
+        },
+        {
+          "domain": "water",
+          "group": "resources"
+        }
+      ],
+      "routing": [
+        {
+          "when": "municipal or household water supply",
+          "use": "WAT-01"
+        },
+        {
+          "when": "solar-powered pumping is substantive",
+          "use": "ENE-01 as well"
+        }
+      ],
+      "legacy_ids": [
+        "AGR-01"
+      ]
+    },
+    {
+      "id": "AGR-02",
+      "label": "Resilient crops and soils",
+      "definition": "Crop varieties, cropping practices, on-farm soil health and agricultural adaptation of production.",
+      "placements": [
+        {
+          "domain": "agriculture",
+          "group": "production"
+        }
+      ],
+      "routing": [
+        {
+          "when": "landscape-scale degradation or desertification",
+          "use": "NAT-05"
+        },
+        {
+          "when": "explicit soil-carbon accounting",
+          "use": "NAT-04"
+        }
+      ],
+      "legacy_ids": [
+        "AGR-02"
+      ]
+    },
+    {
+      "id": "AGR-03",
+      "label": "Livestock, pastures and rangelands",
+      "definition": "Livestock production and health, manure and enteric emissions, pasture and rangeland management.",
+      "placements": [
+        {
+          "domain": "agriculture",
+          "group": "production"
+        }
+      ],
+      "routing": [
+        {
+          "when": "human health",
+          "use": "HEA-02"
+        }
+      ],
+      "legacy_ids": [
+        "AGR-03"
+      ]
+    },
+    {
+      "id": "AGR-04",
+      "label": "Food security and farm livelihoods",
+      "definition": "Food availability and access, value chains, farm incomes and rural agricultural livelihoods.",
+      "placements": [
+        {
+          "domain": "agriculture",
+          "group": "food_systems"
+        },
+        {
+          "domain": "livelihoods",
+          "group": "livelihoods"
+        }
+      ],
+      "routing": [],
+      "legacy_ids": [
+        "AGR-04"
+      ]
+    },
+    {
+      "id": "AGR-05",
+      "label": "Fisheries and aquaculture",
+      "definition": "Capture fisheries, aquaculture and the ecosystems and livelihoods they depend on.",
+      "placements": [
+        {
+          "domain": "agriculture",
+          "group": "food_systems"
+        }
+      ],
+      "routing": [],
+      "legacy_ids": []
+    },
+    {
+      "id": "WAT-01",
+      "label": "Water supply and groundwater",
+      "definition": "Drinking and municipal water supply, water storage and groundwater management.",
+      "placements": [
+        {
+          "domain": "water",
+          "group": "resources"
+        }
+      ],
+      "routing": [
+        {
+          "when": "farm irrigation",
+          "use": "AGR-01"
+        },
+        {
+          "when": "sanitation or wastewater",
+          "use": "WST-03"
+        }
+      ],
+      "legacy_ids": [
+        "WAT-01"
+      ]
+    },
+    {
+      "id": "WAT-02",
+      "label": "River basins and transboundary water",
+      "definition": "Basin planning, water allocation between users and sectors, and transboundary water cooperation.",
+      "placements": [
+        {
+          "domain": "water",
+          "group": "resources"
+        }
+      ],
+      "routing": [
+        {
+          "when": "drought planning or drought response",
+          "use": "WAT-06"
+        },
+        {
+          "when": "flood defences",
+          "use": "WAT-03"
+        }
+      ],
+      "legacy_ids": [
+        "WAT-02"
+      ]
+    },
+    {
+      "id": "WAT-03",
+      "label": "Flood and coastal protection",
+      "definition": "Structural and nature-based flood, river-bank and coastal protection, and floodplain management.",
+      "placements": [
+        {
+          "domain": "water",
+          "group": "hazards"
+        },
+        {
+          "domain": "disaster_risk",
+          "group": "reduction_preparedness"
+        }
+      ],
+      "routing": [
+        {
+          "when": "flood warning systems",
+          "use": "DRM-03"
+        },
+        {
+          "when": "general settlement planning",
+          "use": "SET-02 as well"
+        }
+      ],
+      "legacy_ids": [
+        "WAT-03"
+      ]
+    },
+    {
+      "id": "WAT-04",
+      "label": "Water quality and reuse",
+      "definition": "Receiving-water quality, pollution control and water reuse.",
+      "placements": [
+        {
+          "domain": "water",
+          "group": "quality"
+        }
+      ],
+      "routing": [
+        {
+          "when": "wastewater treatment systems",
+          "use": "WST-03"
+        }
+      ],
+      "legacy_ids": [
+        "WAT-04"
+      ]
+    },
+    {
+      "id": "WAT-05",
+      "label": "Glaciers, snow and mountain water",
+      "definition": "Changes in glaciers, snowpack and permafrost as water sources, and their monitoring or management.",
+      "placements": [
+        {
+          "domain": "water",
+          "group": "resources"
+        }
+      ],
+      "routing": [
+        {
+          "when": "a glacial-lake outburst flood as an event or warning",
+          "use": "the hazard facet with DRM-02 or DRM-03"
+        }
+      ],
+      "legacy_ids": []
+    },
+    {
+      "id": "WAT-06",
+      "label": "Drought management",
+      "definition": "Drought monitoring, drought plans, drought response measures and water-shortage management.",
+      "placements": [
+        {
+          "domain": "water",
+          "group": "hazards"
+        }
+      ],
+      "routing": [
+        {
+          "when": "drought warnings",
+          "use": "DRM-03 as well"
+        },
+        {
+          "when": "on-farm drought adaptation such as crops or fodder",
+          "use": "AGR-02 or AGR-03 as well"
+        }
+      ],
+      "legacy_ids": [],
+      "split_from": [
+        "WAT-02"
+      ]
+    },
+    {
+      "id": "NAT-01",
+      "label": "Forest management and health",
+      "definition": "Forest management, afforestation, forest health and wildfire prevention in forests.",
+      "placements": [
+        {
+          "domain": "nature_land",
+          "group": "forests_land"
+        }
+      ],
+      "routing": [
+        {
+          "when": "a carbon-only forest target",
+          "use": "NAT-04"
+        }
+      ],
+      "legacy_ids": [
+        "BIO-01"
+      ]
+    },
+    {
+      "id": "NAT-02",
+      "label": "Species, habitats and protected areas",
+      "definition": "Species conservation, habitats and protected-area systems.",
+      "placements": [
+        {
+          "domain": "nature_land",
+          "group": "biodiversity"
+        }
+      ],
+      "routing": [
+        {
+          "when": "active restoration of degraded ecosystems",
+          "use": "NAT-03"
+        }
+      ],
+      "legacy_ids": [
+        "BIO-02"
+      ]
+    },
+    {
+      "id": "NAT-03",
+      "label": "Ecosystem restoration",
+      "definition": "Active restoration of degraded ecosystems such as wetlands, steppe and riparian zones.",
+      "placements": [
+        {
+          "domain": "nature_land",
+          "group": "biodiversity"
+        },
+        {
+          "domain": "nature_land",
+          "group": "forests_land"
+        }
+      ],
+      "routing": [],
+      "legacy_ids": [
+        "BIO-03"
+      ]
+    },
+    {
+      "id": "NAT-04",
+      "label": "Land carbon and removals",
+      "definition": "Land-use, land-use change and forestry (LULUCF) sinks, removals and their accounting.",
+      "placements": [
+        {
+          "domain": "nature_land",
+          "group": "forests_land"
+        },
+        {
+          "domain": "climate",
+          "group": "mitigation"
+        }
+      ],
+      "routing": [
+        {
+          "when": "biodiversity benefits are claimed",
+          "use": "NAT-02 or NAT-03 only with evidence"
+        }
+      ],
+      "legacy_ids": [
+        "CLM-07"
+      ]
+    },
+    {
+      "id": "NAT-05",
+      "label": "Land degradation, desertification and salinity",
+      "definition": "Combating desertification, land degradation, sand encroachment, soil salinisation and erosion at landscape scale.",
+      "placements": [
+        {
+          "domain": "nature_land",
+          "group": "forests_land"
+        }
+      ],
+      "routing": [
+        {
+          "when": "on-farm soil practices",
+          "use": "AGR-02"
+        }
+      ],
+      "legacy_ids": []
+    },
+    {
+      "id": "ENE-01",
+      "label": "Renewable electricity",
+      "definition": "Renewable power generation such as solar, wind, hydro and geothermal.",
+      "placements": [
+        {
+          "domain": "energy",
+          "group": "supply"
+        }
+      ],
+      "routing": [],
+      "legacy_ids": [
+        "ENE-01"
+      ]
+    },
+    {
+      "id": "ENE-02",
+      "label": "Grids and energy storage",
+      "definition": "Transmission, distribution, grid flexibility and storage, including grid resilience.",
+      "placements": [
+        {
+          "domain": "energy",
+          "group": "supply"
+        },
+        {
+          "domain": "settlements",
+          "group": "infrastructure"
+        }
+      ],
+      "routing": [
+        {
+          "when": "a generating plant without grid measures",
+          "use": "ENE-01 or ENE-05"
+        }
+      ],
+      "legacy_ids": [
+        "ENE-02"
+      ]
+    },
+    {
+      "id": "ENE-03",
+      "label": "Clean heating and fuels",
+      "definition": "District heating, heat pumps and cleaner heating or cooking fuels.",
+      "placements": [
+        {
+          "domain": "energy",
+          "group": "demand"
+        }
+      ],
+      "routing": [
+        {
+          "when": "vehicle fuels",
+          "use": "TRN-01"
+        }
+      ],
+      "legacy_ids": [
+        "ENE-03"
+      ]
+    },
+    {
+      "id": "ENE-04",
+      "label": "Energy efficiency and demand management",
+      "definition": "Economy-wide or cross-sector efficiency and demand management.",
+      "placements": [
+        {
+          "domain": "energy",
+          "group": "demand"
+        }
+      ],
+      "routing": [
+        {
+          "when": "a building, industrial or transport measure",
+          "use": "SET-01, IND-01 or TRN-01"
+        }
+      ],
+      "legacy_ids": [
+        "ENE-04"
+      ]
+    },
+    {
+      "id": "ENE-05",
+      "label": "Fossil energy transition",
+      "definition": "Coal, oil and gas phase-down, fuel switching and transition of fossil energy systems.",
+      "placements": [
+        {
+          "domain": "energy",
+          "group": "transition"
+        },
+        {
+          "domain": "economy",
+          "group": "transition"
+        }
+      ],
+      "routing": [
+        {
+          "when": "worker and community impacts of the transition",
+          "use": "ECO-02 as well"
+        }
+      ],
+      "legacy_ids": [
+        "ENE-05"
+      ]
+    },
+    {
+      "id": "ENE-06",
+      "label": "Oil and gas methane",
+      "definition": "Methane leakage, venting and flaring in oil, gas and coal-mine operations.",
+      "placements": [
+        {
+          "domain": "energy",
+          "group": "transition"
+        }
+      ],
+      "routing": [
+        {
+          "when": "landfill methane",
+          "use": "WST-02"
+        },
+        {
+          "when": "livestock methane",
+          "use": "AGR-03"
+        }
+      ],
+      "legacy_ids": [
+        "ENE-06"
+      ]
+    },
+    {
+      "id": "ENE-07",
+      "label": "Energy-system climate resilience",
+      "definition": "Exposure of power plants, hydropower and fuel supply to climate hazards, including drought and glacier loss affecting hydropower, heat affecting thermal plants, and the water-energy nexus.",
+      "placements": [
+        {
+          "domain": "energy",
+          "group": "supply"
+        },
+        {
+          "domain": "settlements",
+          "group": "infrastructure"
+        }
+      ],
+      "routing": [
+        {
+          "when": "transmission or distribution network resilience",
+          "use": "ENE-02"
+        },
+        {
+          "when": "glacier and snowmelt water supply as such",
+          "use": "WAT-05"
+        }
+      ],
+      "legacy_ids": []
+    },
+    {
+      "id": "SET-01",
+      "label": "Building energy performance",
+      "definition": "Building codes, retrofits and energy performance of buildings.",
+      "placements": [
+        {
+          "domain": "settlements",
+          "group": "built"
+        },
+        {
+          "domain": "energy",
+          "group": "demand"
+        }
+      ],
+      "routing": [],
+      "legacy_ids": [
+        "URB-01"
+      ]
+    },
+    {
+      "id": "SET-02",
+      "label": "Resilient settlements, infrastructure and land-use planning",
+      "definition": "Risk-informed spatial and land-use planning, building safety, resilient housing, and continuity of public, communications and multi-utility infrastructure without a single sector home.",
+      "placements": [
+        {
+          "domain": "settlements",
+          "group": "built"
+        },
+        {
+          "domain": "settlements",
+          "group": "infrastructure"
+        }
+      ],
+      "routing": [
+        {
+          "when": "energy, transport or water networks",
+          "use": "ENE-02, TRN-03 or WAT-01"
+        }
+      ],
+      "legacy_ids": [
+        "URB-02",
+        "SET-04"
+      ]
+    },
+    {
+      "id": "SET-03",
+      "label": "Urban heat and green space",
+      "definition": "Urban cooling, green and blue infrastructure, and parks.",
+      "placements": [
+        {
+          "domain": "settlements",
+          "group": "built"
+        },
+        {
+          "domain": "nature_land",
+          "group": "biodiversity"
+        }
+      ],
+      "routing": [
+        {
+          "when": "heat-health action plans",
+          "use": "HEA-01"
+        }
+      ],
+      "legacy_ids": [
+        "URB-03"
+      ]
+    },
+    {
+      "id": "TRN-01",
+      "label": "Low-emission vehicles and fuels",
+      "definition": "Vehicle efficiency, electric vehicles and low-carbon transport fuels.",
+      "placements": [
+        {
+          "domain": "transport",
+          "group": "low_emission"
+        }
+      ],
+      "routing": [],
+      "legacy_ids": [
+        "TRN-01"
+      ]
+    },
+    {
+      "id": "TRN-02",
+      "label": "Public, active and shared mobility",
+      "definition": "Public transport, walking, cycling and shared mobility.",
+      "placements": [
+        {
+          "domain": "transport",
+          "group": "low_emission"
+        }
+      ],
+      "routing": [],
+      "legacy_ids": [
+        "TRN-02"
+      ]
+    },
+    {
+      "id": "TRN-03",
+      "label": "Resilient transport networks",
+      "definition": "Protecting roads, rail, ports and airports from hazards and maintaining access.",
+      "placements": [
+        {
+          "domain": "transport",
+          "group": "resilience"
+        },
+        {
+          "domain": "settlements",
+          "group": "infrastructure"
+        }
+      ],
+      "routing": [],
+      "legacy_ids": [
+        "TRN-03"
+      ]
+    },
+    {
+      "id": "IND-01",
+      "label": "Cleaner production and industrial efficiency",
+      "definition": "Industrial energy and resource efficiency and cleaner production.",
+      "placements": [
+        {
+          "domain": "industry",
+          "group": "production"
+        }
+      ],
+      "routing": [
+        {
+          "when": "process gases or refrigerants",
+          "use": "IND-02"
+        }
+      ],
+      "legacy_ids": [
+        "IND-01"
+      ]
+    },
+    {
+      "id": "IND-02",
+      "label": "Process emissions and refrigerants",
+      "definition": "Industrial process emissions, F-gases and refrigerants.",
+      "placements": [
+        {
+          "domain": "industry",
+          "group": "production"
+        }
+      ],
+      "routing": [],
+      "legacy_ids": [
+        "IND-02"
+      ]
+    },
+    {
+      "id": "IND-03",
+      "label": "Industrial climate and disaster resilience",
+      "definition": "Protecting industrial sites and supply chains from hazards, including technological-accident risk.",
+      "placements": [
+        {
+          "domain": "industry",
+          "group": "production"
+        }
+      ],
+      "routing": [],
+      "legacy_ids": [
+        "IND-03"
+      ]
+    },
+    {
+      "id": "IND-04",
+      "label": "Mining and critical minerals",
+      "definition": "Climate and risk aspects of mining, critical minerals and extractive-sector transition, including tailings safety.",
+      "placements": [
+        {
+          "domain": "industry",
+          "group": "mining"
+        }
+      ],
+      "routing": [
+        {
+          "when": "coal phase-down for energy",
+          "use": "ENE-05"
+        }
+      ],
+      "legacy_ids": []
+    },
+    {
+      "id": "HEA-01",
+      "label": "Heat and human health",
+      "definition": "Heat-health action plans, heat-related illness and health protection during heat.",
+      "placements": [
+        {
+          "domain": "health",
+          "group": "risks"
+        }
+      ],
+      "routing": [],
+      "legacy_ids": [
+        "HEA-01"
+      ]
+    },
+    {
+      "id": "HEA-02",
+      "label": "Climate-sensitive disease and exposure",
+      "definition": "Vector-, water- and food-borne disease, air quality and other climate-sensitive health exposures.",
+      "placements": [
+        {
+          "domain": "health",
+          "group": "risks"
+        }
+      ],
+      "routing": [],
+      "legacy_ids": [
+        "HEA-02"
+      ]
+    },
+    {
+      "id": "HEA-03",
+      "label": "Resilient health services",
+      "definition": "Health-system preparedness, safe and continuous health facilities and surveillance capacity.",
+      "placements": [
+        {
+          "domain": "health",
+          "group": "services"
+        }
+      ],
+      "routing": [
+        {
+          "when": "general civil protection",
+          "use": "DRM-06"
+        }
+      ],
+      "legacy_ids": [
+        "HEA-03"
+      ]
+    },
+    {
+      "id": "WST-01",
+      "label": "Materials, recycling and circularity",
+      "definition": "Waste prevention, recycling and circular-economy measures.",
+      "placements": [
+        {
+          "domain": "waste",
+          "group": "circular"
+        }
+      ],
+      "routing": [],
+      "legacy_ids": [
+        "WST-01"
+      ]
+    },
+    {
+      "id": "WST-02",
+      "label": "Solid-waste disposal and methane",
+      "definition": "Landfills, landfill gas and solid-waste disposal.",
+      "placements": [
+        {
+          "domain": "waste",
+          "group": "solid"
+        }
+      ],
+      "routing": [],
+      "legacy_ids": [
+        "WST-02"
+      ]
+    },
+    {
+      "id": "WST-03",
+      "label": "Wastewater and sanitation",
+      "definition": "Sewerage, wastewater treatment and sanitation services.",
+      "placements": [
+        {
+          "domain": "waste",
+          "group": "wastewater"
+        },
+        {
+          "domain": "water",
+          "group": "quality"
+        }
+      ],
+      "routing": [],
+      "legacy_ids": [
+        "WST-03"
+      ]
+    },
+    {
+      "id": "ECO-01",
+      "label": "Economic diversification and resilience",
+      "definition": "Diversifying climate-exposed or fossil-dependent economies and strengthening economic resilience.",
+      "placements": [
+        {
+          "domain": "economy",
+          "group": "diversification"
+        }
+      ],
+      "routing": [],
+      "legacy_ids": [
+        "ECO-01"
+      ]
+    },
+    {
+      "id": "ECO-02",
+      "label": "Just transition and economic restructuring",
+      "definition": "Fair management of transition impacts on workers, regions and communities.",
+      "placements": [
+        {
+          "domain": "economy",
+          "group": "transition"
+        }
+      ],
+      "routing": [],
+      "legacy_ids": [
+        "ECO-02"
+      ]
+    },
+    {
+      "id": "LIV-01",
+      "label": "Jobs and resilient livelihoods",
+      "definition": "Employment, skills for green jobs and livelihood resilience outside a single sector.",
+      "placements": [
+        {
+          "domain": "livelihoods",
+          "group": "livelihoods"
+        }
+      ],
+      "routing": [
+        {
+          "when": "farm livelihoods",
+          "use": "AGR-04"
+        },
+        {
+          "when": "tourism-dependent livelihoods",
+          "use": "TOU-01 as well"
+        }
+      ],
+      "legacy_ids": [
+        "LIV-01",
+        "TOU-03"
+      ]
+    },
+    {
+      "id": "LIV-02",
+      "label": "Social protection and safety nets",
+      "definition": "Cash transfers, adaptive and shock-responsive social protection, and safety nets.",
+      "placements": [
+        {
+          "domain": "livelihoods",
+          "group": "protection"
+        }
+      ],
+      "routing": [],
+      "legacy_ids": [
+        "LIV-02"
+      ]
+    },
+    {
+      "id": "LIV-03",
+      "label": "Displacement, migration and planned relocation",
+      "definition": "Disaster and climate displacement, migration and planned relocation of communities.",
+      "placements": [
+        {
+          "domain": "livelihoods",
+          "group": "protection"
+        }
+      ],
+      "routing": [],
+      "legacy_ids": []
+    },
+    {
+      "id": "CUL-01",
+      "label": "Heritage risk, conservation and recovery",
+      "definition": "Hazard and climate-impact assessments of tangible or intangible heritage, and protecting, adapting and restoring heritage sites and cultural assets.",
+      "placements": [
+        {
+          "domain": "culture",
+          "group": "heritage"
+        }
+      ],
+      "routing": [],
+      "legacy_ids": [
+        "CUL-01",
+        "CUL-02"
+      ]
+    },
+    {
+      "id": "CUL-03",
+      "label": "Local knowledge and cultural continuity",
+      "definition": "Traditional and local knowledge and cultural practices used or protected in climate and risk policy.",
+      "placements": [
+        {
+          "domain": "culture",
+          "group": "heritage"
+        }
+      ],
+      "routing": [
+        {
+          "when": "local knowledge applied within a sector practice, such as herding or irrigation",
+          "use": "the sector topic; add CUL-03 only when the knowledge itself is the subject"
+        }
+      ],
+      "legacy_ids": [
+        "CUL-03"
+      ]
+    },
+    {
+      "id": "EDU-01",
+      "label": "Climate and disaster education",
+      "definition": "Curricula, school programmes and formal or vocational education on climate and disaster risk.",
+      "placements": [
+        {
+          "domain": "education",
+          "group": "awareness"
+        }
+      ],
+      "routing": [],
+      "legacy_ids": [
+        "EDU-01"
+      ]
+    },
+    {
+      "id": "EDU-02",
+      "label": "Public awareness campaigns",
+      "definition": "Public awareness and behaviour campaigns on climate and disaster risk.",
+      "placements": [
+        {
+          "domain": "education",
+          "group": "awareness"
+        }
+      ],
+      "routing": [
+        {
+          "when": "dissemination of warnings for a specific hazard",
+          "use": "DRM-03"
+        }
+      ],
+      "legacy_ids": [
+        "EDU-02"
+      ]
+    },
+    {
+      "id": "EDU-03",
+      "label": "Research, data and knowledge systems",
+      "definition": "Research programmes and institutions, data infrastructure and knowledge-sharing platforms.",
+      "placements": [
+        {
+          "domain": "education",
+          "group": "research"
+        },
+        {
+          "domain": "climate",
+          "group": "knowledge"
+        }
+      ],
+      "routing": [
+        {
+          "when": "climate observations or projections themselves",
+          "use": "CLM-03"
+        },
+        {
+          "when": "risk or loss databases",
+          "use": "DRM-02"
+        }
+      ],
+      "legacy_ids": [
+        "EDU-03"
+      ]
+    },
+    {
+      "id": "TOU-01",
+      "label": "Tourism adaptation and destination resilience",
+      "definition": "Adapting tourism destinations and services to climate and disaster risk.",
+      "placements": [
+        {
+          "domain": "tourism",
+          "group": "tourism"
+        }
+      ],
+      "routing": [],
+      "legacy_ids": [
+        "TOU-01",
+        "TOU-03"
+      ]
+    },
+    {
+      "id": "TOU-02",
+      "label": "Tourism resource efficiency",
+      "definition": "Energy, water and waste efficiency in tourism.",
+      "placements": [
+        {
+          "domain": "tourism",
+          "group": "tourism"
+        }
+      ],
+      "routing": [],
+      "legacy_ids": [
+        "TOU-02"
+      ]
+    }
+  ]
+}

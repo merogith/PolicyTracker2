@@ -1,0 +1,76 @@
+{
+  "versions": {
+    "claims": "0.3.0-draft",
+    "prompt": "topic-0.1",
+    "model": null
+  },
+  "scope": {
+    "country": "XEX",
+    "topic_id": "DRM-02",
+    "document_ids": [
+      "XEX-NDC3"
+    ],
+    "record_ids": [
+      "XEX-NDC3-p8-1",
+      "XEX-NDC3-p30-2"
+    ]
+  },
+  "claims": [
+    {
+      "claim_id": "C1",
+      "claim_text_en": "The 2024 spring floods displaced people and caused losses: about 12,000 displaced in the Northern basin with USD 90 million in losses (p. 8); 15,000 displaced in the national disaster table (p. 30).",
+      "member_record_ids": [
+        "XEX-NDC3-p8-1",
+        "XEX-NDC3-p30-2"
+      ],
+      "outcome_signal": "not_reported",
+      "setback_flags": [],
+      "status": "contested",
+      "review_status": "proposed",
+      "open_issue": "Check whether 12,000 vs 15,000 is a scope difference (basin vs national) or a conflict."
+    }
+  ],
+  "relations": [
+    {
+      "relation_id": "L1",
+      "from_record_id": "XEX-NDC3-p30-2",
+      "to_record_id": "XEX-NDC3-p8-1",
+      "type": "fact_variant",
+      "rationale": "Both report people displaced by the 2024 floods with different values and scopes.",
+      "review_status": "proposed"
+    }
+  ],
+  "brief": {
+    "core_idea_en": "NDC 3.0 records the 2024 spring floods as the country's major recent disaster impact. The narrative on p. 8 reports about 12,000 people displaced in the Northern basin and USD 90 million in losses; the disaster table on p. 30 reports 15,000 displaced nationally. No risk assessment or loss-accounting system is described in the pages read.",
+    "concerns": [
+      {
+        "text_en": "The 2024 spring floods displaced thousands of people and caused large losses; the two displacement figures differ.",
+        "claim_ids": [
+          "C1"
+        ]
+      }
+    ],
+    "responses": [],
+    "numbers": [
+      {
+        "text_en": "About 12,000 displaced and USD 90 million in losses, Northern basin, 2024 (NDC 3.0, p. 8); 15,000 displaced, national, 2024 (p. 30).",
+        "claim_ids": [
+          "C1"
+        ]
+      }
+    ],
+    "changes_between_editions": [],
+    "gaps": [
+      {
+        "text_en": "The difference between 12,000 and 15,000 is not explained; it may be scope.",
+        "claim_ids": [
+          "C1"
+        ]
+      },
+      {
+        "text_en": "No hazard mapping, risk assessment or loss database is mentioned in the pages read (1, 8, 12, 21-22, 30).",
+        "claim_ids": []
+      }
+    ]
+  }
+}

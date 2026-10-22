@@ -1,0 +1,388 @@
+{
+  "version": "4.2.0",
+  "status": "review_not_active",
+  "date": "2026-10-20",
+  "implementation_plan": "team/FINAL-UPGRADE-PLAN.md",
+  "current_design": "ui-scoring/README.md",
+  "llm_pipeline_baseline_version": "3.0.0",
+  "scoring_method_version": "4.0.0",
+  "presentation_version": "4.1.0",
+  "checks": {
+    "historical_input_contract_tests": 15,
+    "historical_legacy_scoring_tests": 49,
+    "historical_legacy_snapshot_tests": 20,
+    "historical_legacy_water_example": "passed",
+    "ui_scoring_verification": "ui-scoring/VERIFICATION.md",
+    "final_plan_verification": "reference/VERIFICATION.md",
+    "preserved_application_files_verified": 108,
+    "current_runtime_copies_verified": 15
+  },
+  "files": [
+    {
+      "path": "examples/band-cases.json",
+      "bytes": 5202,
+      "sha256": "ab6c8fa2517f1e32428837c9e89f90644beba630edbb175f95daa24663c622a9"
+    },
+    {
+      "path": "examples/extraction-request.json",
+      "bytes": 50556,
+      "sha256": "6962b0974caaf0ca33be9cb5176bfdab70eba338b202de7735e8c5e41f412d70"
+    },
+    {
+      "path": "examples/organization-request.json",
+      "bytes": 24779,
+      "sha256": "f8b966ca640de5ad5eca446e7036db890254f1bfed930ebd287ecee15d43fa6a"
+    },
+    {
+      "path": "examples/water-score-input.json",
+      "bytes": 12075,
+      "sha256": "0d48aa5e2e17525f9f6c5a8403cce3a93e32e49c5b0ad2a35820a65e3a773456"
+    },
+    {
+      "path": "examples/water-score-output.json",
+      "bytes": 28330,
+      "sha256": "ae70995694c15111bb3c9fe6341cabc462901b6797c8fe838c4afcbfcaa1c8b6"
+    },
+    {
+      "path": "examples/water.json",
+      "bytes": 17276,
+      "sha256": "35f10e75c1c1862aec6b270923fc237f559c4cd09c707ac7e034498c8d2e8f3b"
+    },
+    {
+      "path": "pdf/policy-tracker-v3-decision-plan.pdf",
+      "bytes": 85094,
+      "sha256": "28529e926f4b4fd446c768c0b36112c4197cfb49be1882d874a51a0ae61c6653"
+    },
+    {
+      "path": "pdf/policy-tracker-v3-prompt-sourcebook.pdf",
+      "bytes": 160299,
+      "sha256": "75cd768ffcf62dbba0e8dcd7b77106ea68d27a62f0aad604aadd2f53ffdbc3eb"
+    },
+    {
+      "path": "pdf/policy-tracker-v3-taxonomy-and-fields.pdf",
+      "bytes": 183508,
+      "sha256": "a2246e69df7a92113394b72edadcbfe54b4f407ca66426270658084321303c19"
+    },
+    {
+      "path": "pdf/policy-tracker-v3-team-handbook.pdf",
+      "bytes": 653085,
+      "sha256": "f1b3259c44af155f5a9412d9a5222f6f28bbd4bc142c3271cbdb9e0713552e3a"
+    },
+    {
+      "path": "pipeline/bundle.json",
+      "bytes": 5122,
+      "sha256": "c54222b016448522bfd193923cb28152029b073a766dbd8869d4fd1b849e53c2"
+    },
+    {
+      "path": "pipeline/labels.json",
+      "bytes": 11108,
+      "sha256": "f5a6fb013e30f616fb91bcaa860d8242a504f6ea56deb763a6812b24d6a24133"
+    },
+    {
+      "path": "pipeline/llm-contracts.json",
+      "bytes": 17974,
+      "sha256": "543c3779f5337dfa7282e850b922d4bc153c4b39bc9f745d930c1148e7a45117"
+    },
+    {
+      "path": "pipeline/maintenance/retag.md",
+      "bytes": 1371,
+      "sha256": "4c879eba2caf7509753fc41dfb07db1e8d71eb717a7e7497404143fee13a6b8c"
+    },
+    {
+      "path": "pipeline/pipeline.json",
+      "bytes": 8810,
+      "sha256": "2820e121c200e9b40882679e0edd69a09d6a9808d4d0b803a5fef6f6a0bcc68e"
+    },
+    {
+      "path": "pipeline/prompts/extract.md",
+      "bytes": 5426,
+      "sha256": "055eb37ed64c394f3331538fc9216d64c558b50f38d9195b6ea3a3a26d0f36d7"
+    },
+    {
+      "path": "pipeline/prompts/organize.md",
+      "bytes": 4195,
+      "sha256": "d9237d7c863f23f8dc6147e1c8e0713fa5bc73cfb981693d02514955fb9d789b"
+    },
+    {
+      "path": "pipeline/scoring.json",
+      "bytes": 13168,
+      "sha256": "9a0402a73970acf29ba113ecb212afb2deb492c2c68842285ab53087e2f50a08"
+    },
+    {
+      "path": "pipeline/taxonomy.json",
+      "bytes": 51986,
+      "sha256": "301d373901f2e2f28e8156f8aee0444c48ea2fe4dba6d78b02e62e89f377be03"
+    },
+    {
+      "path": "preserved/application-before-update.zip",
+      "bytes": 253351,
+      "sha256": "4b886471d62cea49cf93abd87a826bb7c34abcacde3707cb1559054e8813ae80"
+    },
+    {
+      "path": "preserved/application-manifest.json",
+      "bytes": 18422,
+      "sha256": "a1e7b61de9b92b628bbaa8d1ba427ae4a66a543257759a1e0290d27e5003bc6b"
+    },
+    {
+      "path": "preserved/current-runtime.zip",
+      "bytes": 61071,
+      "sha256": "572ad98d2c64cb096a186263ae0647b97efb6c5303ae2010fe1405f93e55514c"
+    },
+    {
+      "path": "preserved/README.md",
+      "bytes": 1859,
+      "sha256": "7de7ba9f0bc14b1d868f72909d22b75926c8a7449861f555f7c632bb0b5737cb"
+    },
+    {
+      "path": "README.md",
+      "bytes": 9533,
+      "sha256": "dd0541773076d93a8e1444fdb308f9beff1bd88ae4b3dbd16957a7afef27be53"
+    },
+    {
+      "path": "reference/build-inputs.mjs",
+      "bytes": 32930,
+      "sha256": "47464ac8761e1567b07ba3ac06def608727f08c4ba46ef29b827e41113d8f64d"
+    },
+    {
+      "path": "reference/build-pdfs.py",
+      "bytes": 13647,
+      "sha256": "13e37bd6c2f32a3d5316e2fe8f05ef8be0f581a3ccd03dc7755545c87d5c03a4"
+    },
+    {
+      "path": "reference/build-preview.py",
+      "bytes": 5926,
+      "sha256": "26308d52b345f6717839a3f6ad59e8434b196a48567b1b88b20598d409c8f431"
+    },
+    {
+      "path": "reference/build-upgrade-plan.py",
+      "bytes": 3532,
+      "sha256": "fac0ebb5798d08a3266f16b3bcb9a247c384ac5693d6936d5fdafb6b41ca52e9"
+    },
+    {
+      "path": "reference/check-pdfs.py",
+      "bytes": 1581,
+      "sha256": "a4da2acdffee89275fd594f5c55217caea4236e3f949149d4dfe6367b20f6f9f"
+    },
+    {
+      "path": "reference/check-preview.cjs",
+      "bytes": 3422,
+      "sha256": "212a7d927cb57047f56558f8393b77864318d87c5974d98132eb82964ab41cba"
+    },
+    {
+      "path": "reference/check-water.mjs",
+      "bytes": 10581,
+      "sha256": "24f60f82db51fba86debae0811543d78e546902274e2c4453bc1713faf33e6e3"
+    },
+    {
+      "path": "reference/compare-snapshots.mjs",
+      "bytes": 9053,
+      "sha256": "d184413223a3590732c3c6bf461bdf47a98731ec10ee08084a0799d677e3c482"
+    },
+    {
+      "path": "reference/compare-snapshots.test.mjs",
+      "bytes": 8221,
+      "sha256": "dad6593e7b94a71d8c1f05275cfe5736928d7b8fe08b3223176888f64822232b"
+    },
+    {
+      "path": "reference/DATA-DICTIONARY.md",
+      "bytes": 24198,
+      "sha256": "90e60f0bfb7f25db9b235df461cd54cedcd1b932c512b23a158347f52b5e2260"
+    },
+    {
+      "path": "reference/input-contract.test.mjs",
+      "bytes": 14114,
+      "sha256": "390dc9dd9935b879e723b1783ad2f60cf004a6c2b73f98700f790660a016f469"
+    },
+    {
+      "path": "reference/package-review.py",
+      "bytes": 6453,
+      "sha256": "c7b078ac5c878d2402fc07724889f34af3cf694e92640838ff0d722d38ceb412"
+    },
+    {
+      "path": "reference/render-diagrams.py",
+      "bytes": 7434,
+      "sha256": "01b0db133baccdaf6a763692fb353773169d35d5caab59de703379b747132f71"
+    },
+    {
+      "path": "reference/REVIEW-FINDINGS.md",
+      "bytes": 12079,
+      "sha256": "3092fa86db7891dfc29c3c4ee8e2b3d3a95f169ca143ee7ea01215dadfaa54d0"
+    },
+    {
+      "path": "reference/score-bands.mjs",
+      "bytes": 15916,
+      "sha256": "784b7bab4e0d6838b6142a8c11d0880ed417e3b2078a3a8afeb33bc54b5f2a0c"
+    },
+    {
+      "path": "reference/score-bands.test.mjs",
+      "bytes": 22450,
+      "sha256": "8f8c1f05f5b492fe1e2fb888fc5ba7b1f9534d08ff83c454d2c6eac2b206c145"
+    },
+    {
+      "path": "reference/SOURCES.md",
+      "bytes": 2583,
+      "sha256": "c9a019659b2d34178c19991d3c0ee8c9d669b3720db668a1e7dc31a71d83e5c2"
+    },
+    {
+      "path": "reference/VERIFICATION.md",
+      "bytes": 5287,
+      "sha256": "2f673e25cebd51ce902e7476e405d12920926626e6e60662c6211a0b662d0ff4"
+    },
+    {
+      "path": "team/DASHBOARDS.md",
+      "bytes": 4660,
+      "sha256": "dfefe64d9d2b410a0f5d0df81669120c3cb6ddecc061728b4c6bccb5d0c7dc61"
+    },
+    {
+      "path": "team/DECISION.md",
+      "bytes": 1339,
+      "sha256": "dfea8f08cc7b8e8089344a66b8b6f812764558aced0822017bb276e1292c43de"
+    },
+    {
+      "path": "team/FINAL-UPGRADE-PLAN.md",
+      "bytes": 24257,
+      "sha256": "72ea9c9084ebfa893af0537faa49fddb19730d0568fc08ba26b8816000c1ca1d"
+    },
+    {
+      "path": "team/PIPELINE.md",
+      "bytes": 9530,
+      "sha256": "b92c02d2eb046d6bb6f2c76b1cf2ec52282c3794d4ba087c911f4e2f0986a715"
+    },
+    {
+      "path": "team/policy-tracker-final-upgrade-plan.pdf",
+      "bytes": 380660,
+      "sha256": "2aa59ebb21e67a2d326c820a0c6fd745d6529e3941ddc3cb8d62ae78fc50e2d2"
+    },
+    {
+      "path": "team/SCORING.md",
+      "bytes": 920,
+      "sha256": "8633650c39d0076c1a8b5371d5c8500f00995bd58a4896ce3c9551ee06ea40a9"
+    },
+    {
+      "path": "team/TAXONOMY.md",
+      "bytes": 44336,
+      "sha256": "8612b842e4b0793a32aeb205d2a82f304382b1df2713d6ab131cf65aa305541d"
+    },
+    {
+      "path": "ui-scoring/build-dashboard.py",
+      "bytes": 3337,
+      "sha256": "5babd5db3b7c46dae62b0e43e32448c1237dacbca26b99644bbdb2d098c7022d"
+    },
+    {
+      "path": "ui-scoring/build-review-pdf.py",
+      "bytes": 3948,
+      "sha256": "9e5c27cc8e5ce4a5876cca4bdbc1679de77e5a42618b2c96bee51e1444958a29"
+    },
+    {
+      "path": "ui-scoring/check-preview.cjs",
+      "bytes": 10130,
+      "sha256": "4906ed37819bd158085ec5e93f74b29575683ae02c094f84fe7ff0d730098730"
+    },
+    {
+      "path": "ui-scoring/dashboard.fragment.html",
+      "bytes": 908029,
+      "sha256": "34e51c4b42899128c5803a6fbfe72f7d89a3d03e9728fa064452bc242309660c"
+    },
+    {
+      "path": "ui-scoring/dashboard.html",
+      "bytes": 1542571,
+      "sha256": "cc953093307fb6cc61eeb95e4a6fdeb8ee2fe0853ae0808bdff17f22f95a490c"
+    },
+    {
+      "path": "ui-scoring/examples.json",
+      "bytes": 3810181,
+      "sha256": "3bcd26cfcc54c7fb3c80dd77175444810a32898fbf8dd5cec21617055b8969c2"
+    },
+    {
+      "path": "ui-scoring/METHOD.md",
+      "bytes": 22500,
+      "sha256": "b626f8bb53d4372cc681df47279fb624de7ded33bcbae263c5ef4ab85fc84acc"
+    },
+    {
+      "path": "ui-scoring/policy-tracker-ui-scoring-revision.pdf",
+      "bytes": 510057,
+      "sha256": "0323015555b7f36e791f223fa10adbfea315f68ca689734835064c556333eda6"
+    },
+    {
+      "path": "ui-scoring/README.md",
+      "bytes": 6830,
+      "sha256": "d3b18184bd361f087a073c75533efd51fbfcfd8fc972a6fd21a95aeb43fef85d"
+    },
+    {
+      "path": "ui-scoring/scoring.json",
+      "bytes": 3177,
+      "sha256": "ce0f15891c5c7143c22f57564b39050f321db144c1761b76b0a5e6f1d231d478"
+    },
+    {
+      "path": "ui-scoring/scoring.mjs",
+      "bytes": 33788,
+      "sha256": "2a0ef9a350c67112df834dfb8c3a51c3de3c7a728a655faabd8b5aa47e7a3d23"
+    },
+    {
+      "path": "ui-scoring/scoring.test.mjs",
+      "bytes": 14298,
+      "sha256": "c6a3c3f5b40a6e3bee085df3d79b4a35b0f62d5af1b5b3cfe9ff66068db80ec2"
+    },
+    {
+      "path": "ui-scoring/VERIFICATION.md",
+      "bytes": 4774,
+      "sha256": "ff6630978669ce453612493991c0bae61749326a2f1530696412705f25a8960a"
+    },
+    {
+      "path": "visuals/dashboard-preview.html",
+      "bytes": 17971,
+      "sha256": "8f11461566f0ede28ef6bd6488283e00c897485b374e1e5c2005c3736b75f976"
+    },
+    {
+      "path": "visuals/pipeline.drawio",
+      "bytes": 13790,
+      "sha256": "52ab5d468880c0680f1d057e0d32cde05a561b7091e1f76a95c1281fc871db97"
+    },
+    {
+      "path": "visuals/process-simple.png",
+      "bytes": 56355,
+      "sha256": "56e1734ae67453447d240b967c11eee52f1715c9c093ceac30d0a272ac425738"
+    },
+    {
+      "path": "visuals/process-simple.svg",
+      "bytes": 4545,
+      "sha256": "790b6a67436294f316841e82241246a51e4da58be6384f44162ae5c534874c29"
+    },
+    {
+      "path": "visuals/process-technical.png",
+      "bytes": 97452,
+      "sha256": "f22f858babeb63fa0c9d2bf87fba31cbdbec314137dd54dffd9c9373e5969bf6"
+    },
+    {
+      "path": "visuals/process-technical.svg",
+      "bytes": 8596,
+      "sha256": "53e6f584ea2eb53459bb1b64cadf226d6c95d3ed1df50090afe8e32fab470738"
+    }
+  ],
+  "application_files_changed_by_this_planning_revision": false,
+  "workspace_differs_from_preserved_snapshot": [
+    "README.md",
+    "package.json",
+    "src/app/runs/page.tsx",
+    "src/components/domains-view.tsx",
+    "src/components/result-card.tsx",
+    "src/components/shell/sidebar-nav.tsx",
+    "src/components/shell/sidebar.tsx",
+    "src/components/taxonomy-editor.tsx",
+    "src/components/upload-form.tsx",
+    "src/lib/analysis/call.ts",
+    "src/lib/analysis/prompt.ts",
+    "src/lib/analysis/retag.ts",
+    "src/lib/analysis/run.ts",
+    "src/lib/analysis/synthesise.ts",
+    "src/lib/cost.ts",
+    "src/lib/documents.ts",
+    "src/lib/domain.ts",
+    "src/lib/ingest.ts",
+    "src/lib/openai.ts",
+    "src/lib/reruns.ts",
+    "src/lib/taxonomy-edit.ts",
+    "tsconfig.json"
+  ],
+  "preservation_note": "Archive hashes are verified against the frozen 19 October baseline. Later workspace differences are reported, never overwritten or silently recaptured."
+}

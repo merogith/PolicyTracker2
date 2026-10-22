@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "scores.schema.json",
+  "title": "Scoring layer (reserved): scores on stable claim IDs",
+  "description": "A separate, versioned layer on top of merged claims. The pipeline never writes this file; a scoring step (model or person) does, against a named rubric version. Scorer values come from config/claims.json scoring_layer.",
+  "type": "object",
+  "required": ["versions", "scope", "scores"],
+  "additionalProperties": false,
+  "properties": {
+    "versions": {
+      "type": "object",
+      "required": ["rubric", "prompt"],
+      "additionalProperties": false,
+      "properties": {
+        "rubric": { "type": "string" },
+        "prompt": { "type": ["string", "null"] },
+        "model": { "type": ["string", "null"] }
+      }
+    },
+    "scope": {
+      "type": "object",
+      "required": ["country"],
+      "additionalProperties": false,
+      "properties": { "country": { "type": "string" } }
+    },
+    "scores": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["claim_id", "score", "rationale", "record_ids", "scorer"],
+        "additionalProperties": false,
+        "properties": {
+          "claim_id": { "type": "string", "description": "Stable claim ID (C-<anchor record>)" },
+          "score": { "type": ["number", "string"], "description": "Scale defined by the rubric version" },
+          "rationale": { "type": "string" },
+          "record_ids": { "type": "array", "minItems": 1, "items": { "type": "string" }, "description": "Records the score relies on" },
+          "scorer": { "type": "string" },
+          "review_status": { "type": "string" }
+        }
+      }
+    }
+  }
+}

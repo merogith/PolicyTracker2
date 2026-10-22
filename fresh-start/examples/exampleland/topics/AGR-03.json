@@ -1,0 +1,53 @@
+{
+  "versions": {
+    "claims": "0.3.0-draft",
+    "prompt": "topic-0.1",
+    "model": null
+  },
+  "scope": {
+    "country": "XEX",
+    "topic_id": "AGR-03",
+    "document_ids": [
+      "XEX-NDC3"
+    ],
+    "record_ids": [
+      "XEX-NDC3-p30-1"
+    ]
+  },
+  "claims": [
+    {
+      "claim_id": "C1",
+      "claim_text_en": "A national drought management plan was adopted in 2023 and requires herder communities to keep emergency fodder reserves.",
+      "member_record_ids": [
+        "XEX-NDC3-p30-1"
+      ],
+      "outcome_signal": "not_reported",
+      "setback_flags": [],
+      "status": "active",
+      "review_status": "proposed",
+      "open_issue": null
+    }
+  ],
+  "brief": {
+    "core_idea_en": "For livestock and rangelands, the pages read contain one measure: the 2023 National Drought Management Plan requires herder communities to keep emergency fodder reserves. Pasture management, livestock health and enteric emissions are not covered in the pages read.",
+    "concerns": [],
+    "responses": [
+      {
+        "text_en": "Herder communities must maintain emergency fodder reserves under the 2023 National Drought Management Plan (NDC 3.0, p. 30).",
+        "claim_ids": [
+          "C1"
+        ]
+      }
+    ],
+    "numbers": [],
+    "changes_between_editions": [],
+    "gaps": [
+      {
+        "text_en": "'Emergency fodder reserves' has no topic of its own; it is logged as an unmapped concept for taxonomy review.",
+        "claim_ids": [
+          "C1"
+        ]
+      }
+    ]
+  }
+}

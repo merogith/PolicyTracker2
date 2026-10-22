@@ -1,0 +1,563 @@
+{
+  "version": "3.0.0",
+  "status": "review_not_active",
+  "schema_format": "JSON Schema templates; $enum_from / $enabled_facets / $priority_evidence are compiled offline before dispatch. Compiled schemas use strict objects with every property required and nullable unknowns.",
+  "input_allowlist": {
+    "extract": [
+      "pipeline/prompts/extract.md",
+      "pipeline/taxonomy.json",
+      "pipeline/labels.json",
+      "pipeline/pipeline.json",
+      "pipeline/llm-contracts.json"
+    ],
+    "organize": [
+      "pipeline/prompts/organize.md",
+      "pipeline/taxonomy.json",
+      "pipeline/labels.json",
+      "pipeline/pipeline.json",
+      "pipeline/llm-contracts.json"
+    ],
+    "retag": [
+      "pipeline/maintenance/retag.md",
+      "pipeline/taxonomy.json",
+      "pipeline/labels.json",
+      "pipeline/pipeline.json",
+      "pipeline/llm-contracts.json"
+    ]
+  },
+  "excluded_inputs": [
+    "team/",
+    "pdf/",
+    "visuals/",
+    "preserved/",
+    "archive/",
+    "examples/",
+    "pipeline/scoring.json",
+    "pipeline/bundle.json",
+    "Entire repository or directory glob",
+    "Prior scores, UI overlays, credentials and unrelated country documents"
+  ],
+  "runtime_inputs": "Only explicit function arguments containing the selected source manifest/pages or immutable records. Example files are passed explicitly by the demo runner, never auto-loaded by production buildRequest.",
+  "code_owned_fields": [
+    "persistent record/evidence/claim/policy-object IDs",
+    "physical page mapping from source units",
+    "coverage completion and missing-source state",
+    "snapshot and configuration versions",
+    "documentation bands and aggregates",
+    "cost/budget state"
+  ],
+  "raw_rules": [
+    "All Stage 1 refs are response-local. Stage 2 uses only supplied persistent record/evidence IDs and local proposed-claim/variant refs.",
+    "The model cannot certify search completion or corpus completeness. No scores or confidence percentages.",
+    "Priority wording is nullable, explicit and unranked; a priority mention alone is not a policy undertaking.",
+    "Code retains source-local assertions; a combined record is never backfilled into an older document."
+  ],
+  "schema_templates": {
+    "extract": {
+      "type": "object",
+      "properties": {
+        "evidence": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "local_ref": {
+                "type": "string"
+              },
+              "source_unit_id": {
+                "type": "string"
+              },
+              "quote": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "local_ref",
+              "source_unit_id",
+              "quote"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "records": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "local_ref": {
+                "type": "string"
+              },
+              "statement": {
+                "type": "string"
+              },
+              "statement_type": {
+                "$enum_from": "labels.statement_type.options"
+              },
+              "primary_topic_id": {
+                "anyOf": [
+                  {
+                    "$enum_from": "taxonomy.topics"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "secondary_topic_ids": {
+                "type": "array",
+                "items": {
+                  "$enum_from": "taxonomy.topics"
+                }
+              },
+              "unmapped_concepts": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "policy_object_as_stated": {
+                "anyOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "scope_as_stated": {
+                "anyOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "conditionality": {
+                "$enum_from": "labels.fact_enums.conditionality"
+              },
+              "labels": {
+                "$enabled_facets": true
+              },
+              "facts": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "fact_type": {
+                      "$enum_from": "labels.fact_enums.fact_type"
+                    },
+                    "metric": {
+                      "type": "string"
+                    },
+                    "value_as_stated": {
+                      "type": "string"
+                    },
+                    "unit": {
+                      "anyOf": [
+                        {
+                          "type": "string"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    },
+                    "period": {
+                      "anyOf": [
+                        {
+                          "type": "string"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    },
+                    "baseline_as_stated": {
+                      "anyOf": [
+                        {
+                          "type": "string"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    },
+                    "geography_or_system": {
+                      "anyOf": [
+                        {
+                          "type": "string"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    },
+                    "scenario": {
+                      "anyOf": [
+                        {
+                          "type": "string"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    },
+                    "comparator": {
+                      "$enum_from": "labels.fact_enums.comparator"
+                    },
+                    "direction": {
+                      "$enum_from": "labels.fact_enums.direction"
+                    },
+                    "basis": {
+                      "$enum_from": "labels.fact_enums.basis"
+                    },
+                    "total_or_additional": {
+                      "$enum_from": "labels.fact_enums.total_or_additional"
+                    },
+                    "conditionality": {
+                      "$enum_from": "labels.fact_enums.conditionality"
+                    },
+                    "finance_status": {
+                      "anyOf": [
+                        {
+                          "$enum_from": "labels.fact_enums.finance_status"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    },
+                    "evidence_refs": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    }
+                  },
+                  "required": [
+                    "fact_type",
+                    "metric",
+                    "value_as_stated",
+                    "unit",
+                    "period",
+                    "baseline_as_stated",
+                    "geography_or_system",
+                    "scenario",
+                    "comparator",
+                    "direction",
+                    "basis",
+                    "total_or_additional",
+                    "conditionality",
+                    "finance_status",
+                    "evidence_refs"
+                  ],
+                  "additionalProperties": false
+                }
+              },
+              "delivery": {
+                "type": "object",
+                "properties": {
+                  "actor": {
+                    "anyOf": [
+                      {
+                        "type": "object",
+                        "properties": {
+                          "text": {
+                            "type": "string"
+                          },
+                          "role": {
+                            "$enum_from": "labels.actor_roles"
+                          },
+                          "evidence_refs": {
+                            "type": "array",
+                            "items": {
+                              "type": "string"
+                            }
+                          }
+                        },
+                        "required": [
+                          "text",
+                          "role",
+                          "evidence_refs"
+                        ],
+                        "additionalProperties": false
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  },
+                  "timeframe": {
+                    "anyOf": [
+                      {
+                        "type": "object",
+                        "properties": {
+                          "text": {
+                            "type": "string"
+                          },
+                          "anchor": {
+                            "$enum_from": "labels.delivery_enums.timeframe_anchor"
+                          },
+                          "evidence_refs": {
+                            "type": "array",
+                            "items": {
+                              "type": "string"
+                            }
+                          }
+                        },
+                        "required": [
+                          "text",
+                          "anchor",
+                          "evidence_refs"
+                        ],
+                        "additionalProperties": false
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  },
+                  "deliverable": {
+                    "anyOf": [
+                      {
+                        "type": "object",
+                        "properties": {
+                          "text": {
+                            "type": "string"
+                          },
+                          "kind": {
+                            "$enum_from": "labels.delivery_enums.deliverable_kind"
+                          },
+                          "evidence_refs": {
+                            "type": "array",
+                            "items": {
+                              "type": "string"
+                            }
+                          }
+                        },
+                        "required": [
+                          "text",
+                          "kind",
+                          "evidence_refs"
+                        ],
+                        "additionalProperties": false
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  }
+                },
+                "required": [
+                  "actor",
+                  "timeframe",
+                  "deliverable"
+                ],
+                "additionalProperties": false
+              },
+              "priority_evidence": {
+                "$priority_evidence": true
+              },
+              "evidence_refs": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "field_evidence": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "path": {
+                      "type": "string"
+                    },
+                    "evidence_refs": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    }
+                  },
+                  "required": [
+                    "path",
+                    "evidence_refs"
+                  ],
+                  "additionalProperties": false
+                }
+              }
+            },
+            "required": [
+              "local_ref",
+              "statement",
+              "statement_type",
+              "primary_topic_id",
+              "secondary_topic_ids",
+              "unmapped_concepts",
+              "policy_object_as_stated",
+              "scope_as_stated",
+              "conditionality",
+              "labels",
+              "facts",
+              "delivery",
+              "priority_evidence",
+              "evidence_refs",
+              "field_evidence"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "limitations": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "required": [
+        "evidence",
+        "records",
+        "limitations"
+      ],
+      "additionalProperties": false
+    },
+    "organize": {
+      "type": "object",
+      "properties": {
+        "claims": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "local_ref": {
+                "type": "string"
+              },
+              "title": {
+                "type": "string"
+              },
+              "variants": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "local_ref": {
+                      "type": "string"
+                    },
+                    "record_ids": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    },
+                    "detail_record_ids": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    },
+                    "association_evidence_ids": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    }
+                  },
+                  "required": [
+                    "local_ref",
+                    "record_ids",
+                    "detail_record_ids",
+                    "association_evidence_ids"
+                  ],
+                  "additionalProperties": false
+                }
+              },
+              "suggested_prior_claim_id": {
+                "anyOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              }
+            },
+            "required": [
+              "local_ref",
+              "title",
+              "variants",
+              "suggested_prior_claim_id"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "relationships": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "type": {
+                "$enum_from": "labels.relationship_types"
+              },
+              "from_record_id": {
+                "type": "string"
+              },
+              "to_record_id": {
+                "type": "string"
+              },
+              "evidence_ids": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "comparability": {
+                "$enum_from": "labels.comparability"
+              },
+              "rationale": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "type",
+              "from_record_id",
+              "to_record_id",
+              "evidence_ids",
+              "comparability",
+              "rationale"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "retained_records": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "record_id": {
+                "type": "string"
+              },
+              "reason": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "record_id",
+              "reason"
+            ],
+            "additionalProperties": false
+          }
+        }
+      },
+      "required": [
+        "claims",
+        "relationships",
+        "retained_records"
+      ],
+      "additionalProperties": false
+    }
+  }
+}

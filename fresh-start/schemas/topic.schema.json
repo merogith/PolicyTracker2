@@ -1,0 +1,95 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "topic.schema.json",
+  "title": "Stage 2 output for one topic pack: claims and a brief",
+  "description": "What the model returns for one country and one topic. Stable claim IDs, merges across packs, response stages and counts are NOT here: code derives them from the member records and the country manifest. Allowed values come from config/claims.json and are checked by scripts/check.py.",
+  "type": "object",
+  "required": ["versions", "scope", "claims", "brief"],
+  "additionalProperties": false,
+  "properties": {
+    "versions": {
+      "type": "object",
+      "required": ["claims", "prompt"],
+      "additionalProperties": false,
+      "properties": {
+        "claims": { "type": "string", "description": "config/claims.json version" },
+        "prompt": { "type": "string" },
+        "model": { "type": ["string", "null"] }
+      }
+    },
+    "scope": {
+      "type": "object",
+      "required": ["country", "topic_id", "document_ids", "record_ids"],
+      "additionalProperties": false,
+      "properties": {
+        "country": { "type": "string" },
+        "topic_id": { "type": "string" },
+        "document_ids": { "type": "array", "minItems": 1, "items": { "type": "string" } },
+        "record_ids": { "type": "array", "minItems": 1, "items": { "type": "string" }, "description": "The pack as code built it; the checker recomputes and compares" }
+      }
+    },
+    "claims": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["claim_id", "claim_text_en", "member_record_ids", "outcome_signal", "setback_flags", "status"],
+        "additionalProperties": false,
+        "properties": {
+          "claim_id": { "type": "string", "description": "Provisional, unique within this pack. Code assigns the stable ID." },
+          "claim_text_en": { "type": "string", "description": "One distinct action, commitment, target or finding" },
+          "member_record_ids": { "type": "array", "minItems": 1, "items": { "type": "string" } },
+          "outcome_signal": { "type": "string" },
+          "setback_flags": { "type": "array", "items": { "type": "string" } },
+          "status": { "type": "string" },
+          "review_status": { "type": "string" },
+          "open_issue": { "type": ["string", "null"] }
+        }
+      }
+    },
+    "relations": {
+      "type": "array",
+      "description": "Optional detail: typed links between records of this pack",
+      "items": {
+        "type": "object",
+        "required": ["relation_id", "from_record_id", "to_record_id", "type", "rationale"],
+        "additionalProperties": false,
+        "properties": {
+          "relation_id": { "type": "string" },
+          "from_record_id": { "type": "string" },
+          "to_record_id": { "type": "string" },
+          "type": { "type": "string" },
+          "rationale": { "type": "string" },
+          "review_status": { "type": "string" }
+        }
+      }
+    },
+    "brief": {
+      "type": "object",
+      "required": ["core_idea_en", "concerns", "responses", "numbers", "changes_between_editions", "gaps"],
+      "additionalProperties": false,
+      "properties": {
+        "core_idea_en": { "type": "string" },
+        "concerns": { "$ref": "#/$defs/bullets" },
+        "responses": { "$ref": "#/$defs/bullets" },
+        "numbers": { "$ref": "#/$defs/bullets" },
+        "changes_between_editions": { "$ref": "#/$defs/bullets" },
+        "gaps": { "$ref": "#/$defs/bullets" }
+      }
+    }
+  },
+  "$defs": {
+    "bullets": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["text_en", "claim_ids"],
+        "additionalProperties": false,
+        "properties": {
+          "text_en": { "type": "string" },
+          "claim_ids": { "type": "array", "items": { "type": "string" }, "description": "Provisional claim IDs of this pack that support the sentence; may be empty only in gaps" }
+        }
+      }
+    }
+  }
+}

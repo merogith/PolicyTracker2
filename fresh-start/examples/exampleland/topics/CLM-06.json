@@ -1,0 +1,60 @@
+{
+  "versions": {
+    "claims": "0.3.0-draft",
+    "prompt": "topic-0.1",
+    "model": null
+  },
+  "scope": {
+    "country": "XEX",
+    "topic_id": "CLM-06",
+    "document_ids": [
+      "XEX-NDC3"
+    ],
+    "record_ids": [
+      "XEX-NDC3-p12-1"
+    ]
+  },
+  "claims": [
+    {
+      "claim_id": "C1",
+      "claim_text_en": "Reduce economy-wide GHG emissions by 15% below 1990 by 2035 unconditionally, and by up to 25% subject to international support.",
+      "member_record_ids": [
+        "XEX-NDC3-p12-1"
+      ],
+      "outcome_signal": "not_reported",
+      "setback_flags": [],
+      "status": "active",
+      "review_status": "proposed",
+      "open_issue": null
+    }
+  ],
+  "brief": {
+    "core_idea_en": "NDC 3.0 sets one economy-wide target: a 15% reduction below 1990 levels by 2035 without conditions, rising to up to 25% with international support. No sector pathway or interim milestone appears in the pages read.",
+    "concerns": [],
+    "responses": [
+      {
+        "text_en": "Economy-wide GHG reduction target for 2035 against a 1990 base, with an unconditional and a conditional variant (NDC 3.0, p. 12).",
+        "claim_ids": [
+          "C1"
+        ]
+      }
+    ],
+    "numbers": [
+      {
+        "text_en": "15% below 1990 by 2035, unconditional; up to 25% below 1990 by 2035, subject to international support (NDC 3.0, p. 12).",
+        "claim_ids": [
+          "C1"
+        ]
+      }
+    ],
+    "changes_between_editions": [],
+    "gaps": [
+      {
+        "text_en": "The 1990 emissions level is not stated on the page, so the absolute target cannot be derived.",
+        "claim_ids": [
+          "C1"
+        ]
+      }
+    ]
+  }
+}

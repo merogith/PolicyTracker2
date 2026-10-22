@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1270" height="1020" viewBox="0 0 1270 1020">
+<defs><marker id="arrow" markerWidth="9" markerHeight="9" refX="8" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8" fill="#587b90"/></marker></defs>
+<rect width="1270" height="1020" fill="#f4f7fa"/>
+<text x="45" y="56" font-family="Arial" font-size="29" font-weight="bold" fill="#17374b">From every selected source to traceable response scores</text>
+<text x="45" y="87" font-family="Arial" font-size="17" fill="#536c7c">Final engineering plan / scoring 4.0 / presentation 4.1 / no human acceptance gate</text>
+<text x="45" y="121" font-family="Arial" font-size="16" fill="#176d69">Teal = LLM reasoning   /   Blue-gray = deterministic code and stored data</text>
+<rect x="45" y="165" width="360" height="110" rx="9" fill="#ffffff" stroke="#abc0cd" stroke-width="1.5"/>
+<text x="62" y="194" font-family="Arial" font-size="17" font-weight="bold" fill="#17374b">1  Freeze source + config manifest</text>
+<text x="62" y="230" font-family="Arial" font-size="16" font-weight="normal" fill="#17374b">Country, roles, editions, as-of date</text>
+<text x="62" y="255" font-family="Arial" font-size="16" font-weight="normal" fill="#17374b">Exact bundle hashes; fixed run identity</text>
+<rect x="455" y="165" width="360" height="110" rx="9" fill="#ffffff" stroke="#abc0cd" stroke-width="1.5"/>
+<text x="472" y="194" font-family="Arial" font-size="17" font-weight="bold" fill="#17374b">2  Prepare every page + region</text>
+<text x="472" y="230" font-family="Arial" font-size="16" font-weight="normal" fill="#17374b">Text / layout; local OCR if needed</text>
+<text x="472" y="255" font-family="Arial" font-size="16" font-weight="normal" fill="#17374b">Conditional vision; retain crops</text>
+<rect x="865" y="165" width="360" height="110" rx="9" fill="#e4f3ef" stroke="#2b847b" stroke-width="1.5"/>
+<text x="882" y="194" font-family="Arial" font-size="17" font-weight="bold" fill="#17374b">3  Extract - LLM 1</text>
+<text x="882" y="230" font-family="Arial" font-size="16" font-weight="normal" fill="#17374b">Every owned packet; all-topic labels</text>
+<text x="882" y="255" font-family="Arial" font-size="16" font-weight="normal" fill="#17374b">Atomic statements, titles, cited fields</text>
+<rect x="865" y="350" width="360" height="110" rx="9" fill="#ffffff" stroke="#abc0cd" stroke-width="1.5"/>
+<text x="882" y="379" font-family="Arial" font-size="17" font-weight="bold" fill="#17374b">4  Check + conditional recovery</text>
+<text x="882" y="415" font-family="Arial" font-size="16" font-weight="normal" fill="#17374b">Evidence, unit accounting, omissions</text>
+<text x="882" y="440" font-family="Arial" font-size="16" font-weight="normal" fill="#17374b">Persist records; split exhausted output</text>
+<rect x="455" y="350" width="360" height="110" rx="9" fill="#ffffff" stroke="#abc0cd" stroke-width="1.5"/>
+<text x="472" y="379" font-family="Arial" font-size="17" font-weight="bold" fill="#17374b">5  Account for selected sources</text>
+<text x="472" y="415" font-family="Arial" font-size="16" font-weight="normal" fill="#17374b">Complete only when work resolves</text>
+<text x="472" y="440" font-family="Arial" font-size="16" font-weight="normal" fill="#17374b">Publish partial; no completion cutoff</text>
+<rect x="45" y="350" width="360" height="110" rx="9" fill="#ffffff" stroke="#abc0cd" stroke-width="1.5"/>
+<text x="62" y="379" font-family="Arial" font-size="17" font-weight="bold" fill="#17374b">6  Select scope + pool records</text>
+<text x="62" y="415" font-family="Arial" font-size="16" font-weight="normal" fill="#17374b">Document / current / historical scope</text>
+<text x="62" y="440" font-family="Arial" font-size="16" font-weight="normal" fill="#17374b">Owned records + read-only context</text>
+<rect x="45" y="535" width="360" height="110" rx="9" fill="#e4f3ef" stroke="#2b847b" stroke-width="1.5"/>
+<text x="62" y="564" font-family="Arial" font-size="17" font-weight="bold" fill="#17374b">7  Organize - LLM 2</text>
+<text x="62" y="600" font-family="Arial" font-size="16" font-weight="normal" fill="#17374b">Same proposition, compatible scope</text>
+<text x="62" y="625" font-family="Arial" font-size="16" font-weight="normal" fill="#17374b">Keep conflicts; account every record</text>
+<rect x="455" y="535" width="360" height="110" rx="9" fill="#ffffff" stroke="#abc0cd" stroke-width="1.5"/>
+<text x="472" y="564" font-family="Arial" font-size="17" font-weight="bold" fill="#17374b">8  Check organization - code</text>
+<text x="472" y="600" font-family="Arial" font-size="16" font-weight="normal" fill="#17374b">Ownership, references, group boundaries</text>
+<text x="472" y="625" font-family="Arial" font-size="16" font-weight="normal" fill="#17374b">Bounded repair / reconciliation</text>
+<rect x="865" y="535" width="360" height="110" rx="9" fill="#ffffff" stroke="#abc0cd" stroke-width="1.5"/>
+<text x="882" y="564" font-family="Arial" font-size="17" font-weight="bold" fill="#17374b">9  Build source-qualified views</text>
+<text x="882" y="600" font-family="Arial" font-size="16" font-weight="normal" fill="#17374b">No details from excluded documents</text>
+<text x="882" y="625" font-family="Arial" font-size="16" font-weight="normal" fill="#17374b">Unresolved groups: scores unavailable</text>
+<rect x="865" y="720" width="360" height="110" rx="9" fill="#ffffff" stroke="#abc0cd" stroke-width="1.5"/>
+<text x="882" y="749" font-family="Arial" font-size="17" font-weight="bold" fill="#17374b">10  Score responses and topics</text>
+<text x="882" y="785" font-family="Arial" font-size="16" font-weight="normal" fill="#17374b">Four checks; fixed-topic averages</text>
+<text x="882" y="810" font-family="Arial" font-size="16" font-weight="normal" fill="#17374b">Counts + coverage; stage separate</text>
+<rect x="455" y="720" width="360" height="110" rx="9" fill="#ffffff" stroke="#abc0cd" stroke-width="1.5"/>
+<text x="472" y="749" font-family="Arial" font-size="17" font-weight="bold" fill="#17374b">11  Compare frozen snapshots</text>
+<text x="472" y="785" font-family="Arial" font-size="16" font-weight="normal" fill="#17374b">Same basis: documentation pp change</text>
+<text x="472" y="810" font-family="Arial" font-size="16" font-weight="normal" fill="#17374b">Backfill / method change: refresh</text>
+<rect x="45" y="720" width="360" height="110" rx="9" fill="#ffffff" stroke="#abc0cd" stroke-width="1.5"/>
+<text x="62" y="749" font-family="Arial" font-size="17" font-weight="bold" fill="#17374b">12  Atomic publication</text>
+<text x="62" y="785" font-family="Arial" font-size="16" font-weight="normal" fill="#17374b">Keep prior snapshot during processing</text>
+<text x="62" y="810" font-family="Arial" font-size="16" font-weight="normal" fill="#17374b">Publish partial when needed; no queue</text>
+<path d="M405 220.0 L455 220.0" stroke="#587b90" fill="none" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M815 220.0 L865 220.0" stroke="#587b90" fill="none" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M1045.0 275 L1045.0 350" stroke="#587b90" fill="none" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M865 405.0 L815 405.0" stroke="#587b90" fill="none" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M455 405.0 L405 405.0" stroke="#587b90" fill="none" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M225.0 460 L225.0 535" stroke="#587b90" fill="none" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M405 590.0 L455 590.0" stroke="#587b90" fill="none" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M815 590.0 L865 590.0" stroke="#587b90" fill="none" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M1045.0 645 L1045.0 720" stroke="#587b90" fill="none" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M865 775.0 L815 775.0" stroke="#587b90" fill="none" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M455 775.0 L405 775.0" stroke="#587b90" fill="none" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="45" y="917" font-family="Arial" font-size="16" fill="#536c7c">MODEL ALLOWLIST: prompt + enabled vocabulary + strict schema + authorized source / record units only.</text>
+<text x="45" y="944" font-family="Arial" font-size="16" fill="#536c7c">No team guides, archives, previous scores, unrelated files or arbitrary folder scans enter model context.</text>
+<text x="45" y="971" font-family="Arial" font-size="16" fill="#536c7c">One country / two shared request slots. Usage ledger + resume. Stale jobs cannot replace newer snapshots.</text>
+</svg>

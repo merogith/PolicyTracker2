@@ -1,0 +1,53 @@
+{
+  "versions": {
+    "claims": "0.3.0-draft",
+    "prompt": "topic-0.1",
+    "model": null
+  },
+  "scope": {
+    "country": "XEX",
+    "topic_id": "WAT-06",
+    "document_ids": [
+      "XEX-NDC3"
+    ],
+    "record_ids": [
+      "XEX-NDC3-p30-1"
+    ]
+  },
+  "claims": [
+    {
+      "claim_id": "C1",
+      "claim_text_en": "A national drought management plan was adopted in 2023 and requires herder communities to keep emergency fodder reserves.",
+      "member_record_ids": [
+        "XEX-NDC3-p30-1"
+      ],
+      "outcome_signal": "not_reported",
+      "setback_flags": [],
+      "status": "active",
+      "review_status": "proposed",
+      "open_issue": null
+    }
+  ],
+  "brief": {
+    "core_idea_en": "Drought management in NDC 3.0 rests on the National Drought Management Plan adopted in 2023, which requires herder communities to maintain emergency fodder reserves. No drought monitoring or water-shortage measure beyond the plan's adoption appears in the pages read.",
+    "concerns": [],
+    "responses": [
+      {
+        "text_en": "National Drought Management Plan adopted in 2023, requiring herder communities to maintain emergency fodder reserves (NDC 3.0, p. 30).",
+        "claim_ids": [
+          "C1"
+        ]
+      }
+    ],
+    "numbers": [],
+    "changes_between_editions": [],
+    "gaps": [
+      {
+        "text_en": "Adoption of the plan is reported; no implementation, funding or drought-impact figures are given.",
+        "claim_ids": [
+          "C1"
+        ]
+      }
+    ]
+  }
+}

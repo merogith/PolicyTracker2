@@ -1,0 +1,4 @@
+
+
+Your previous answer was rejected: synthetic example: findings.0.kind is invalid
+Answer again, following the schema and the rules exactly.

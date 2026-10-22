@@ -1,0 +1,51 @@
+{
+  "name": "policy-tracker",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint",
+    "typecheck": "tsc --noEmit",
+    "worker": "tsx src/worker/index.ts",
+    "db:migrate": "prisma migrate dev",
+    "db:seed": "prisma db seed",
+    "check": "tsc --noEmit && eslint && tsx --test \"src/**/*.test.ts\" && tsx scripts/check-results.ts",
+    "postinstall": "prisma generate",
+    "test": "tsx --test \"src/**/*.test.ts\"",
+    "test:retrieval": "tsx scripts/test-retrieval.ts",
+    "test:live": "tsx scripts/test-live.ts",
+    "refresh:titles": "tsx scripts/refresh-claim-presentation.ts",
+    "refresh:labels": "tsx scripts/refresh-claim-labels.ts"
+  },
+  "dependencies": {
+    "@prisma/adapter-better-sqlite3": "^7.10.1",
+    "@prisma/client": "^7.10.1",
+    "dotenv": "^18.0.8",
+    "lucide-react": "^1.59.0",
+    "next": "16.4.2",
+    "openai": "^7.38.0",
+    "pdfjs-dist": "^6.4.299",
+    "react": "19.3.0",
+    "react-dom": "19.3.0",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@tailwindcss/turbopack": "^4",
+    "@types/better-sqlite3": "^9.6.0",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "16.4.2",
+    "pdf-lib": "^1.17.1",
+    "prisma": "^7.10.1",
+    "tailwindcss": "^4",
+    "tsx": "^4.23.15",
+    "typescript": "^5"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

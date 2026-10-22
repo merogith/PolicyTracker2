@@ -1,0 +1,149 @@
+{
+  "id": "claim-rules",
+  "version": "0.3.0-draft",
+  "status": "draft_for_review",
+  "answers": "Which distinct things does a country say under each topic, and how far has each one gone according to the documents?",
+  "separation_rule": "Stage 2 runs after extraction. It never changes a record's labels, facts or evidence, and it reads records only, never the PDF.",
+  "pack_rule": "Code builds one pack per topic per country: every record whose topic_ids contains the topic, from all of the country's documents, excluding records a reviewer rejected. A record with two topics is in two packs. Stage 2 is one model call per pack.",
+  "claim_unit": "One claim per distinct action, commitment, target or finding. Records that restate, report progress on, give variants of, contradict, revise or supersede the same thing belong to one claim. Different things never merge, even under one topic. Single-record claims are normal.",
+  "grouping_rules": [
+    "Only the propositions and evidence decide a merge. A shared topic, hazard or place is never enough.",
+    "Every record in the pack belongs to exactly one claim of that pack.",
+    "Different years, conditional pathways, sub-targets and independent actions stay separate claims unless the source makes them one target.",
+    "A newer document not repeating a claim does not prove withdrawal.",
+    "The model proposes claim membership, claim text, status and the brief only. Code computes stable IDs, merges across packs, response stages and counts."
+  ],
+  "merge_rule": "After all packs of a country, code merges claims that share a record, transitively. A merged claim keeps every topic of its members and counts once in each topic. Nothing else is merged: two claims without a shared record stay separate even when their texts look alike.",
+  "claim_identity": {
+    "rule": "claim_id in a pack output is provisional (C1, C2, ...) and unique only within that pack. Code assigns the stable ID 'C-' + anchor record ID, where the anchor is the member record from the earliest document edition, then the lowest page, then the lowest sequence.",
+    "stability": "A claim keeps its stable ID across re-runs for as long as its anchor record remains a member. Adding a document to a country never changes the IDs of claims that document does not touch."
+  },
+  "relation_types": [
+    {
+      "id": "restates",
+      "groups_into_one_claim": true,
+      "definition": "Records state the same proposition, target or fact, in the same or another document."
+    },
+    {
+      "id": "progress_of",
+      "groups_into_one_claim": true,
+      "definition": "A record reports a later stage of the same action or commitment (planned → underway → delivered)."
+    },
+    {
+      "id": "fact_variant",
+      "groups_into_one_claim": true,
+      "definition": "Records report the same underlying fact with different values, units or wording. Keep every variant; never average."
+    },
+    {
+      "id": "contradicts",
+      "groups_into_one_claim": true,
+      "definition": "Records make incompatible assertions about a comparable metric, period, scope and basis. The claim becomes contested."
+    },
+    {
+      "id": "revises",
+      "groups_into_one_claim": true,
+      "definition": "A later record changes an earlier value or statement. Keep both and their order."
+    },
+    {
+      "id": "supersedes",
+      "groups_into_one_claim": true,
+      "definition": "A source explicitly replaces an earlier commitment. Keep the earlier one in history."
+    },
+    {
+      "id": "part_of",
+      "groups_into_one_claim": false,
+      "definition": "One record is a component or milestone of a broader goal. Separate claims, linked."
+    },
+    {
+      "id": "related",
+      "groups_into_one_claim": false,
+      "definition": "Same broader issue, different propositions. Separate claims."
+    },
+    {
+      "id": "unresolved",
+      "groups_into_one_claim": false,
+      "definition": "The relationship cannot be decided from the evidence. Keep separate until reviewed."
+    }
+  ],
+  "relations_rule": "Relations are optional detail inside a pack. When given, a grouping type (groups_into_one_claim true) must connect records of one claim and a non-grouping type must connect records of different claims.",
+  "response_stages": {
+    "derivation": "claim.response_stage = highest response_stage among member records' statement types (vocabulary.statement_type). Types with a null stage are ignored; a claim with none has stage 0.",
+    "derivation_latest": "claim.response_stage_latest = the same lookup restricted to member records from the newest document edition (by edition_date in the country manifest) among the claim's members. Equal to response_stage when a country has one document.",
+    "meaning": "The strongest response step documented in the reviewed pages. Not effectiveness, ambition, performance or 'on track'. Views show both 'furthest documented' (response_stage) and 'as of the latest document' (response_stage_latest); a drop between them is something to read, never a score.",
+    "levels": [
+      {
+        "stage": 0,
+        "label": "Context, outcome or proposal only"
+      },
+      {
+        "stage": 1,
+        "label": "Priority, commitment or target"
+      },
+      {
+        "stage": 2,
+        "label": "Planned action"
+      },
+      {
+        "stage": 3,
+        "label": "Implementation underway"
+      },
+      {
+        "stage": 4,
+        "label": "Output delivered"
+      }
+    ]
+  },
+  "claim_fields": {
+    "outcome_signal": [
+      "improving",
+      "worsening",
+      "no_clear_change",
+      "mixed",
+      "not_comparable",
+      "not_reported"
+    ],
+    "setback_flags": [
+      "delayed",
+      "cancelled",
+      "funding_withdrawn",
+      "reversed",
+      "explicit_failure"
+    ],
+    "status": [
+      "active",
+      "contested",
+      "superseded"
+    ],
+    "review_status": [
+      "proposed",
+      "accepted",
+      "rejected"
+    ]
+  },
+  "brief": {
+    "rule": "One brief per pack. It summarises the pack's claims for a reader and cites them by provisional claim_id. It never states anything that no cited claim supports, and it never states a stage or a score: code adds stages from the cited claims.",
+    "sections": {
+      "core_idea_en": "Two to four sentences: what this country's documents say about this topic.",
+      "concerns": "Problems, risks, impacts, barriers and needs the documents raise.",
+      "responses": "Commitments, plans, work underway and delivered outputs, naming the document and page.",
+      "numbers": "Key figures quoted as stated, with year and condition. Never computed.",
+      "changes_between_editions": "Only when a newer document says something different from an older one. Empty for a single document.",
+      "gaps": "What the documents leave open: missing baselines, unresolved variants, unmapped concepts, measures not found in the pages read."
+    }
+  },
+  "scoring_layer": {
+    "status": "reserved",
+    "rule": "Scores are a separate, versioned layer on stable claim IDs (schemas/scores.schema.json). The pipeline never computes a score, and a stage is not a score. A score names its rubric version, its rationale and the records it relies on. Views show score distributions per topic next to claim counts and coverage. Any aggregation to a topic or country number is an explicit, versioned rule, never an average applied silently.",
+    "scorer_values": [
+      "model",
+      "person"
+    ]
+  },
+  "rollup_rules": [
+    "Topic view, per country: distinct merged claims per response stage, naming the documents each claim draws on. A multi-topic claim appears once in each of its topics.",
+    "Document view: records by statement type and topic, split into concerns (stage-0 types) and responses (stage 1-4 types), plus the coverage ledger.",
+    "Comparison across countries: claim counts per topic per stage, always shown with the documents and pages read. Counts say what was written, not what was done.",
+    "Never sum, average or rank stages into a topic, domain or country score.",
+    "A topic with no claims means 'not found in the reviewed pages', never a negative."
+  ]
+}

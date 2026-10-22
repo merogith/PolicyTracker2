@@ -1,0 +1,423 @@
+{
+  "version": "3.0.0",
+  "status": "review_not_active",
+  "example_status": "synthetic_reference_inputs_not_country_results",
+  "source_file": "water.json",
+  "combined_source_profile": "supplied_all",
+  "note": "Combined example includes both NAP editions as an exploratory supplied-all inventory, not the matched current NDC/NAP corpus. The one-topic demonstration is not a full Agriculture-domain or national assessment. Production semantic checks are not implemented by this fixture adapter.",
+  "combined": {
+    "scope": {
+      "kind": "country",
+      "document_ids": [
+        "XEX-NAP1",
+        "XEX-NDC1",
+        "XEX-NAP2"
+      ],
+      "source_profile_complete": true
+    },
+    "profile": {
+      "profile_id": "synthetic-water-example-AGR-01-v3",
+      "topic_ids": [
+        "AGR-01"
+      ]
+    },
+    "evidence": [
+      {
+        "evidence_id": "E1",
+        "document_id": "XEX-NDC1"
+      },
+      {
+        "evidence_id": "E2",
+        "document_id": "XEX-NAP1"
+      },
+      {
+        "evidence_id": "E3",
+        "document_id": "XEX-NAP2"
+      },
+      {
+        "evidence_id": "E4",
+        "document_id": "XEX-NAP2"
+      }
+    ],
+    "claims": [
+      {
+        "claim_id": "C1",
+        "topic_ids": [
+          "AGR-01"
+        ],
+        "variants": [
+          {
+            "variant_id": "V1",
+            "policy_object_id": "XEX-efficient-irrigation-target-2030",
+            "statement_type": "commitment",
+            "conditionality": "unconditional",
+            "evidence_ids": [
+              "E1"
+            ],
+            "details": {
+              "actor": null,
+              "timeframe": {
+                "text": "by 2030",
+                "policy_object_id": "XEX-efficient-irrigation-target-2030",
+                "evidence_ids": [
+                  "E1"
+                ],
+                "anchor": "action"
+              },
+              "deliverable": {
+                "text": "100,000 hectares total national efficient irrigation coverage",
+                "policy_object_id": "XEX-efficient-irrigation-target-2030",
+                "evidence_ids": [
+                  "E1"
+                ],
+                "kind": "quantified_output"
+              }
+            }
+          },
+          {
+            "variant_id": "V2",
+            "policy_object_id": "XEX-efficient-irrigation-target-2030",
+            "statement_type": "commitment",
+            "conditionality": "unconditional",
+            "evidence_ids": [
+              "E3"
+            ],
+            "details": {
+              "actor": null,
+              "timeframe": {
+                "text": "by 2030",
+                "policy_object_id": "XEX-efficient-irrigation-target-2030",
+                "evidence_ids": [
+                  "E3"
+                ],
+                "anchor": "action"
+              },
+              "deliverable": {
+                "text": "80,000 hectares total national efficient irrigation coverage",
+                "policy_object_id": "XEX-efficient-irrigation-target-2030",
+                "evidence_ids": [
+                  "E3"
+                ],
+                "kind": "quantified_output"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "claim_id": "C2",
+        "topic_ids": [
+          "AGR-01"
+        ],
+        "variants": [
+          {
+            "variant_id": "C2-base",
+            "policy_object_id": "XEX-network-capacity-2024",
+            "statement_type": "context",
+            "conditionality": "not_stated",
+            "evidence_ids": [
+              "E2"
+            ],
+            "details": {
+              "actor": null,
+              "timeframe": null,
+              "deliverable": null
+            }
+          }
+        ]
+      },
+      {
+        "claim_id": "C3",
+        "topic_ids": [
+          "AGR-01"
+        ],
+        "variants": [
+          {
+            "variant_id": "C3-base",
+            "policy_object_id": "XEX-canal-rehabilitation-2026-2030",
+            "statement_type": "planned_action",
+            "conditionality": "not_stated",
+            "evidence_ids": [
+              "E4"
+            ],
+            "details": {
+              "actor": {
+                "text": "Ministry of Agriculture",
+                "role": "implementing",
+                "policy_object_id": "XEX-canal-rehabilitation-2026-2030",
+                "evidence_ids": [
+                  "E4"
+                ]
+              },
+              "timeframe": {
+                "text": "during 2026–2030",
+                "anchor": "action",
+                "policy_object_id": "XEX-canal-rehabilitation-2026-2030",
+                "evidence_ids": [
+                  "E4"
+                ]
+              },
+              "deliverable": {
+                "text": "Rehabilitate 30 km of programme irrigation canals",
+                "kind": "quantified_output",
+                "policy_object_id": "XEX-canal-rehabilitation-2026-2030",
+                "evidence_ids": [
+                  "E4"
+                ]
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "topics": [
+      {
+        "topic_id": "AGR-01",
+        "home_domain_id": "agriculture",
+        "processing_complete": true
+      }
+    ]
+  },
+  "documents": [
+    {
+      "document_id": "XEX-NDC1",
+      "input": {
+        "scope": {
+          "kind": "document",
+          "document_ids": [
+            "XEX-NDC1"
+          ],
+          "source_profile_complete": true
+        },
+        "profile": {
+          "profile_id": "synthetic-water-example-AGR-01-v3",
+          "topic_ids": [
+            "AGR-01"
+          ]
+        },
+        "evidence": [
+          {
+            "evidence_id": "E1",
+            "document_id": "XEX-NDC1"
+          }
+        ],
+        "claims": [
+          {
+            "claim_id": "C1",
+            "topic_ids": [
+              "AGR-01"
+            ],
+            "variants": [
+              {
+                "variant_id": "V1",
+                "policy_object_id": "XEX-efficient-irrigation-target-2030",
+                "statement_type": "commitment",
+                "conditionality": "unconditional",
+                "evidence_ids": [
+                  "E1"
+                ],
+                "details": {
+                  "actor": null,
+                  "timeframe": {
+                    "text": "by 2030",
+                    "policy_object_id": "XEX-efficient-irrigation-target-2030",
+                    "evidence_ids": [
+                      "E1"
+                    ],
+                    "anchor": "action"
+                  },
+                  "deliverable": {
+                    "text": "100,000 hectares total national efficient irrigation coverage",
+                    "policy_object_id": "XEX-efficient-irrigation-target-2030",
+                    "evidence_ids": [
+                      "E1"
+                    ],
+                    "kind": "quantified_output"
+                  }
+                }
+              }
+            ]
+          }
+        ],
+        "topics": [
+          {
+            "topic_id": "AGR-01",
+            "home_domain_id": "agriculture",
+            "processing_complete": true
+          }
+        ]
+      }
+    },
+    {
+      "document_id": "XEX-NAP1",
+      "input": {
+        "scope": {
+          "kind": "document",
+          "document_ids": [
+            "XEX-NAP1"
+          ],
+          "source_profile_complete": true
+        },
+        "profile": {
+          "profile_id": "synthetic-water-example-AGR-01-v3",
+          "topic_ids": [
+            "AGR-01"
+          ]
+        },
+        "evidence": [
+          {
+            "evidence_id": "E2",
+            "document_id": "XEX-NAP1"
+          }
+        ],
+        "claims": [
+          {
+            "claim_id": "C2",
+            "topic_ids": [
+              "AGR-01"
+            ],
+            "variants": [
+              {
+                "variant_id": "C2-base",
+                "policy_object_id": "XEX-network-capacity-2024",
+                "statement_type": "context",
+                "conditionality": "not_stated",
+                "evidence_ids": [
+                  "E2"
+                ],
+                "details": {
+                  "actor": null,
+                  "timeframe": null,
+                  "deliverable": null
+                }
+              }
+            ]
+          }
+        ],
+        "topics": [
+          {
+            "topic_id": "AGR-01",
+            "home_domain_id": "agriculture",
+            "processing_complete": true
+          }
+        ]
+      }
+    },
+    {
+      "document_id": "XEX-NAP2",
+      "input": {
+        "scope": {
+          "kind": "document",
+          "document_ids": [
+            "XEX-NAP2"
+          ],
+          "source_profile_complete": true
+        },
+        "profile": {
+          "profile_id": "synthetic-water-example-AGR-01-v3",
+          "topic_ids": [
+            "AGR-01"
+          ]
+        },
+        "evidence": [
+          {
+            "evidence_id": "E3",
+            "document_id": "XEX-NAP2"
+          },
+          {
+            "evidence_id": "E4",
+            "document_id": "XEX-NAP2"
+          }
+        ],
+        "claims": [
+          {
+            "claim_id": "C1",
+            "topic_ids": [
+              "AGR-01"
+            ],
+            "variants": [
+              {
+                "variant_id": "V2",
+                "policy_object_id": "XEX-efficient-irrigation-target-2030",
+                "statement_type": "commitment",
+                "conditionality": "unconditional",
+                "evidence_ids": [
+                  "E3"
+                ],
+                "details": {
+                  "actor": null,
+                  "timeframe": {
+                    "text": "by 2030",
+                    "policy_object_id": "XEX-efficient-irrigation-target-2030",
+                    "evidence_ids": [
+                      "E3"
+                    ],
+                    "anchor": "action"
+                  },
+                  "deliverable": {
+                    "text": "80,000 hectares total national efficient irrigation coverage",
+                    "policy_object_id": "XEX-efficient-irrigation-target-2030",
+                    "evidence_ids": [
+                      "E3"
+                    ],
+                    "kind": "quantified_output"
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "claim_id": "C3",
+            "topic_ids": [
+              "AGR-01"
+            ],
+            "variants": [
+              {
+                "variant_id": "C3-base",
+                "policy_object_id": "XEX-canal-rehabilitation-2026-2030",
+                "statement_type": "planned_action",
+                "conditionality": "not_stated",
+                "evidence_ids": [
+                  "E4"
+                ],
+                "details": {
+                  "actor": {
+                    "text": "Ministry of Agriculture",
+                    "role": "implementing",
+                    "policy_object_id": "XEX-canal-rehabilitation-2026-2030",
+                    "evidence_ids": [
+                      "E4"
+                    ]
+                  },
+                  "timeframe": {
+                    "text": "during 2026–2030",
+                    "anchor": "action",
+                    "policy_object_id": "XEX-canal-rehabilitation-2026-2030",
+                    "evidence_ids": [
+                      "E4"
+                    ]
+                  },
+                  "deliverable": {
+                    "text": "Rehabilitate 30 km of programme irrigation canals",
+                    "kind": "quantified_output",
+                    "policy_object_id": "XEX-canal-rehabilitation-2026-2030",
+                    "evidence_ids": [
+                      "E4"
+                    ]
+                  }
+                }
+              }
+            ]
+          }
+        ],
+        "topics": [
+          {
+            "topic_id": "AGR-01",
+            "home_domain_id": "agriculture",
+            "processing_complete": true
+          }
+        ]
+      }
+    }
+  ]
+}

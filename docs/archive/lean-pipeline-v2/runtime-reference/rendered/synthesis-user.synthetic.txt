@@ -1,0 +1,30 @@
+Question (Water): What does the document say about Water (Water resources, supply, basins, drought, floods and coasts, water quality and the cryosphere as a water source.), and how far has each response gone? Cover its topics: WAT-01 Water supply and groundwater; WAT-02 River basins and transboundary water; WAT-03 Flood and coastal protection; WAT-04 Water quality and reuse; WAT-05 Glaciers, snow and mountain water; WAT-06 Drought management; AGR-01 Irrigation and farm water efficiency; WST-03 Wastewater and sanitation.
+Answer shape: one finding per distinct statement with its kind, figures and citations; citations are refs, not quotes.
+Document findings:
+```json
+{
+ "domain": {
+  "label": "Water",
+  "definition": "Water resources, supply, basins, drought, floods and coasts, water quality and the cryosphere as a water source."
+ },
+ "documents": [
+  {
+   "document_id": "XXX-NDC1",
+   "title": "Synthetic example for prompt review",
+   "kind": "NDC",
+   "edition_date": "2025-01-01",
+   "not_found": false,
+   "note": null,
+   "findings": [
+    {
+     "ref": "XXX-NDC1#findings.0",
+     "text": "The policy targets flood-protection works by 2030.",
+     "kind": "commitment",
+     "figures": []
+    }
+   ]
+  }
+ ],
+ "documents_without_answer": []
+}
+```

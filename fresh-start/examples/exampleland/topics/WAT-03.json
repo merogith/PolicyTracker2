@@ -1,0 +1,58 @@
+{
+  "versions": {
+    "claims": "0.3.0-draft",
+    "prompt": "topic-0.1",
+    "model": null
+  },
+  "scope": {
+    "country": "XEX",
+    "topic_id": "WAT-03",
+    "document_ids": [
+      "XEX-NDC3"
+    ],
+    "record_ids": [
+      "XEX-NDC3-p8-1"
+    ]
+  },
+  "claims": [
+    {
+      "claim_id": "C1",
+      "claim_text_en": "The 2024 spring floods displaced about 12,000 people in the Northern basin and caused estimated losses of USD 90 million.",
+      "member_record_ids": [
+        "XEX-NDC3-p8-1"
+      ],
+      "outcome_signal": "not_reported",
+      "setback_flags": [],
+      "status": "active",
+      "review_status": "proposed",
+      "open_issue": null
+    }
+  ],
+  "brief": {
+    "core_idea_en": "In the pages read, NDC 3.0 describes the 2024 flood impact in the Northern basin but states no flood or coastal protection measure. The only flood response found is the early-warning action under DRM-03.",
+    "concerns": [
+      {
+        "text_en": "Spring floods in 2024 displaced about 12,000 people in the Northern basin and caused USD 90 million in losses.",
+        "claim_ids": [
+          "C1"
+        ]
+      }
+    ],
+    "responses": [],
+    "numbers": [
+      {
+        "text_en": "About 12,000 displaced; USD 90 million in losses; Northern basin; 2024 (NDC 3.0, p. 8).",
+        "claim_ids": [
+          "C1"
+        ]
+      }
+    ],
+    "changes_between_editions": [],
+    "gaps": [
+      {
+        "text_en": "No structural or nature-based flood protection measure appears in the pages read.",
+        "claim_ids": []
+      }
+    ]
+  }
+}

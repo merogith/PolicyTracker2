@@ -1,0 +1,233 @@
+// Data model: see docs/PLAN.md Part 5 and docs/IMPLEMENTATION.md Part 2.
+// String columns hold the enumerations; allowed values are listed in src/lib/domain.ts.
+
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "sqlite"
+}
+
+model Country {
+  id            String   @id @default(cuid())
+  iso3          String   @unique
+  name          String
+  vectorStoreId String?
+  /// active | deleting
+  status        String   @default("active")
+  /// Highest sequence number ever used per document kind, so document ids are never reused.
+  docCounters   Json
+  createdAt     DateTime @default(now())
+  mainReportId  String?
+
+  documents Document[]
+  results   AnalysisResult[]
+  reports   CountryReport[] @relation("CountryReports")
+  mainReport CountryReport? @relation("MainReport", fields: [mainReportId], references: [id], onDelete: SetNull)
+}
+
+/// A completed country analysis. Payloads are immutable; selection never rewrites history.
+model CountryReport {
+  id          String   @id @default(cuid())
+  countryId   String
+  title       String
+  fingerprint String
+  snapshot    Json
+  createdAt   DateTime @default(now())
+
+  country Country @relation("CountryReports", fields: [countryId], references: [id], onDelete: Cascade)
+  mainFor Country[] @relation("MainReport")
+
+  @@unique([countryId, fingerprint])
+  @@index([countryId, createdAt])
+}
+
+model Document {
+  /// <ISO3>-<KIND><n>, e.g. KAZ-NDC1
+  id           String    @id
+  countryId    String
+  title        String
+  kind         String
+  kindSeq      Int
+  /// YYYY-MM-DD as printed on the document or its submission
+  editionDate  String
+  language     String?
+  pageCount    Int?
+  pdfPath      String
+  originalName String
+  sha256       String
+  openaiFileId String?
+  /// uploaded | extracting | indexing | analysing | analysed | failed | deleting
+  status       String    @default("uploaded")
+  error        String?
+  createdAt    DateTime  @default(now())
+  updatedAt    DateTime  @updatedAt
+
+  country   Country          @relation(fields: [countryId], references: [id], onDelete: Cascade)
+  pages     Page[]
+  results   AnalysisResult[]
+  citations Citation[]
+
+  @@unique([countryId, kind, kindSeq])
+  @@index([countryId])
+}
+
+model Page {
+  documentId   String
+  page         Int
+  /// PDF page label when the document defines one (e.g. "iv", "12")
+  label        String?
+  text         String
+  /// extracted | unreadable
+  disposition  String
+  openaiFileId String?
+
+  document Document @relation(fields: [documentId], references: [id], onDelete: Cascade)
+
+  @@id([documentId, page])
+}
+
+/// A domain of the taxonomy. Each domain is the question asked of every document.
+model Domain {
+  /// slug from the taxonomy, e.g. "water"
+  id          String    @id
+  /// 2-4 capital letters; topic IDs start with it, e.g. WAT-03
+  prefix      String    @unique
+  label       String
+  definition  String
+  /// [{ id, label }] display groups for its topics
+  groups      Json
+  /// extra phrases to search with
+  searchHints Json
+  /// file_search max_num_results (1..50)
+  maxResults  Int       @default(20)
+  order       Int
+  /// bumped when the question changes (label, definition, the topics placed in it)
+  version     Int       @default(1)
+  enabled     Boolean   @default(true)
+  retiredAt   DateTime?
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+
+  results AnalysisResult[]
+}
+
+/// A topic of the taxonomy. The model tags items with topic IDs only; domains come from placements.
+model Topic {
+  /// <PREFIX>-<nn>, never reused for a different meaning
+  id          String    @id
+  label       String
+  definition  String
+  /// [{ domain, group }]; the first is the home domain
+  placements  Json
+  /// [{ when, use }] hints naming the neighbouring topic to use instead
+  routing     Json
+  legacyIds   Json
+  splitFrom   Json
+  order       Int
+  retiredAt   DateTime?
+  /// topic IDs that replace a retired topic
+  replacedBy  Json?
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+}
+
+/// The taxonomy's version: the seed file's version plus a revision bumped on every edit.
+model TaxonomyState {
+  id          String   @id @default("current")
+  baseVersion String
+  revision    Int      @default(0)
+  updatedAt   DateTime @updatedAt
+}
+
+model AnalysisResult {
+  id              String    @id @default(cuid())
+  domainId        String
+  domainVersion   Int
+  /// document | country
+  scope           String
+  documentId      String?
+  countryId       String
+  /// "doc:<documentId>" or "country:<countryId>"; one result per domain version and slot
+  slot            String
+  /// queued | running | done | failed
+  status          String    @default("queued")
+  output          Json?
+  model           String?
+  promptVersion   String?
+  /// taxonomy version the topic tags come from (TaxonomyState)
+  taxonomyVersion String?
+  inputTokens     Int       @default(0)
+  cachedTokens    Int       @default(0)
+  outputTokens    Int       @default(0)
+  reasoningTokens Int       @default(0)
+  fileSearchCalls Int       @default(0)
+  costUsd         Float     @default(0)
+  /// document scope: pages the search returned; country scope: the document results used
+  sources         Json?
+  error           String?
+  createdAt       DateTime  @default(now())
+  updatedAt       DateTime  @updatedAt
+  finishedAt      DateTime?
+
+  domain    Domain      @relation(fields: [domainId], references: [id], onDelete: Cascade)
+  document  Document?   @relation(fields: [documentId], references: [id], onDelete: Cascade)
+  country   Country     @relation(fields: [countryId], references: [id], onDelete: Cascade)
+  citations Citation[]
+
+  @@unique([domainId, domainVersion, slot])
+  @@index([countryId])
+  @@index([documentId])
+}
+
+model Citation {
+  id         String  @id @default(cuid())
+  resultId   String
+  documentId String
+  /// page where the quote was found (the cited page unless it was off by one); the cited page if not found
+  page       Int
+  /// page the model gave
+  citedPage  Int
+  quote      String
+  verified   Boolean
+  /// where the citation sits in the output: "" for the top level, "findings.2", ...
+  itemPath   String
+  position   Int
+
+  result   AnalysisResult @relation(fields: [resultId], references: [id], onDelete: Cascade)
+  document Document       @relation(fields: [documentId], references: [id], onDelete: Cascade)
+
+  @@index([resultId])
+  @@index([documentId, page])
+}
+
+model Job {
+  id          String    @id @default(cuid())
+  /// ingest_document | analyse_document_domain | synthesise_country_domain | retag_result | delete_document | delete_country
+  type        String
+  payload     Json
+  /// queued | running | done | failed | cancelled
+  status      String    @default("queued")
+  attempts    Int       @default(0)
+  maxAttempts Int       @default(3)
+  error       String?
+  runAfter    DateTime  @default(now())
+  startedAt   DateTime?
+  finishedAt  DateTime?
+  createdAt   DateTime  @default(now())
+  /// same value for jobs doing the same work; used to avoid queueing duplicates
+  dedupeKey   String
+  countryId   String?
+  documentId  String?
+  domainId    String?
+  inputTokens  Int      @default(0)
+  outputTokens Int      @default(0)
+  costUsd      Float    @default(0)
+  /// unknown = historical mode not recorded; demo usage is never billable
+  executionMode String @default("unknown")
+
+  @@index([status, runAfter])
+  @@index([dedupeKey, status])
+}

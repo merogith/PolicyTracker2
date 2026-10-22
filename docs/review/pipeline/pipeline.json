@@ -1,0 +1,128 @@
+{
+  "version": "3.0.0",
+  "status": "review_not_active",
+  "runtime_loaded": false,
+  "scope": "Regional climate and disaster policy; retain the 16-domain / 64-topic system.",
+  "source_scope": {
+    "initial_document_roles": [
+      "NDC",
+      "NAP"
+    ],
+    "future_roles": "DRR, LTS and other policy roles are opt-in profile extensions, not automatically admitted.",
+    "selection": "Code freezes source_document_ids and role/date rules before extraction/organization. Historical editions remain accessible but are not silently included in a selected current corpus.",
+    "missing_required_role": "Source-profile completeness is false; retain positive evidence and identify the missing role. The LLM never certifies corpus completeness.",
+    "metadata": "Country/kind/title/date/source URL identify provenance; they do not establish responsibility, national claim scope, authority or explicit supersession."
+  },
+  "models": {
+    "extract": {
+      "environment_variable": "OPENAI_MODEL"
+    },
+    "organize": {
+      "environment_variable": "OPENAI_MODEL",
+      "optional_benchmarked_override_environment_variable": "OPENAI_MODEL_CHEAP",
+      "selection_rule": "Two logical stages may use the same validated model. Enable a cheaper organization model only after representative-source tests preserve grouping, contradiction and attribution quality."
+    },
+    "repair": {
+      "environment_variable": "OPENAI_MODEL_REPAIR",
+      "optional": true
+    }
+  },
+  "extraction": {
+    "unit": "document_domain",
+    "initial_domain_units": 16,
+    "method": "Retain domain retrieval initially. Benchmark section-first extraction before any default change.",
+    "retrieval_owner": "code",
+    "max_search_calls_per_unit": 3,
+    "max_results_per_search": 20,
+    "source_tokens_target": 8000,
+    "source_tokens_hard": 18000,
+    "max_output_tokens": 6000,
+    "taxonomy_context": "All topic IDs plus compact global definitions; detailed current-domain and adjacent-topic definitions/routing. No hard restriction to the queried domain.",
+    "source_context": "Physical-page units; separate section/table header/footnote units with explicit context_unit_ids. No stitched multi-page quote and no hard 40-word quotation cutoff.",
+    "empty_result": "Only a code-logged completed bounded query plan can support No evidence found; an empty LLM list cannot attest search completeness.",
+    "unmapped": "Relevant source material without a fitting topic remains a local unmapped record; irrelevant material is omitted.",
+    "output_truncation": "Split the source-unit manifest deterministically, preserve boundary context and reconcile discovered duplicates. Never resend the same oversized request unchanged or silently truncate output."
+  },
+  "organization": {
+    "unit": "country_home_domain",
+    "pooling": "Code pools all source records by assigned primary topics, independent of discovery question.",
+    "ownership": "One primary-topic home owns each record. Other packs receive read-only context. Unmapped records remain a code-retained local bucket.",
+    "input_tokens_target": 12000,
+    "input_tokens_hard": 24000,
+    "max_output_tokens": 6000,
+    "inputs": "Source-linked records, short evidence, facts and existing identity candidates; no PDFs, web search, scores or review documents.",
+    "boundary_policy": "Partition owned records deterministically; retain candidate neighbors as context; reserve bounded Stage 2 reconciliation for cross-partition identity/link candidates. Unreconciled boundaries remain partial.",
+    "accounting": "Each owned record exactly once across proposed variants or retained records; context-only records never gain ownership.",
+    "transitivity": "A-B and B-C similarities do not prove A-C identity. Compare negative constraints before merging all three.",
+    "failure_fallback": "Verified source-local records from failed/partial organization or retained_records become provisional singleton assessments. Preserve directly evidenced responses/details, never borrow across records. organization_complete=false keeps missing predicates unknown; common-claim counts remain provisional. Later success creates a newer snapshot with lineage. No extra LLM or human acceptance step."
+  },
+  "scheduling": {
+    "max_parallel_country_units": 4,
+    "parallel_limit_status": "Initial unmeasured operating hypothesis, configurable after rate/cost measurements.",
+    "barrier": "Freeze an immutable country input/configuration manifest. Wait for every Stage 1 unit in that manifest to become terminal, or reach the partial-publication deadline, before code pooling.",
+    "parallelism": "Stage 1 document/domain units run in parallel. Stage 2 home-domain packs run in parallel after the frozen barrier.",
+    "coalescing": "Coalesce uploads into one update; do not reorganize after every individual record arrival.",
+    "late_results": "Late success produces a newer snapshot. Results from older manifests cannot overwrite newer snapshots."
+  },
+  "budgets": {
+    "all_defaults": "Unmeasured initial targets, not measured costs or model guarantees.",
+    "chars_per_token_estimate": 3,
+    "safety_margin_tokens": 2000,
+    "dispatch_requirement": "Offline estimates are guardrails only. Production must use the chosen model tokenizer/provider limits and fit instructions + schema + source/context + reserved output/reasoning + safety margin.",
+    "country_budget_environment_variable": "MAX_USD_PER_RUN",
+    "scope": "One persisted country-update allowance covers search, inference, retries, repair, optional OCR and overflow; storage is reported separately.",
+    "retry_policy": "One targeted repair; optional one stronger attempt within the same allowance. Consolidate SDK/worker retries, log every attempt, retain uncertain-spend reservations.",
+    "exhaustion": "Stop dispatching new work; publish preserved positive evidence with incomplete states."
+  },
+  "verification": {
+    "qualifying_evidence": "Require exact source-unit quote occurrence with NFC/whitespace normalization only; preserve numeric spans including adjacent signs, comparators, percent symbols and range ends. As-stated units, periods, baselines, scope and scenarios must occur in their field-linked quotes. Tolerant highlighting cannot establish eligibility.",
+    "highlighting": "Tolerant page locating/highlighting is separate and cannot establish factual eligibility.",
+    "field_grounding": "Check every factual provenance reference. Source occurrence and schema validity do not prove semantic entailment or correct actor-action association.",
+    "ocr": "Optional targeted unreadable/table pages only; preserve OCR method and limitations; no universal OCR or third routine LLM stage."
+  },
+  "publication": {
+    "human_review_required": false,
+    "mode": "Atomic snapshot after terminal jobs or configured partial deadline",
+    "interactive_deadline_minutes": 60,
+    "deadline_status": "Initial configurable hypothesis.",
+    "partial_publication": true,
+    "late_completion": "Automatically publish a newer snapshot.",
+    "post_publication_controls": [
+      "flag",
+      "hide",
+      "restore"
+    ],
+    "previous_snapshot": "Keep the dated prior snapshot visible during work."
+  },
+  "cache": {
+    "display_only_edits": "Render only, no LLM call.",
+    "scoring_edits": "Recalculate stored facts; if a new rule needs missing facts, schedule affected extraction.",
+    "scope_expansion": "Retag saved evidence and search newly covered subjects; retagging alone cannot discover omitted evidence.",
+    "new_document": "Extract only new/changed document units and rebuild affected groups plus dependency neighbors.",
+    "extraction_key_fields": [
+      "document_content_hash",
+      "source_unit_content_and_retrieval_plan_hash",
+      "extraction_prompt_semantic_hash",
+      "taxonomy_semantic_hash",
+      "enabled_labels_semantic_hash",
+      "schema_hash",
+      "model_and_parameters",
+      "retrieval_settings"
+    ],
+    "organization_key_fields": [
+      "owned_and_context_record_content_hash",
+      "relevant_document_metadata_hash",
+      "prior_identity_candidates_hash",
+      "organization_prompt_semantic_hash",
+      "relevant_taxonomy_and_relationship_hash",
+      "schema_hash",
+      "model_and_parameters"
+    ],
+    "snapshot_provenance_only": [
+      "country_source_manifest_id",
+      "snapshot_id",
+      "as_of_date_when_selected_evidence_is_unchanged"
+    ],
+    "rule": "Country manifest changes alone do not invalidate unchanged extraction or organization packs. If a cutoff/profile change selects different records, the changed record-pack hash invalidates organization and derived views."
+  }
+}

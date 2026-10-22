@@ -1,0 +1,12 @@
+Findings:
+```json
+[
+ {
+  "index": 0,
+  "text": "The policy targets flood-protection works by 2030.",
+  "quotes": [
+   "Flood-protection works are targeted for 2030."
+  ]
+ }
+]
+```

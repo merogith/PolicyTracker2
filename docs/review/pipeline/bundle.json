@@ -1,0 +1,133 @@
+{
+  "id": "regional-climate-disaster-policy-tracker",
+  "version": "3.0.0",
+  "status": "baseline_contracts_awaiting_upgrade",
+  "date": "2026-10-20",
+  "runtime_loaded": false,
+  "path_base": "review_root_parent_of_pipeline_directory",
+  "configuration_authority": "Proposed portable bundle; production must freeze an immutable version for each run. UI edits/import/export use this same authority.",
+  "component_versions": {
+    "llm_pipeline_baseline": "3.0.0",
+    "taxonomy": "3.0.0",
+    "ui_scoring": "4.0.0",
+    "ui_presentation": "4.1.0",
+    "upgrade_plan": "4.2.0"
+  },
+  "upgrade_boundary": "The v3 machine files and examples are preserved baseline contracts. The final plan requires packet extraction, recovery, OCR and upgraded schemas before production activation.",
+  "current_dashboard_scoring": "ui-scoring/scoring.json",
+  "current_dashboard_plan": "ui-scoring/README.md",
+  "legacy_scoring_reference": "pipeline/scoring.json; v3 coverage-only headline superseded by ui-scoring/scoring.json",
+  "files": [
+    {
+      "path": "pipeline/taxonomy.json",
+      "sha256": "301d373901f2e2f28e8156f8aee0444c48ea2fe4dba6d78b02e62e89f377be03"
+    },
+    {
+      "path": "pipeline/labels.json",
+      "sha256": "f5a6fb013e30f616fb91bcaa860d8242a504f6ea56deb763a6812b24d6a24133"
+    },
+    {
+      "path": "pipeline/pipeline.json",
+      "sha256": "2820e121c200e9b40882679e0edd69a09d6a9808d4d0b803a5fef6f6a0bcc68e"
+    },
+    {
+      "path": "pipeline/scoring.json",
+      "sha256": "9a0402a73970acf29ba113ecb212afb2deb492c2c68842285ab53087e2f50a08"
+    },
+    {
+      "path": "pipeline/llm-contracts.json",
+      "sha256": "543c3779f5337dfa7282e850b922d4bc153c4b39bc9f745d930c1148e7a45117"
+    },
+    {
+      "path": "pipeline/prompts/extract.md",
+      "sha256": "055eb37ed64c394f3331538fc9216d64c558b50f38d9195b6ea3a3a26d0f36d7"
+    },
+    {
+      "path": "pipeline/prompts/organize.md",
+      "sha256": "d9237d7c863f23f8dc6147e1c8e0713fa5bc73cfb981693d02514955fb9d789b"
+    },
+    {
+      "path": "pipeline/maintenance/retag.md",
+      "sha256": "4c879eba2caf7509753fc41dfb07db1e8d71eb717a7e7497404143fee13a6b8c"
+    },
+    {
+      "path": "reference/build-inputs.mjs",
+      "sha256": "47464ac8761e1567b07ba3ac06def608727f08c4ba46ef29b827e41113d8f64d"
+    },
+    {
+      "path": "reference/score-bands.mjs",
+      "sha256": "784b7bab4e0d6838b6142a8c11d0880ed417e3b2078a3a8afeb33bc54b5f2a0c"
+    },
+    {
+      "path": "reference/compare-snapshots.mjs",
+      "sha256": "d184413223a3590732c3c6bf461bdf47a98731ec10ee08084a0799d677e3c482"
+    },
+    {
+      "path": "reference/DATA-DICTIONARY.md",
+      "sha256": "90e60f0bfb7f25db9b235df461cd54cedcd1b932c512b23a158347f52b5e2260"
+    },
+    {
+      "path": "ui-scoring/scoring.json",
+      "sha256": "ce0f15891c5c7143c22f57564b39050f321db144c1761b76b0a5e6f1d231d478"
+    },
+    {
+      "path": "ui-scoring/scoring.mjs",
+      "sha256": "2a0ef9a350c67112df834dfb8c3a51c3de3c7a728a655faabd8b5aa47e7a3d23"
+    },
+    {
+      "path": "ui-scoring/METHOD.md",
+      "sha256": "b626f8bb53d4372cc681df47279fb624de7ded33bcbae263c5ef4ab85fc84acc"
+    },
+    {
+      "path": "team/FINAL-UPGRADE-PLAN.md",
+      "sha256": "72ea9c9084ebfa893af0537faa49fddb19730d0568fc08ba26b8816000c1ca1d"
+    },
+    {
+      "path": "team/PIPELINE.md",
+      "sha256": "b92c02d2eb046d6bb6f2c76b1cf2ec52282c3794d4ba087c911f4e2f0986a715"
+    }
+  ],
+  "llm_input_allowlist": {
+    "extract": [
+      "pipeline/prompts/extract.md",
+      "pipeline/taxonomy.json",
+      "pipeline/labels.json",
+      "pipeline/pipeline.json",
+      "pipeline/llm-contracts.json"
+    ],
+    "organize": [
+      "pipeline/prompts/organize.md",
+      "pipeline/taxonomy.json",
+      "pipeline/labels.json",
+      "pipeline/pipeline.json",
+      "pipeline/llm-contracts.json"
+    ],
+    "retag": [
+      "pipeline/maintenance/retag.md",
+      "pipeline/taxonomy.json",
+      "pipeline/labels.json",
+      "pipeline/pipeline.json",
+      "pipeline/llm-contracts.json"
+    ]
+  },
+  "loading_rule": "Only stage allowlisted files may contribute to request assembly. This bundle manifest is not an instruction to send every file to the model.",
+  "stages": {
+    "extract": "pipeline/prompts/extract.md",
+    "organize": "pipeline/prompts/organize.md",
+    "maintenance_retag": "pipeline/maintenance/retag.md"
+  },
+  "schema_authority": "pipeline/llm-contracts.json; compile enum choices from taxonomy and enabled labels using reference/build-inputs.mjs",
+  "implementation_plan": "team/FINAL-UPGRADE-PLAN.md",
+  "verification": "ui-scoring/VERIFICATION.md",
+  "pipeline_verification": "reference/VERIFICATION.md",
+  "normalization_contract": "reference/DATA-DICTIONARY.md",
+  "reference_calculators": [
+    "ui-scoring/scoring.mjs"
+  ],
+  "legacy_reference_calculators": [
+    "reference/score-bands.mjs",
+    "reference/compare-snapshots.mjs"
+  ],
+  "preserved_current_runtime": "preserved/current-runtime.zip",
+  "preserved_application": "preserved/application-before-update.zip"
+}
