@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A source-page example and guide to the read-only Regional Policy Tracker snapshot.">
+  <title>Regional Policy Tracker snapshot</title>
+  <style>
+    :root { color-scheme: light; font: 100%/1.6 system-ui, sans-serif; color: #171717; background: #fff; }
+    body { margin: 0; }
+    main { max-width: 44rem; margin: auto; padding: clamp(2rem, 7vw, 5rem) 1.35rem; }
+    h1 { font-size: clamp(2.1rem, 6vw, 3.5rem); line-height: 1.08; letter-spacing: -.045em; margin: .3rem 0 1rem; }
+    h2 { line-height: 1.25; font-size: 1.4rem; margin: 0 0 .6rem; }
+    p, blockquote { margin: 0 0 .9rem; }
+    .label { color: #4a4a4a; font-size: .9rem; }
+    section { margin-top: 2rem; padding-top: 1.6rem; border-top: 1px solid #b5b5b5; }
+    blockquote { padding: .2rem 0 .2rem 1rem; border-left: 2px solid #171717; }
+    ul { margin: .7rem 0 0; padding-inline-start: 1.2rem; }
+    .links { list-style: none; display: flex; flex-wrap: wrap; gap: .4rem 1.2rem; padding: 0; }
+    a { color: inherit; text-underline-offset: .2em; }
+    a:focus-visible { outline: 2px solid; outline-offset: 4px; }
+  </style>
+</head>
+<body>
+<main>
+  <p class="label">Read-only snapshot · 22 October 2026</p>
+  <h1>Regional Policy Tracker</h1>
+  <p>Explore how the prototype links a policy finding to the page it came from. This snapshot covers six source documents across Belarus, Kazakhstan and Türkiye. The <a href="https://github.com/merogith/PolicyTracker#find-information">source project’s inventory</a> lists 42 PDFs and 18 country entries.</p>
+  <section aria-labelledby="example">
+    <h2 id="example">From a finding to its source</h2>
+    <p>Kazakhstan’s 2023 climate commitment describes electric-vehicle infrastructure in large cities as a planned action.</p>
+    <blockquote cite="https://unfccc.int/sites/default/files/NDC/2023-06/12updated%20NDC%20KAZ_Gov%20Decree313_19042023_en_cover%20page.pdf#page=7">“creation of a required infrastructure for EVs in large cities of the country”</blockquote>
+    <p class="label">Kazakhstan’s updated national climate commitment, 2023 · page 7</p>
+    <ul class="links">
+      <li><a href="countries/KAZ/documents/KAZ-NDC2/q-e397427b9388.html#viewer">Inspect the cited page in the tracker</a></li>
+      <li><a href="https://unfccc.int/sites/default/files/NDC/2023-06/12updated%20NDC%20KAZ_Gov%20Decree313_19042023_en_cover%20page.pdf#page=7">Read the UNFCCC PDF, page 7</a></li>
+      <li><a href="countries/KAZ/">Explore the Kazakhstan report</a></li>
+    </ul>
+  </section>
+  <section aria-labelledby="snapshot">
+    <h2 id="snapshot">Explore the snapshot</h2>
+    <p>The run history records development jobs, including demo runs, failed attempts and dashboard cancellations. For example, the failed-job view records a document indexing connection error after three attempts.</p>
+    <ul class="links">
+      <li><a href="countries/">Regional dashboard</a></li>
+      <li><a href="runs/">Run history</a></li>
+      <li><a href="runs/q-3afded04228e.html">Failed-job view</a></li>
+      <li><a href="methodology/">Methodology</a></li>
+      <li><a href="https://merogith.github.io/Climate-policy-taxonomy/climate-policy-taxonomy.html">Taxonomy examples from Kazakhstan’s 2025 NDC</a></li>
+    </ul>
+  </section>
+</main>
+</body>
+</html>

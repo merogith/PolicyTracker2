@@ -1,6 +1,6 @@
-# Regional Policy Tracker snapshot
+# Regional Policy Tracker — Evidence Snapshot
 
-[Open the public snapshot](https://merogith.github.io/PolicyTracker2/) to trace a finding from Kazakhstan’s updated 2023 climate commitment to a source page. The exported reports cover six documents from Belarus, Kazakhstan and Türkiye. The [source project](https://github.com/merogith/PolicyTracker) maintains a separate inventory of 42 PDFs and 18 country entries.
+[Open the regional dashboard](https://merogith.github.io/PolicyTracker2/countries/) or [follow a finding to its source](https://merogith.github.io/PolicyTracker2/evidence-overview.html) in Kazakhstan’s updated 2023 climate commitment. The exported reports cover six documents from Belarus, Kazakhstan and Türkiye. The [source project](https://github.com/merogith/PolicyTracker) maintains a separate inventory of 42 PDFs and 18 country entries.
 
 - [Saved citation view](https://merogith.github.io/PolicyTracker2/countries/KAZ/documents/KAZ-NDC2/q-e397427b9388.html#viewer)
 - [Official UNFCCC PDF, page 7](https://unfccc.int/sites/default/files/NDC/2023-06/12updated%20NDC%20KAZ_Gov%20Decree313_19042023_en_cover%20page.pdf#page=7)
