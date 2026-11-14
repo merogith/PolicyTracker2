@@ -3,6 +3,18 @@
 // GET forms and reloads are sent to the file saved for that exact view instead.
 (function () {
   var BASE = (document.currentScript && document.currentScript.src.match(/^https?:\/\/[^/]+(.*)\/_static\/nav\.js/) || [])[1] || "";
+  // The archived export misspells this country label. Correct display text
+  // after the page loads and leave the saved data and source documents intact.
+  window.addEventListener("load", function () {
+    var walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+    for (var node = walker.nextNode(); node; node = walker.nextNode()) {
+      if (node.nodeValue.indexOf("Kazakhistan") === -1) continue;
+      if (!node.parentElement.closest("script, style, pre, code, textarea")) {
+        node.nodeValue = node.nodeValue.replace(/\bKazakhistan\b/g, "Kazakhstan");
+      }
+    }
+  });
+
   var map = null;
   var initial = new URL(location.href);
   var nativeFetch = window.fetch.bind(window);
